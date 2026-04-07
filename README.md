@@ -18,7 +18,7 @@
 
 git clone http://github.com/misunmin/genesis21b
 
-
+members invited:
 - rvinuesa@umich.edu
 - ebm5351@psu.edu
 - dshaver@anl.gov
