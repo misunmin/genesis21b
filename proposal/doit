@@ -1,0 +1,6 @@
+git pull
+git add doit
+git add bib/*bib
+git add tex/*.tex
+git commit -m 'pff'
+git push
