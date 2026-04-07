@@ -1,0 +1,124 @@
+\documentclass[11pt]{article}
+\input{preamble}
+
+\begin{document}
+
+%%% Todd equation spacing commands
+\setlength{\abovedisplayskip}{3pt} 
+\setlength{\abovedisplayshortskip}{2pt}
+
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\belowdisplayshortskip}{2pt}
+
+% \nocite{*} % Show all possible references for now.
+\showrefnames    % \norefnames turns off this option
+\showcitenames   % \nocitenames turns off this option
+ \norefnames
+ \nocitenames
+
+
+\pagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+%%% Required: Proposal Cover Page
+\newpage \phantomsection
+\addcontentsline{toc}{subsection}{Proposal Cover Page}
+%\includepdf{LeyfferCoverPage}
+\input{cover}
+
+% \newpage \phantomsection
+% \addcontentsline{toc}{subsection}{Proposal Supplemental Cover Page}
+% \input{SupplCover}
+
+\setcounter{secnumdepth}{3} 
+\setcounter{tocdepth}{3}
+
+%%% Required: Table of Contents
+\newpage \phantomsection
+% \makeatletter				% More room for page numbers in TOC
+% \renewcommand{\@pnumwidth}{3.1em}	% 
+% \renewcommand{\@tocrmarg}{4.0em}	%
+% \setcounter{tocdepth}{2}
+ \addcontentsline{toc}{subsection}{Table of Contents}
+ \renewcommand\contentsname{Contents}
+ \subpdfbookmark{Table of Contents}{toc}
+%\noindent{\bf \Title}
+ %\tableofcontents
+\makeatletter
+\@starttoc{toc}
+\makeatother
+% \makeatother				% End more room in TOC
+
+\pagestyle{fancy}
+% \newpage \phantomsection ABSTRACT IS A SEPARATE PAGE
+% \addcontentsline{toc}{subsection}{Proposal Abstract}
+% \input{one_page_abstract}
+\newpage
+%%% Required: Narrative (main technical portion of the proposal, including
+%%% background/introduction, proposed research and methods, timetable of
+%%% activities, and responsibilities of key project personnel)
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\addcontentsline{toc}{section}{PROPOSAL NARRATIVE \pagebudget{5 pgs}}
+
+% \call{}
+
+\input{intro}
+\input{objectives}
+\input{proposed}
+\input{milestones}
+\input{dataSources}
+\input{metrics}
+
+\newpage
+\lhead{ } 
+\appendix
+\renewcommand{\thesection}{A.\arabic{section}}
+\addcontentsline{toc}{section}{APPENDICES \pagebudget{(Should start on or before
+page 6)}}
+
+%%% Appendix 1: BIBLIOGRAPHY \& REFERENCES CITE
+\newpage 
+\pagestyle{fancy} \lhead{\it BIBLIOGRAPHY \& REFERENCES CITED}
+\section{Bibliography \& References Cited}
+\bibliographystyle{abbrvnat}
+\bibliography{bib/masterbib}
+\lhead{}
+
+%%% Appendix 2: Facilities \& Other Resources
+\newpage 
+\section{Facilities \& Other Resources\pagebudget{0.5pg}}
+\noindent
+\textcolor{red}{{\bf Fix:} This appendix should be no more than half a page when printed using standard letter-size (8.5-inch x 11-inch) paper with 1-inch margins (top, bottom, left, and right).}
+
+\input{anl-facilities}
+
+%%% Appendix 3: Equipment
+\newpage 
+\section{Equipment}
+Not applicable to this project.
+
+%%% Appendix 4: Data Management Plan
+\newpage
+\section{Data Management Plan\pagebudget{Check!}}
+\label{app:dataplan}
+\input{anl-data} 
+
+%%% Appendix 5: SYNERGISTIC ACTIVITIES (OPTIONAL)
+\newpage
+\section{Synergistic Activities\pagebudget{1 pg per PI}}
+\label{app:synergies}
+
+%%% Appendix 6: TRANSPARENCY OF FOREIGN CONNECTIONS
+\newpage
+\section{Transparency of Foreign Connections}
+\label{app:foreign}
+
+%%% Appendix 7: Other Attachments
+\newpage
+\section{Other Attachments: Letters of Collaboration or Access}
+\label{app:collab}
+
+\end{document}
+
