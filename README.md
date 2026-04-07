@@ -14,7 +14,7 @@
 - budget: 
 - partners: letter of collaboration (kairos, terrapower)
      
-## REPO
+## REPO: git clone http://github.com/misunmin/genesis21b
 
 
 - rvinuesa@umich.edu
