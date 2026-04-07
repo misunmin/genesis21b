@@ -5,6 +5,7 @@
 
 - 4/14 ANL internal submission due
 - Plans:
+   - 4/08 Wed: [inputs](https://docs.google.com/document/d/1bEcsV_Lmntw-5kKw6bpyr3WBnqhkKWIiaI23DluNPdU/edit?tab=t.0)
    - 4/09 Thu: CV/CP
    - 4/10 Fri: initial draft  
    - 4/12 Sun: refined draft 
