@@ -2,9 +2,15 @@
 
 ## 4/7 AGENDA
 
- - 4/14 ANL internal due: full proposal
- - two additional AI experts
- - CV/CP (NSF form)
+
+- 4/14 ANL internal submission due
+- Plans:
+   - 4/09 Thu: CV/CP
+   - 4/10 Fri: initial draft  
+   - 4/12 Sun: refined draft 
+- two additional AI experts
+- budget
+- partners: letter of collaboration (kairos, terrapower)
      
 ## REPO
 
