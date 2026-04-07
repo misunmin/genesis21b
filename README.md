@@ -10,8 +10,8 @@
    - 4/10 Fri: initial draft  
    - 4/12 Sun: refine draft
    - 4/14 Wed: submission for internal review 
-- two additional AI experts
-- budget
+- Potential: two additional AI experts (Sven, Thomas)
+- budget: 
 - partners: letter of collaboration (kairos, terrapower)
      
 ## REPO
