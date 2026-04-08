@@ -1,5 +1,5 @@
 
-## 
+## ANL CELS Genesis Proposal Process
 
 ```
 From: cels-dd <cels-dd-bounces@cels.anl.gov> on behalf of Patoska, Brian M <bpatoska@anl.gov>
