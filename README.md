@@ -1,7 +1,22 @@
 
 ## 
 
-```Key Process Notes:
+```
+From: cels-dd <cels-dd-bounces@cels.anl.gov> on behalf of Patoska, Brian M <bpatoska@anl.gov>
+Sent: Wednesday, April 8, 2026 4:05 PM
+To: cels-dd@lists.cels.anl.gov <cels-dd@lists.cels.anl.gov>
+Cc: Jankiewicz, Steve <sjankiewicz@anl.gov>; Cruz Garcia, Elizabeth <ecruzgarcia@anl.gov>
+Subject: CELS Genesis Proposal Process
+ 
+
+Hello,
+
+
+Below is an update on the CELS-specific process for the Genesis Mission RFA (DE-FOA-0003612). The finance team is ready to assist;
+however, with 280+ proposals anticipated in CELS, please note that resources are stretched very thin. Providing budget information
+to your local finance manager as soon as possible is essential.
+
+Key Process Notes:
 
 1   Budget Details:
         Please provide budget details to your local finance managers by end of this week, Friday April 10, or sooner, if available
