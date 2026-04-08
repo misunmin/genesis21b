@@ -67,7 +67,7 @@ members invited:
 - yyu@anl.gov
 - kolev1@llnl.gov
 - tomov2@llnl.gov
-- add?: leyffer@anl.gov
-- add?: oleary-roseberry.1@osu.edu
+- leyffer@anl.gov
+- (future: oleary-roseberry.1@osu.edu)
   
 ## 
