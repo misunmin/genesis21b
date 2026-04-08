@@ -1,7 +1,7 @@
 
 ## 
-''
-Key Process Notes:
+
+```Key Process Notes:
 
 1   Budget Details:
         Please provide budget details to your local finance managers by end of this week, Friday April 10, or sooner, if available
@@ -24,8 +24,7 @@ Key Process Notes:
 7   Budget Entry:
         For all proposals (Lead and Partner), please contact your local Finance Manager regarding budget considerations as soon as possible.
         The Finance team will be entering budget information into Grants.gov for all Lead and Partner applications.
-''
-
+```
 ## 4/7 AGENDA
 
 - 4/28 DOE submission DUE at 11:59 ET
