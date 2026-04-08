@@ -1,0 +1,16 @@
+
+main latex file:
+genesis21b.tex
+
+
+To compile:
+
+cd genesis21b/proposal/tex
+make
+
+To clean:
+make clean
+
+To clean including PDF:
+make veryclean
+
