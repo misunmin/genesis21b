@@ -65,6 +65,12 @@ Cheers,
 Sven
 ```
 
+## Budget
+
+- Budget (750K): ANL(300K),LLNL(200K),UIUC(70K),PSU(70K),UM(110K)
+- Phase I budget period: July 1, 2026 - March 31, 2027
+- Project Title:  Foundation Models for Automated Design of  Energy Flow Systems
+
 ## 4/7 team meeting AGENDA
 
 - 4/28 DOE submission DUE at 11:59 ET
