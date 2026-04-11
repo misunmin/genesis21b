@@ -1,194 +1,198 @@
-\begin{center}
-{\LARGE \textbf{DOE Genesis Mission -- Phase I Project}}\\[1em]
-{\LARGE \textbf{Foundation Models for Automated Design of Energy Flow Systems }}\\[1em]
-\end{center}
-
-\section{Background and Significance\pagebudget{~1pgs}}
-\label{sec:intro} 
-
-\call{Explain the importance and relevance of the proposed work and clearly
-articulate which aspect of the chosen challenge will be addressed and solved.
-Set the proposed research in perspective to other efforts in the field.
-Highlight novel or unique aspects of the proposed work. Cite relevant
-literature.}
-
-\section{Introduction and Motivation}
-
-\subsection{Problem Statement}
-{\bf Describe the scientific or technical problem. Explain its importance to DOE
-mission areas.}
-
-Thermal-fluid (TF) transport is central to the majority of the world's energy
-systems.  Heat extraction for nuclear reactors and fusion systems relies on
-thermal-fluids to transport energy from fission or fusion reactions to heat
-exchangers, where working fluids are heated to drive turbines or other
-processes.  Combustion systems and inertially-confined fusion (ICF) systems
-rely on repeatable fluid motion to initiate reactions.  
-  System- and device-level optimization, often involving domain-topology
-modifications, can require hundreds of simulations, each of which can take days
-to months on high-performance computing (HPC) platforms, depending on the domain
-complexity, extent of timescales (e.g., convective-flow scales versus
-thermal-diffusive scales in solids), and required fidelity.  
-
-The goal of this project is to demonstrate that {\em foundation models} can be
-used to significantly reduce (by orders of magnitude) design exploration costs
-such that the design process for critical TF components can be fully automated.
-Ground truths for the project derive from available experimental and simulated
-data and from existing high-order exascale codes MFEM and Nek5000/RS (both
-Gordon Bell Prize winners, \cite{tzanio1,gb99,gb23}).   
-
-The targeted test problems are directly relevant to several critical components
-of systems in the DOE energy systems portfolio.  These include optimizing
-pressure-drop/heat-transfer in fuel rod bundles for sodium-fast reactors;
-improving stability for ICF hohlraum designs; and optimization of TF heat
-transfer in synchrotron beam-line devices [collins22].
 
 
-\subsection{Relevance to Genesis Mission}
-Identify the specific topic area and explicitly connect the proposed work to AI
-for science and DOE priorities.
 
-\textbf{Reviewer check:} Is the proposal clearly aligned with the FOA?
 
-\section{Proposed Approach \hfill {\small (FOA Sec. III.A--B, pp.~8--15)}}
-
-\subsection{Overview}
-Provide a high-level description of the approach and highlight novelty.
-
-\subsection{Role of AI}
-Describe:
-
-Graph neural networks (GNNs) to encode a wide range of geometries;
-Autoencoder-based GNN to encode the flow data over a wide range of geometries
-in a common latent space; Conditional latent diffusion based on a transformer
-to generalize across geometries. The first GNN produces an embedding for a new
-geometry, and this is used as a prior to generate the latent representation of
-that new geometry, which is then decoded to obtain the data in the physical
-domain.  LLM-based agentic-AI framework will be used to decide what new cases
-to generate, and based on this information carry out the optimization. This
-will be complemented with deep reinforcement learning for dynamic optimization.
-
-A key innovation will be the coupling high-order finite element simulation data
-from Nek5000/RS and MFEM with foundation models that preserve physical
-structure and boundary constraints. Such preservation is obtained based on
-latent spaces that are consistent with the original causal relations in
-physical space.
-
-Describe:
-\begin{itemize}
-\item What AI/ML methods are used
-\item Where AI enters the workflow
-\item Why AI is essential
-\end{itemize}
-
-\[
-\textbf{AI must be central, not auxiliary}
-\]
-
-\small
-Remainder here from chatgpt analysis of FOA. \\
-\section{Definition of AI Advantage \hfill {\small (FOA Sec. III, pp.~9--12)}}
-
-\subsection{Concept}
-Define what ``AI advantage'' means in this context.
-
-\subsection{Metrics}
-Provide quantitative metrics such as:
-\begin{itemize}
-\item Accuracy improvement
-\item Computational speedup
-\item Data efficiency
-\end{itemize}
-
-\[
-\textbf{Must be measurable and testable}
-\]
-
-\section{Phase I Research Plan \hfill {\small (FOA Sec. III \& IV, pp.~9--15, 61--62)}}
-
-\subsection{Technical Tasks}
-\begin{itemize}
-\item Task 1: Data generation or curation
-\item Task 2: Model development
-\item Task 3: Workflow integration
-\item Task 4: Validation
-\end{itemize}
-
-\subsection{Demonstration Deliverable}
-Clearly state what will be built and demonstrated.
-
-Example:
-\begin{quote}
-We will demonstrate an AI-enabled workflow that achieves specified performance targets.
-\end{quote}
-
-\subsection{Success Criteria}
-Define quantitative success metrics and validation procedures.
-
-\[
-\textbf{If success is not defined, it cannot be evaluated}
-\]
-
-\section{Data Strategy \hfill {\small (FOA Sec. III, pp.~10--13)}}
-
-Describe:
-\begin{itemize}
-\item Data sources (simulation, experimental, or existing)
-\item Data volume and quality
-\item Preprocessing and curation
-\end{itemize}
-
-\section{Computational Plan \hfill {\small (FOA Sec. III, pp.~10--13)}}
-
-Describe:
-\begin{itemize}
-\item Required computing resources
-\item Scalability expectations
-\item Relation to DOE computing infrastructure
-\end{itemize}
-
-\section{Team and Management Plan \hfill {\small (FOA Sec. III \& IV, pp.~11--15, 61--62)}}
-
-\subsection{Roles}
-\begin{itemize}
-\item PI: overall leadership
-\item Co-PIs: defined technical roles
-\item Subaward institutions: specific contributions
-\end{itemize}
-
-\subsection{Team Strength}
-Explain why the team is uniquely qualified.
-
-\section{Path to Phase II \hfill {\small (FOA Sec. III \& Funding Details p.~2)}}
-
-Describe how Phase I results scale into Phase II:
-\begin{itemize}
-\item Larger models or datasets
-\item Expanded workflows
-\item Toward transformative capability
-\end{itemize}
-
-\[
-\textbf{Show a credible trajectory to transformation}
-\]
-
-\section{Broader Impacts \hfill {\small (FOA Sec. III, pp.~8--15)}}
-
-Describe:
-\begin{itemize}
-\item Scientific impact
-\item Relevance to energy, environment, or national security
-\item Long-term significance
-\end{itemize}
-
-\section*{Appendices (Not counted in page limit) \hfill {\small (FOA Sec. IV.C, pp.~61--62)}}
-
-\begin{itemize}
-\item References
-\item Facilities and resources
-\item Letters of commitment
-\item Letters of collaboration
-\end{itemize}
-
-\normalsize
-\newpage
+%    \begin{center}
+%    {\LARGE \textbf{DOE Genesis Mission -- Phase I Project}}\\[1em]
+%    {\LARGE \textbf{Foundation Models for Automated Design of Energy Flow Systems }}\\[1em]
+%    \end{center}
+%    
+%    \section{Background and Significance\pagebudget{~1pgs}}
+%    \label{sec:intro} 
+%    
+%    \call{Explain the importance and relevance of the proposed work and clearly
+%    articulate which aspect of the chosen challenge will be addressed and solved.
+%    Set the proposed research in perspective to other efforts in the field.
+%    Highlight novel or unique aspects of the proposed work. Cite relevant
+%    literature.}
+%    
+%    \section{Introduction and Motivation}
+%    
+%    \subsection{Problem Statement}
+%    {\bf Describe the scientific or technical problem. Explain its importance to DOE
+%    mission areas.}
+%    
+%    Thermal-fluid (TF) transport is central to the majority of the world's energy
+%    systems.  Heat extraction for nuclear reactors and fusion systems relies on
+%    thermal-fluids to transport energy from fission or fusion reactions to heat
+%    exchangers, where working fluids are heated to drive turbines or other
+%    processes.  Combustion systems and inertially-confined fusion (ICF) systems
+%    rely on repeatable fluid motion to initiate reactions.  
+%      System- and device-level optimization, often involving domain-topology
+%    modifications, can require hundreds of simulations, each of which can take days
+%    to months on high-performance computing (HPC) platforms, depending on the domain
+%    complexity, extent of timescales (e.g., convective-flow scales versus
+%    thermal-diffusive scales in solids), and required fidelity.  
+%    
+%    The goal of this project is to demonstrate that {\em foundation models} can be
+%    used to significantly reduce (by orders of magnitude) design exploration costs
+%    such that the design process for critical TF components can be fully automated.
+%    Ground truths for the project derive from available experimental and simulated
+%    data and from existing high-order exascale codes MFEM and Nek5000/RS (both
+%    Gordon Bell Prize winners, \cite{tzanio1,gb99,gb23}).   
+%    
+%    The targeted test problems are directly relevant to several critical components
+%    of systems in the DOE energy systems portfolio.  These include optimizing
+%    pressure-drop/heat-transfer in fuel rod bundles for sodium-fast reactors;
+%    improving stability for ICF hohlraum designs; and optimization of TF heat
+%    transfer in synchrotron beam-line devices [collins22].
+%    
+%    
+%    \subsection{Relevance to Genesis Mission}
+%    Identify the specific topic area and explicitly connect the proposed work to AI
+%    for science and DOE priorities.
+%    
+%    \textbf{Reviewer check:} Is the proposal clearly aligned with the FOA?
+%    
+%    \section{Proposed Approach \hfill {\small (FOA Sec. III.A--B, pp.~8--15)}}
+%    
+%    \subsection{Overview}
+%    Provide a high-level description of the approach and highlight novelty.
+%    
+%    \subsection{Role of AI}
+%    Describe:
+%    
+%    Graph neural networks (GNNs) to encode a wide range of geometries;
+%    Autoencoder-based GNN to encode the flow data over a wide range of geometries
+%    in a common latent space; Conditional latent diffusion based on a transformer
+%    to generalize across geometries. The first GNN produces an embedding for a new
+%    geometry, and this is used as a prior to generate the latent representation of
+%    that new geometry, which is then decoded to obtain the data in the physical
+%    domain.  LLM-based agentic-AI framework will be used to decide what new cases
+%    to generate, and based on this information carry out the optimization. This
+%    will be complemented with deep reinforcement learning for dynamic optimization.
+%    
+%    A key innovation will be the coupling high-order finite element simulation data
+%    from Nek5000/RS and MFEM with foundation models that preserve physical
+%    structure and boundary constraints. Such preservation is obtained based on
+%    latent spaces that are consistent with the original causal relations in
+%    physical space.
+%    
+%    Describe:
+%    \begin{itemize}
+%    \item What AI/ML methods are used
+%    \item Where AI enters the workflow
+%    \item Why AI is essential
+%    \end{itemize}
+%    
+%    \[
+%    \textbf{AI must be central, not auxiliary}
+%    \]
+%    
+%    \small
+%    Remainder here from chatgpt analysis of FOA. \\
+%    \section{Definition of AI Advantage \hfill {\small (FOA Sec. III, pp.~9--12)}}
+%    
+%    \subsection{Concept}
+%    Define what ``AI advantage'' means in this context.
+%    
+%    \subsection{Metrics}
+%    Provide quantitative metrics such as:
+%    \begin{itemize}
+%    \item Accuracy improvement
+%    \item Computational speedup
+%    \item Data efficiency
+%    \end{itemize}
+%    
+%    \[
+%    \textbf{Must be measurable and testable}
+%    \]
+%    
+%    \section{Phase I Research Plan \hfill {\small (FOA Sec. III \& IV, pp.~9--15, 61--62)}}
+%    
+%    \subsection{Technical Tasks}
+%    \begin{itemize}
+%    \item Task 1: Data generation or curation
+%    \item Task 2: Model development
+%    \item Task 3: Workflow integration
+%    \item Task 4: Validation
+%    \end{itemize}
+%    
+%    \subsection{Demonstration Deliverable}
+%    Clearly state what will be built and demonstrated.
+%    
+%    Example:
+%    \begin{quote}
+%    We will demonstrate an AI-enabled workflow that achieves specified performance targets.
+%    \end{quote}
+%    
+%    \subsection{Success Criteria}
+%    Define quantitative success metrics and validation procedures.
+%    
+%    \[
+%    \textbf{If success is not defined, it cannot be evaluated}
+%    \]
+%    
+%    \section{Data Strategy \hfill {\small (FOA Sec. III, pp.~10--13)}}
+%    
+%    Describe:
+%    \begin{itemize}
+%    \item Data sources (simulation, experimental, or existing)
+%    \item Data volume and quality
+%    \item Preprocessing and curation
+%    \end{itemize}
+%    
+%    \section{Computational Plan \hfill {\small (FOA Sec. III, pp.~10--13)}}
+%    
+%    Describe:
+%    \begin{itemize}
+%    \item Required computing resources
+%    \item Scalability expectations
+%    \item Relation to DOE computing infrastructure
+%    \end{itemize}
+%    
+%    \section{Team and Management Plan \hfill {\small (FOA Sec. III \& IV, pp.~11--15, 61--62)}}
+%    
+%    \subsection{Roles}
+%    \begin{itemize}
+%    \item PI: overall leadership
+%    \item Co-PIs: defined technical roles
+%    \item Subaward institutions: specific contributions
+%    \end{itemize}
+%    
+%    \subsection{Team Strength}
+%    Explain why the team is uniquely qualified.
+%    
+%    \section{Path to Phase II \hfill {\small (FOA Sec. III \& Funding Details p.~2)}}
+%    
+%    Describe how Phase I results scale into Phase II:
+%    \begin{itemize}
+%    \item Larger models or datasets
+%    \item Expanded workflows
+%    \item Toward transformative capability
+%    \end{itemize}
+%    
+%    \[
+%    \textbf{Show a credible trajectory to transformation}
+%    \]
+%    
+%    \section{Broader Impacts \hfill {\small (FOA Sec. III, pp.~8--15)}}
+%    
+%    Describe:
+%    \begin{itemize}
+%    \item Scientific impact
+%    \item Relevance to energy, environment, or national security
+%    \item Long-term significance
+%    \end{itemize}
+%    
+%    \section*{Appendices (Not counted in page limit) \hfill {\small (FOA Sec. IV.C, pp.~61--62)}}
+%    
+%    \begin{itemize}
+%    \item References
+%    \item Facilities and resources
+%    \item Letters of commitment
+%    \item Letters of collaboration
+%    \end{itemize}
+%    
+%    \normalsize
+%    \newpage
