@@ -72,7 +72,6 @@ scales in solids), and required fidelity.
 Elia/Dillon/Vlad/Tzanio for preceding par.
 
 
-
 {\bf [This paragraph somewhat redundant at this point.]}
 The high-order codes, Nek5000/RS and MFEM, developed within the Center for
 Efficient Exascale Discretizations (CEED) as part of the DOE's Exascale
@@ -99,9 +98,6 @@ Elia/Dillon/Vlad/Tzanio for preceding par.
      Nek5000/RS and MFEM are Gordon Bell Winners
      Order-of-magnitude performance gains, for same accuracy, over
      low-order codes.
-
-
-
 
 
 1/2 PAGE:    Project Objectives 
@@ -131,13 +127,15 @@ Elia/Dillon/Vlad/Tzanio for preceding par.
 
 
 
-
-
-
 1 PAGE:    Milestones in the Nine Months 
+
+  Misun
+
   Provide a list of clearly defined and measurable milestones of the project.
 
 1/2 PAGE:    Data Sources and Models 
+
+  Misun
 
   Describe which existing or new data sources will be used. Address your team’s
   access to the data. If applicable, indicate which AI models or frameworks will
@@ -147,6 +145,8 @@ Elia/Dillon/Vlad/Tzanio for preceding par.
 
 
 1/2 PAGE:    Decision Gate Metrics 
+
+  Ricardo / Luke
 
   Provide specific metrics that can be used for the evaluation of Phase I go/no
   go decision. 
