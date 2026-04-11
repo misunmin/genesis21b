@@ -155,9 +155,37 @@ transfer with well-quantified pressure penalties.
 due to the sensitivity of the QOI (typically the Nusselt number), its rich
 parameter space (wire diameter, pitch, Reynolds number), strong agreement
 between simulations and experiments, and relatively low cost for simulation data.
-  Together, these applications provide relatively wide coverage of 
-reactor-relevant thermal-fluids applications for Phase I.
 
+The MFEM team will contribute a targeted ICF miniapp designed primarily as a
+high-fidelity data generator for training and validating the proposed surrogate
+modeling framework. Building on existing capabilities in Lagrangian
+hydrodynamics \cite{Dobrev2012}, ALE methods \cite{Tomov2018}, and scalable
+H(div) radiation diffusion solvers \cite{Pazner2025}, this effort will focus on
+producing physically consistent, multi-physics datasets that capture coupled
+hydrodynamics–radiation behavior across parameterized geometries and operating
+conditions. The miniapp will be tightly integrated into the AI workflow to
+systematically generate training data, support active learning loops, and
+enable evaluation of surrogate accuracy and generalization. In Phase I,
+simplified ICF configurations will be used to demonstrate feasibility and
+establish a robust pipeline connecting MFEM-generated data with the foundation
+models, ensuring that learned representations remain consistent with the
+underlying physical operators and constraints.
+
+This effort directly complements the proposed AI architecture by providing
+high-order, structure-preserving finite element data that aligns with the
+project’s emphasis on physically consistent latent spaces. MFEM’s support for
+complex, unstructured meshes and high-order discretizations enables systematic
+variation of geometry and resolution, which is critical for training
+geometry-aware models such as GNN-based encoders. Moreover, the compatibility
+of MFEM operators with differentiable programming frameworks enables a natural
+pathway to incorporate operator-level sensitivities into both surrogate
+training and downstream optimization. This creates a strong link between the
+simulation stack and the latent-space optimization strategies outlined in the
+proposal, particularly for adjoint-informed refinement and hybrid optimization
+workflows.
+
+  Together, these Phase I applications provide relatively wide coverage of 
+energy-relevant thermal-fluids systems.
 This effort builds directly on DOE investments in high-fidelity simulation.
 Nek5000/RS and MFEM are Gordon Bell Prize winning codes
 \cite{tufo99a,gb23,gb25mfem} developed under the Center for Efficient Exascale
@@ -287,4 +315,3 @@ workflows.
   Quantitative statements enabling transformative science and engineering through AI are preferred.
 \end{verbatim} 
 \normalsize
-
