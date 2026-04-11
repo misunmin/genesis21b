@@ -95,31 +95,33 @@ $10^{12}$ \cite{gb23,gb25mfem}.
 \end{verbatim} 
 \normalsize
 
+
 The first component of the research plan focuses on the development of a
-geometry-aware foundation model for thermal-fluid prediction.
-Building on prior work on foundation
-models~\cite{Vishwasrao2026AgenticPDE}, as well as simulation and experimental
-data from wire-wrapped bundles~\cite{collins22} and related
-configurations such as spacer grids, pebble beds, and twisted tubes, will be
-mapped to a common latent space independent of mesh topology. 
+geometry-aware foundation model for thermal-fluid prediction, led by ANL,
+UIUC, and PSU.  
+Building on prior work on foundation models~\cite{Vishwasrao2026AgenticPDE}, as
+well as simulation and experimental data from wire-wrapped bundles
+\cite{Dai2025WireWrapped61Pin,kaeri37pin}, and related configurations such as
+spacer grids, pebble beds, and twisted tubes, results will be mapped to a
+common latent space independent of mesh topology.
+%
 This is particularly critical for reactor applications, where geometry
 variations (wire pitch, rod spacing, bundle configuration) strongly influence
-heat transfer and pressure losses. The model will combine graph-based
-representations of geometry, variational autoencoders for compressing
-high-dimensional flow
+heat transfer and pressure losses. 
+  The model will combine graph-basedrepresentations of geometry, variational
+autoencoders for compressing high-dimensional flow
 fields~\cite{Vinuesa2022MLCFD,SoleraRico2024BetaVAE}, and conditional latent
 diffusion~\cite{Vishwasrao2025DiffSPORT} to learn the latent distribution
-across operating regimes. Training will exploit available experimental data
-sets (e.g., \cite{kaeri37pin,collins22}) and DOE exascale-ready workflows and
-GPU-enabled datasets from Nek5000/RS and MFEM (Gordon Bell Prize winning codes
-\cite{tufo99a,gb23,gb25mfem} developed under the Center for Efficient Exascale
-Discretizations as part of DOE's Exascale Computing Project).  
-The resulting surrogate will provide fast, accurate predictions of quantities
-central to reactor design and licensing, including heat transfer coefficients,
-pressure drop, and flow-induced mixing.
+across operating regimes. 
+%
+Training will exploit available experimental data sets (e.g.,
+\cite{kaeri37pin}) and DOE exascale-ready workflows and GPU-enabled
+datasets from Nek5000/RS The resulting surrogate will provide fast, accurate
+predictions of quantities central to reactor design and licensing, including
+heat transfer coefficients, pressure drop, and flow-induced mixing.
    For the cases considered, we have already established clear agreement
 between the experimental data and the high-order simulation codes, which
-can be used to validate the ML surrogates.
+will be used to validate the ML surrogates.
 
 The second component develops a latent-space optimization and control
 framework, led by the University of Michigan, targeting both steady and
@@ -146,24 +148,34 @@ highly transient, multiphysics dynamics arise from laser-driven compression of
 fuel pellets. This provides a stringent test of the model’s ability to capture
 fast-evolving regimes. The second is a well-characterized heat transfer
 enhancement problem involving wire-coil inserts in cooling channels, where
-experimental data show up to fourfold increases in heat transfer with
-well-quantified pressure penalties . This problem is particularly valuable for
-model development and validation due to its rich parameter space (wire
-diameter, pitch, Reynolds number) and the strong agreement between simulations
-and experiments. Together, these applications ensure both depth (reactor
-relevance) and breadth (generalization across physics and regimes).
+experimental data \cite{collins22}) show up to fourfold increases in heat
+transfer with well-quantified pressure penalties. 
+%
+   This problem is particularly valuable for model development and validation
+due to the sensitivity of the QOI (typically the Nusselt number), its rich
+parameter space (wire diameter, pitch, Reynolds number), strong agreement
+between simulations and experiments, and relatively low cost for simulation data.
+  Together, these applications provide relatively wide coverage of 
+reactor-relevant thermal-fluids applications for Phase I.
 
-This effort builds directly on DOE investments in high-fidelity simulation
-through the Exascale Computing Project, particularly Nek5000/RS, which has been
-extensively used for reactor thermal-hydraulics and is part of NRC-accepted
-workflows. However, the proposed work is fundamentally distinct. Instead of
-advancing simulation capabilities alone, we develop a generalizable foundation
-model that unifies data across geometries and regimes, and we introduce a
-closed-loop, AI-driven optimization framework that enables rapid design
-exploration and mechanistic discovery. By the end of Phase I, we will
+This effort builds directly on DOE investments in high-fidelity simulation.
+Nek5000/RS and MFEM are Gordon Bell Prize winning codes
+\cite{tufo99a,gb23,gb25mfem} developed under the Center for Efficient Exascale
+Discretizations as part of DOE's Exascale Computing Project.  Their high-order
+discretizations, coupled with fast matrix-free operator evaluation and highly
+scalable preconditioners gives them a competitive edge over traditional codes
+(e.g., a 32X gain compared to 2nd-order finite volumes for $Re=50$M
+boundary-layer flows \cite{Min2024Wind,Tomboulides2024ABL}).  Nek5000/RS has
+been extensively used for reactor thermal-hydraulics and is part of
+NRC-accepted workflows. The proposed work, however, is fundamentally distinct.
+Instead of advancing simulation capabilities alone, we develop a generalizable
+foundation model that unifies data across geometries and regimes, and we
+introduce a closed-loop, AI-driven optimization framework that enables rapid
+design exploration and mechanistic discovery. By the end of Phase I, we will
 demonstrate real-time surrogate modeling and closed-loop optimization for
 representative thermal-fluid systems, establishing a clear pathway toward
 AI-driven digital twins for reactor design and other DOE mission applications.
+
 
 
 \newpage
