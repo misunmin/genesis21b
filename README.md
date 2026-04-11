@@ -95,6 +95,11 @@ Key Process Notes:
 7   Budget Entry:
         For all proposals (Lead and Partner), please contact your local Finance Manager regarding budget considerations as soon as possible.
         The Finance team will be entering budget information into Grants.gov for all Lead and Partner applications.
+
+Please share this information with your teams. More details will follow as we get updated guidance from SRO.
+Please let me know if any questions or if the Shared Services team can further assist during this process.
+
+ 
 ```
 
 ### ANL Some info
