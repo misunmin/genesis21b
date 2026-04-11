@@ -10,55 +10,49 @@ Subject: Proposal Process (GM 21B submission)
 
 Hi Misun,
 
- 
+Please be sure to submit a CELS Proposal Intake Form  and provide the POCs for your partners so we can request their proposal documents.
+We will need the following proposal items from all partner institutions by Tuesday, 4/14.
+Please note that each partner institution is required to submit its own collaborative application in Grants.gov.
 
-Please be sure to submit a CELS Proposal Intake Form  and provide the POCs for your partners so we can request their proposal documents. We will need the following proposal items from all partner institutions by Tuesday, 4/14. Please note that each partner institution is required to submit its own collaborative application in Grants.gov.
-
- 
+- CELS intake form
 
 Proposal Materials Needed from Partners:
 
-    Biographical Sketches (SciENcv DOE) for senior/key personnel
-     Current and Pending Support (SciENcv DOE) for senior/key personnel
-     Project/Performance Site Location(s) form
-     Partner project/performance site information
-    COI/Merit Reviewer Conflicts information
-     Partner Facilities & Other Resources information for shared Appendix 2
-     Partner Equipment information for shared Appendix 3
-    SYNERGISTIC ACTIVITIES (optional) for Appendix 5
-    Transparency of Foreign Connections for Appendix 6
-     Any appendix content they need included in the common narrative/appendices
-     Letter of Commitment from the partner institution
-     Any Letters of Collaboration or Access they want included in Appendix 7, if applicable
+    - (o) Biographical Sketches (SciENcv DOE) for senior/key personnel
+    - (o) Current and Pending Support (SciENcv DOE) for senior/key personnel
+    - (-) Project/Performance Site Location(s) form
+    - (-) Partner project/performance site information
+    - (o) COI/Merit Reviewer Conflicts information
+    - (-) Partner Facilities & Other Resources information for shared Appendix 2
+    - (-) Partner Equipment information for shared Appendix 3
+    - (o) SYNERGISTIC ACTIVITIES (optional) for Appendix 5
+    - (x) Transparency of Foreign Connections for Appendix 6
+    - (-) Any appendix content they need included in the common narrative/appendices
+    - (-) Letter of Commitment from the partner institution
+    - (-)  Any Letters of Collaboration or Access they want included in Appendix 7, if applicable
 
+- abstract narrative
+- upload to Min box folder
+- grants.gov
+- register
+
+In addition, we will need all ANL key personnel documents and should be prepared to circulate the final Abstract and Narrative—identical
+across all partner organizations—between April 15–21, with the intent to submit the full proposal on Monday, April 27, 2026.
+
+Note, all proposal documents should be saved to (37) 21B_Min_Lead | Powered by Box.
+
+In addition, your grants.gov workspace ID is WS01634547 – please register in https://grants.gov/register
+so that I can add you to the workspace.
  
-
-In addition, we will need all ANL key personnel documents and should be prepared to circulate the final Abstract and Narrative—identical across all partner organizations—between April 15–21, with the intent to submit the full proposal on Monday, April 27, 2026.
-
- 
-
-Note, all proposal documents should be saved to (37) 21B_Min_Lead | Powered by Box. In addition, your grants.gov workspace ID is WS01634547 – please register in https://grants.gov/register so that I can add you to the workspace.
-
- 
-
 Please let me know if you have any questions.
-
- 
 
 Regards,
 
- 
-
 Elizabeth (Lisa) Cruz Garcia
-
 Proposal Resource Administrator
-
 Computing, Environment and Life Sciences
-
 Argonne National Laboratory
-
 Phone: 630-252-6821
-
 
 ```
 ## ANL CELS Genesis Proposal Process
