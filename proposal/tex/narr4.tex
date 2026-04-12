@@ -16,8 +16,9 @@ geometry can be quickly produced in the latent space, and decoded back to the
 physical space. The agentic AI framework has access to this foundation model
 and the various optimizers, orchestrating the optimization/design process,
 which is significantly accelerated.
-{\bf WE WILL ADD TEST CASE IMAGES HERE, EITHER INTEGRATED OR STAND-ALONE}
-} \label{fig:fm1}
+{\bf EDIT caption}
+} 
+\label{fig:fm1}
 \end{figure}
 
 \section{Background/Introduction  -   1 PAGE}
@@ -87,15 +88,11 @@ with simulation degrees of freedom (DOFs) ranging from $10^7$ to $10^{12}$
 
 \section{    Project Objectives \hspace{1.0in} 1/2 PAGE}
 
-\tiny \small \begin{verbatim}
-   Provide a clear and concise statement of the specific objectives of the
-   proposed project. Address how the objectives align with the chosen focus 
-   topic and lead to an AI advantage.
-
-      Misun / Elia / Dillon
+\tiny \begin{verbatim}
+Misun/Elia/Dillon: Provide a clear and concise statement of the specific objectives of the proposed project.  
+Address how the objectives align with the chosen focus topic and lead to an AI advantage.
 \end{verbatim} 
 \normalsize
-
 \input objective
 
 \vspace*{1in}
@@ -117,69 +114,68 @@ with simulation degrees of freedom (DOFs) ranging from $10^7$ to $10^{12}$
 
 \input taxonomy3
 
-{\color{gray}
-The first component of the research plan focuses on the development of a {\bf geometry-aware 
-thermal–fluid foundation model}, led by ANL, UIUC, and PSU. Building on prior work in foundation 
-modeling~\cite{Vishwasrao2026AgenticPDE}, simulation and experimental data from 
-wire-wrapped bundles~\cite{Dai2025WireWrapped61Pin,kaeri37pin}, as well as related configurations 
-such as spacer grids, pebble beds, and twisted tubes, will be mapped into {\bf a common latent 
-space independent of mesh topology}. This capability is particularly critical for reactor applications, 
-where variations in geometry—such as wire pitch, rod spacing, and bundle configuration—strongly 
-influence heat transfer and pressure losses.
-The proposed model integrates {\bf graph-based geometric representations}, 
-{\bf variational autoencoders (VAEs)} for compression of high-dimensional flow 
-fields~\cite{Vinuesa2022MLCFD,SoleraRico2024BetaVAE},
-and {\bf conditional latent diffusion models}~\cite{Vishwasrao2025DiffSPORT} 
-to learn distributions across operating regimes,
-as well as neural-operator architectures for physics-consistent surrogate learning
-which we will investigate in Phase II. 
-Training will leverage DOE exascale-ready workflows and GPU-enabled datasets generated using 
-{\bf Nek5000/RS} and {\bf MFEM}. The resulting surrogate model will enable fast, high-fidelity 
-prediction of key reactor performance quantities, including heat transfer coefficients, 
-pressure drop, and flow-induced mixing. For the cases considered, we have already established
-clear agreement between the experimental data and the high-order simulation codes, which will be 
-used to validate the ML surrogates.
-}
+The first component of the research plan, led by ANL, UIUC, and PSU, focuses on
+the development of a {\bf geometry-aware thermal–fluid foundation model}. 
+Building on prior work in foundation modeling \cite{Vishwasrao2026AgenticPDE},
+simulation and experimental data from wire-wrapped
+bundles~\cite{Dai2025WireWrapped61Pin,kaeri37pin}, as well as related
+configurations such as spacer grids, pebble beds, and twisted tubes, will be
+mapped into {\rm a common latent space independent of mesh topology}. This
+capability is particularly critical for reactor applications, where variations
+in geometry—such as wire pitch, rod spacing, and bundle configuration—strongly
+influence heat transfer and pressure losses.  The proposed model integrates
+{\rm graph-based geometric representations}, {\rm variational autoencoders
+(VAEs)} for compression of high-dimensional flow
+fields~\cite{Vinuesa2022MLCFD,SoleraRico2024BetaVAE}, and {\rm conditional
+latent diffusion models}~\cite{Vishwasrao2025DiffSPORT} to learn distributions
+across operating regimes, as well as neural-operator architectures for
+physics-consistent surrogate learning which we will investigate in Phase II.
+Training will leverage DOE exascale-ready workflows and GPU-enabled datasets
+generated using {\rm Nek5000/RS} and {\rm MFEM}. The resulting surrogate model
+will enable fast, high-fidelity prediction of key reactor performance
+quantities, including heat transfer coefficients, pressure drop, and
+flow-induced mixing. For the cases considered, we have already established
+clear agreement between the experimental data and the high-order simulation
+codes, which will be used to validate the ML surrogates.
 
 \medskip
-The first component of the research plan focuses on the development of a
-geometry-aware foundation model for thermal-fluid prediction, led by ANL,
-UIUC, and PSU.  
-Building on prior work on foundation models~\cite{Vishwasrao2026AgenticPDE}, as
-well as simulation and experimental data from wire-wrapped bundles
-\cite{Dai2025WireWrapped61Pin,kaeri37pin}, and related configurations such as
-spacer grids, pebble beds, and twisted tubes, results will be mapped to a
-common latent space independent of mesh topology.
-%
-This is particularly critical for reactor applications, where geometry
-variations (wire pitch, rod spacing, bundle configuration) strongly influence
-heat transfer and pressure losses. 
-  The model will combine graph-basedrepresentations of geometry, variational
-autoencoders for compressing high-dimensional flow
-fields~\cite{Vinuesa2022MLCFD,SoleraRico2024BetaVAE}, and conditional latent
-diffusion~\cite{Vishwasrao2025DiffSPORT} to learn the latent distribution
-across operating regimes. 
-%
-Training will exploit available experimental data sets (e.g.,
-\cite{kaeri37pin}) and DOE exascale-ready workflows and GPU-enabled
-datasets from Nek5000/RS The resulting surrogate will provide fast, accurate
-predictions of quantities central to reactor design and licensing, including
-heat transfer coefficients, pressure drop, and flow-induced mixing.
-   For the cases considered, we have already established clear agreement
-between the experimental data and the high-order simulation codes, which
-will be used to validate the ML surrogates.
+% The first component of the research plan focuses on the development of a
+% geometry-aware foundation model for thermal-fluid prediction, led by ANL, UIUC,
+% and PSU.  Building on prior work on foundation
+% models~\cite{Vishwasrao2026AgenticPDE}, as well as simulation and experimental
+% data from wire-wrapped bundles \cite{Dai2025WireWrapped61Pin,kaeri37pin}, and
+% related configurations such as spacer grids, pebble beds, and twisted tubes,
+% results will be mapped to a common latent space independent of mesh topology.
+% %
+% This is particularly critical for reactor applications, where geometry
+% variations (wire pitch, rod spacing, bundle configuration) strongly influence
+% heat transfer and pressure losses.  The model will combine
+% graph-basedrepresentations of geometry, variational autoencoders for
+% compressing high-dimensional flow fields
+% \cite{Vinuesa2022MLCFD,SoleraRico2024BetaVAE}, and conditional latent diffusion
+% \cite{Vishwasrao2025DiffSPORT} to learn the latent distribution across
+% operating regimes. 
+% %
+% Training will exploit available experimental data sets (e.g.,
+% \cite{kaeri37pin}) and DOE exascale-ready workflows and GPU-enabled
+% datasets from Nek5000/RS The resulting surrogate will provide fast, accurate
+% predictions of quantities central to reactor design and licensing, including
+% heat transfer coefficients, pressure drop, and flow-induced mixing.
+%    For the cases considered, we have already established clear agreement
+% between the experimental data and the high-order simulation codes, which
+% will be used to validate the ML surrogates.
 
-{\color{gray}
-The second component develops a {\bf latent-space optimization and control framework},
-led by the University of Michigan, targeting both steady and transient operating regimes.
-This effort will employ a hybrid strategy combining {\bf Bayesian optimization}~\cite{Morita2022BOCFD},
-{\bf derivative-free optimization methods}, and {\bf reinforcement learning}~\cite{Font2025DRLFlowControl}.
+The second component, led by the University of Michigan, develops a 
+{\bf latent-space optimization and control framework}, targeting both steady and
+transient operating regimes.
+This effort will employ a hybrid strategy combining {\rm Bayesian optimization}~\cite{Morita2022BOCFD},
+{\rm derivative-free optimization methods}, and {\rm reinforcement learning}~\cite{Font2025DRLFlowControl}.
 Such approaches are essential for reactor-relevant design spaces that are high-dimensional,
 non-convex, and constrained by safety and operational limits.
 %
 Optimization will be performed directly within the latent space of the foundation model,
 enabling efficient exploration of design variables such as wire pitch, rod arrangement,
-and operating conditions. The {bf agentic AI system} will orchestrate this process by dynamically
+and operating conditions. The {rm agentic AI system} will orchestrate this process by dynamically
 selecting optimization strategies, proposing new simulation queries, and balancing competing
 objectives, including heat transfer enhancement, pressure loss minimization, and
 safety margin preservation.
@@ -187,63 +183,61 @@ safety margin preservation.
 The framework will operate in a closed-loop workflow, in which candidate designs generated
 in latent space are selectively validated using high-fidelity simulations.
 This ensures predictive accuracy while maintaining robustness across operating conditions.
-}
 
-The second component develops a latent-space optimization and control
-framework, led by the University of Michigan, targeting both steady and
-transient regimes. We will employ a hybrid strategy combining Bayesian
-optimization~\cite{Morita2022BOCFD}, derivative-free methods, and reinforcement
-learning~\cite{Font2025DRLFlowControl}. This is essential for reactor-relevant
-design spaces, which are high-dimensional, non-convex, and constrained by
-safety and operational limits. Optimization will be performed directly in the
-latent space of the foundation model, enabling efficient exploration of design
-parameters such as wire pitch, rod arrangement, and operating conditions. The
-agentic-AI system will orchestrate this process by selecting optimization
-strategies, proposing new simulation queries, and balancing competing
-objectives such as heat transfer enhancement, pressure loss, and safety
-margins. The framework will operate in a closed loop, where candidate designs
-generated in latent space are selectively validated using high-fidelity
-simulations, ensuring both accuracy and robustness.
 
-{\color{gray}
+% The second component develops a latent-space optimization and control
+% framework, led by the University of Michigan, targeting both steady and
+% transient regimes. We will employ a hybrid strategy combining Bayesian
+% optimization~\cite{Morita2022BOCFD}, derivative-free methods, and reinforcement
+% learning~\cite{Font2025DRLFlowControl}. This is essential for reactor-relevant
+% design spaces, which are high-dimensional, non-convex, and constrained by
+% safety and operational limits. Optimization will be performed directly in the
+% latent space of the foundation model, enabling efficient exploration of design
+% parameters such as wire pitch, rod arrangement, and operating conditions. The
+% agentic-AI system will orchestrate this process by selecting optimization
+% strategies, proposing new simulation queries, and balancing competing
+% objectives such as heat transfer enhancement, pressure loss, and safety
+% margins. The framework will operate in a closed loop, where candidate designs
+% generated in latent space are selectively validated using high-fidelity
+% simulations, ensuring both accuracy and robustness.
+
 The third component focuses on {\bf cross-domain validation and integration into the
-Genesis Mission ecosystem},
-led by Argonne with contributions from all partners. In addition to wire-wrapped
-reactor bundles, two complementary applications will be considered to expand the scope
-and generality of the approach. 
+Genesis Mission ecosystem}, with contributions from all partners. 
+In addition to wire-wrapped reactor bundles, two complementary applications
+will be considered to expand the scope and generality of the approach. 
 %
-The first application involves {\bf inertial confinement fusion}, where strongly transient,
+The first application involves {\rm inertial confinement fusion}, where strongly transient,
 multiphysics dynamics arise from laser-driven compression of fuel pellets.
 This provides a stringent test of the model’s ability to capture rapidly evolving physical regimes.
 %
-The second application targets a {\bf well-characterized heat-transfer enhancement problem}
+The second application targets a {\rm well-characterized heat-transfer enhancement problem}
 involving wire-coil inserts in cooling channels, where experimental data~\cite{collins22}
-demonstrate up to fourfold increases in heat transfer accompanied by well-quantified pressure penalties.
-This problem provides an ideal benchmark for model development and validation
-due to the sensitivity of the QOI (typically the Nusselt number), its rich 
-parameter space--including wire diameter, pitch, and Reynolds number--and the 
-strong agreement between simulations and experiments, and relatively low cost 
-for simulation data.
-}
-
-
-The third component focuses on validation across multiple DOE-relevant
-applications and integration into the Genesis Mission ecosystem, led by Argonne
-with contributions from all partners. In addition to wire-wrapped reactor
-bundles, we will consider two complementary applications that expand the scope
-and generality of the approach. The first is inertial confinement fusion, where
-highly transient, multiphysics dynamics arise from laser-driven compression of
-fuel pellets. This provides a stringent test of the model’s ability to capture
-fast-evolving regimes. The second is a well-characterized heat transfer
-enhancement problem involving wire-coil inserts in cooling channels, where
-experimental data \cite{collins22}) show up to fourfold increases in heat
-transfer with well-quantified pressure penalties. 
-%
+demonstrate up to fourfold increases in heat transfer for fixed flow rates.
    This problem is particularly valuable for model development and validation
-due to the sensitivity of the QOI (typically the Nusselt number), its rich
+because of the sensitivity of the QOI (typically the Nusselt number), the rich
 parameter space (wire diameter, pitch, Reynolds number), strong agreement
 between simulations and experiments, and relatively low cost for simulation data.
 
+
+% The third component focuses on validation across multiple DOE-relevant
+% applications and integration into the Genesis Mission ecosystem, led by Argonne
+% with contributions from all partners. In addition to wire-wrapped reactor
+% bundles, we will consider two complementary applications that expand the scope
+% and generality of the approach. The first is inertial confinement fusion, where
+% highly transient, multiphysics dynamics arise from laser-driven compression of
+% fuel pellets. This provides a stringent test of the model’s ability to capture
+% fast-evolving regimes. The second is a well-characterized heat transfer
+% enhancement problem involving wire-coil inserts in cooling channels, where
+% experimental data \cite{collins22}) show up to fourfold increases in heat
+% transfer with well-quantified pressure penalties. 
+% %
+%    This problem is particularly valuable for model development and validation
+% due to the sensitivity of the QOI (typically the Nusselt number), its rich
+% parameter space (wire diameter, pitch, Reynolds number), strong agreement
+% between simulations and experiments, and relatively low cost for simulation data.
+
+\newpage
+{\bf [Tzanio/Vlad - possible to integrate into above? Happy to discuss.]}
 The MFEM team will contribute a targeted ICF miniapp designed primarily as a
 high-fidelity data generator for training and validating the proposed surrogate
 modeling framework. Building on existing capabilities in Lagrangian
@@ -272,7 +266,8 @@ simulation stack and the latent-space optimization strategies outlined in the
 proposal, particularly for adjoint-informed refinement and hybrid optimization
 workflows.
 
-  Together, these Phase I applications provide relatively wide coverage of 
+
+  Together, these Phase I applications provide wide coverage of 
 energy-relevant thermal-fluids systems.
 This effort builds directly on DOE investments in high-fidelity simulation.
 Nek5000/RS and MFEM are Gordon Bell Prize winning codes
@@ -280,10 +275,11 @@ Nek5000/RS and MFEM are Gordon Bell Prize winning codes
 Discretizations as part of DOE's Exascale Computing Project.  Their high-order
 discretizations, coupled with fast matrix-free operator evaluation and highly
 scalable preconditioners gives them a competitive edge over traditional approaches
-(e.g., a 32X gain compared to 2nd-order finite volumes for $Re=50$M
-boundary-layer flows \cite{Min2024Wind,Tomboulides2024ABL}).  Nek5000/RS has
+(e.g., a 32X gain compared to 2nd-order finite volume methods 
+\cite{Min2024Wind,Tomboulides2024ABL}).  Nek5000/RS has
 been extensively used for reactor thermal-hydraulics and is part of
-NRC-accepted workflows. The proposed work, however, is fundamentally distinct.
+NRC-accepted workflows \cite{URL?}. 
+The proposed work, however, is fundamentally distinct.
 Instead of advancing simulation capabilities alone, we develop a generalizable
 foundation model that unifies data across geometries and regimes, and we
 introduce a closed-loop, AI-driven optimization framework that enables rapid
@@ -291,6 +287,7 @@ design exploration and mechanistic discovery. By the end of Phase I, we will
 demonstrate real-time surrogate modeling and closed-loop optimization for
 representative thermal-fluid systems, establishing a clear pathway toward
 AI-driven digital twins for reactor design and other DOE mission applications.
+{\bf Shorten, but is following Instructions.}
 
 
 \vspace*{.1in}
