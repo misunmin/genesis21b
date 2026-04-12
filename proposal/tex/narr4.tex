@@ -96,7 +96,7 @@ with simulation degrees of freedom (DOFs) ranging from $10^7$ to $10^{12}$
 \end{verbatim} 
 \normalsize
 
-
+\input objective
 
 \vspace*{1in}
 \section{    Proposed Research and Methods \hspace{1.0in} 1-1/2 PAGES}
@@ -311,44 +311,7 @@ AI-driven digital twins for reactor design and other DOE mission applications.
 \end{verbatim} 
 \normalsize
 
-\noindent
-\textbf{Milestone 1 (Month 2): Data Integration and Baseline Surrogate}  
-
-Unify \textbf{Nek5000/RS} simulation and experimental datasets
-(wire-coil and reactor-relevant geometries) into a common representation
-and demonstrate a baseline surrogate model for heat-transfer and
-pressure-drop prediction.
-
-\vspace{4pt}
-
-\noindent
-\textbf{Milestone 2 (Month 4): Foundation Model in Latent Space}  
-
-Fine-tune an existing geometry-aware fluid-mechanics foundation model
-using project-specific datasets. The learned latent representations will
-enable cross-configuration generalization, achieving accurate predictions
-($<5\%$ error) across unseen geometries.
-
-\vspace{4pt}
-
-\noindent
-\textbf{Milestone 3 (Month 6): Closed-Loop Optimization Capability}  
-
-Integrate Bayesian and derivative-free optimization methods in latent
-space and demonstrate closed-loop design loops, achieving at least
-$5$--$10\times$ reduction in design iteration cost relative to
-brute-force CFD.
-
-\vspace{4pt}
-
-\noindent
-\textbf{Milestone 4 (Month 9): Agentic AI--Driven Accelerated Design}  
-
-Deploy agentic AI orchestration for adaptive sampling and
-multi-objective optimization, demonstrating end-to-end automated
-design with $10$--$20\times$ acceleration and improved performance
-(e.g., heat-transfer versus pressure-drop trade-off) on a
-representative heat-exchanger system.
+\input milestone
 
 \newpage
 \section{    Data Sources and Models \hspace{1.0in} 1/2 PAGE}
@@ -450,4 +413,4 @@ AI framework.
 
 \normalsize
 
-
+\input metric
