@@ -117,8 +117,10 @@ space independent of mesh topology}. This capability is particularly critical fo
 where variations in geometry—such as wire pitch, rod spacing, and bundle configuration—strongly 
 influence heat transfer and pressure losses.
 The proposed model integrates {\bf graph-based geometric representations}, 
-{\bf variational autoencoders (VAEs)} for compression of high-dimensional flow fields [20,23], 
-and {\bf conditional latent diffusion models} [25] to learn distributions across operating regimes. 
+{\bf variational autoencoders (VAEs)} for compression of high-dimensional flow 
+fields~\cite{Vinuesa2022MLCFD,SoleraRico2024BetaVAE},
+and {\bf conditional latent diffusion models}~\cite{Vishwasrao2025DiffSPORT} 
+to learn distributions across operating regimes. 
 Training will leverage DOE exascale-ready workflows and GPU-enabled datasets generated using 
 {\bf Nek5000/RS} and {\bf MFEM}. The resulting surrogate model will enable fast, high-fidelity 
 prediction of key reactor performance quantities, including heat transfer coefficients, 
@@ -128,8 +130,8 @@ used to validate the ML surrogates.
 
 The second component develops a {\bf latent-space optimization and control framework}, 
 led by the University of Michigan, targeting both steady and transient operating regimes. 
-This effort will employ a hybrid strategy combining {\bf Bayesian optimization} [17], 
-{\bf derivative-free optimization methods}, and {\bf reinforcement learning} [9]. 
+This effort will employ a hybrid strategy combining {\bf Bayesian optimization}~\cite{Morita2022BOCFD}, 
+{\bf derivative-free optimization methods}, and {\bf reinforcement learning}~\cite{Font2025DRLFlowControl. 
 Such approaches are essential for reactor-relevant design spaces that are high-dimensional, 
 non-convex, and constrained by safety and operational limits.
 
