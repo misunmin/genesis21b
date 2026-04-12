@@ -22,37 +22,37 @@ which is significantly accelerated.
 
 \section{Background/Introduction  -   1 PAGE}
 
-{\color{gray} This project will develop a {\bf foundation-model–driven, agentic 
-AI framework}~\cite{Vinuesa2026XAI} for the prediction, optimization, and 
-control of thermal–fluid transport in energy systems, with primary emphasis 
-on wire-wrapped fuel-rod bundles for advanced reactor design. These systems 
-are central to DOE missions in advanced fission and fusion energy and are 
-characterized by complex turbulent flows, strong geometric sensitivity, and 
-stringent performance and safety requirements. They also constitute an 
-exceptionally rich data domain, combining decades of high-fidelity simulations 
-using Nek5000/RS--one of the few CFD codes accepted in NRC licensing workflows--with 
-extensive experimental datasets from both open literature and proprietary industry sources.
-The central objective of this {\bf Phase I effort} is to unify these heterogeneous datasets 
-into a common, geometry-aware representation and demonstrate a {\bf closed-loop workflow} 
-that enables rapid prediction, design exploration, and optimization of 
-reactor-relevant thermal–fluid systems.
-}
+% {\color{gray} This project will develop a {\bf foundation-model–driven, agentic 
+% AI framework}~\cite{Vinuesa2026XAI} for the prediction, optimization, and 
+% control of thermal–fluid transport in energy systems, with primary emphasis 
+% on wire-wrapped fuel-rod bundles for advanced reactor design. These systems 
+% are central to DOE missions in advanced fission and fusion energy and are 
+% characterized by complex turbulent flows, strong geometric sensitivity, and 
+% stringent performance and safety requirements. They also constitute an 
+% exceptionally rich data domain, combining decades of high-fidelity simulations 
+% using Nek5000/RS--one of the few CFD codes accepted in NRC licensing workflows--with 
+% extensive experimental datasets from both open literature and proprietary industry sources.
+% The central objective of this {\bf Phase I effort} is to unify these heterogeneous datasets 
+% into a common, geometry-aware representation and demonstrate a {\bf closed-loop workflow} 
+% that enables rapid prediction, design exploration, and optimization of 
+% reactor-relevant thermal–fluid systems.
+% }
+ 
+This project will develop a {\bf foundation-model-driven, agentic-AI framework}
+\cite{Vinuesa2026XAI} for the prediction, optimization, and control of
+thermal-fluid transport in energy systems, with primary emphasis on 
+fission and fusion applications.  
+  These fluid systems are central to DOE’s advanced energy programs and 
+are characterized by complex turbulent flow, strong geometric sensitivity, 
+and stringent performance and safety constraints.
+  They also constitute a rich data domain, combining decades of high-fidelity
+simulations using Nek5000/RS (one of the few CFD codes accepted in NRC
+licensing workflows) and MFEM (the 2025 Gordon Bell Winner) with extensive
+experimental datasets from both open literature and proprietary industry sources. 
+   The central objective of this {\bf Phase I effort} is to unify these heterogeneous 
+datasets into a common geometry-aware representation and to demonstrate a
+{\bf closed-loop workflow} for rapid design and optimization of thermal-fluid systems.
 
-This project will develop a foundation-model-driven, agentic-AI
-framework~\cite{Vinuesa2026XAI} for the prediction, optimization, and control
-of thermal-fluid transport in energy systems, with primary emphasis on fission
-and fusion applications.  These fluid systems represent a cornerstone of DOE’s
-advanced energy programs and are characterized by complex turbulent flow,
-strong geometry dependence, and stringent performance and safety constraints.
-They also constitute a uniquely rich data domain, combining decades of
-high-fidelity simulations using Nek5000/RS (one of the few CFD codes accepted
-in NRC licensing workflows) and MFEM (the 2025 Gordon Bell Winner) with
-extensive experimental datasets from both open literature and proprietary
-industry sources. The central objective of this Phase I effort is to unify
-these heterogeneous datasets into a common representation and demonstrate a
-closed-loop workflow for rapid design and optimization.
-
-{\color{gray}
 Thermal–fluid transport governs the performance of a wide range of energy systems. 
 In nuclear fission and fusion reactors, fluid motion transports thermal energy 
 from core processes (fission/fusion reactions) to heat exchangers, where working 
@@ -65,21 +65,7 @@ simulations}, each taking days to months on high-performance computing (HPC) pla
 The computational burden arises from complex geometries, broad ranges of timescales 
 (e.g., convective flow versus thermal diffusion in solids), and stringent 
 accuracy requirements.
-}
 
-Thermal-fluid transport is central to the majority of the world's energy
-systems.  Nuclear reactors and fusion systems rely on fluid flow to transport
-thermal energy from the core processes (fission/fusion reactions) to heat
-exchangers, where working fluids are heated to drive turbines or other devices.
-Combustion systems and inertially-confined fusion (ICF) systems rely on
-repeatable fluid motion to initiate energy producting reactions.  System- and
-device-level optimization, often involving domain-topology modifications, can
-require hundreds of simulations, each of which can take days to months on
-high-performance computing (HPC) platforms, depending on the domain complexity,
-the range of timescales (e.g., convective-flow scales versus thermal-diffusive
-scales in solids), and required fidelity.   
-
-{\color{gray}
 The overall goal of this project, to be realized in Phase II, is to radically 
 transform the design cycle for energy-system components by providing reliable, 
 high-accuracy AI-driven surrogate models tightly coupled with state-of-the-art 
@@ -89,43 +75,15 @@ flows and inertially confined fusion (ICF) miniapps, while liquid-metal
 magnetohydrodynamics (MHD) relevant to magnetically confined fusion will be 
 addressed in Phase II.
 As illustrated in Fig. 1, Phase I test cases include:
-(i) optimization of pressure-drop and heat-transfer
-performance in \textbf{wire-wrapped fuel-rod bundles};
-(ii) a \textbf{miniapp for inertially confined fusion}; and
-(iii) optimization of \textbf{wire-coil inserts} for
+    (i) optimization of pressure-drop and heat-transfer performance in \textbf{wire-wrapped fuel-rod bundles};
+   (ii) a \textbf{miniapp for inertially confined fusion}; and
+  (iii) optimization of \textbf{wire-coil inserts} for
 heat-transfer enhancement in beam-line cooling systems.
-%
-%
-%As illustrated in Fig. 1, Phase I test cases include:
-%\begin{enumerate}[label=(\roman*), noitemsep, topsep=1pt]
-%\item Optimization of pressure drop and heat transfer in
-%\textbf{wire-wrapped fuel-rod bundles}
-%\item A \textbf{miniapp for inertially confined fusion}
-%\item Optimization of \textbf{wire-coil inserts} for
-%heat-transfer enhancement in beam-line cooling systems
-%\end{enumerate}
-%
-%
 These test cases were selected because of the availability of reliable simulation 
 and experimental data and their scalability across a wide range of problem sizes, 
-with simulation degrees of freedom (DOFs) ranging 
-from approximately $10^7$ to $10^12$~\cite{gb23,gb25mfem}.
-}
+with simulation degrees of freedom (DOFs) ranging from $10^7$ to $10^{12}$
+\cite{gb23,gb25mfem}.
 
-The overall goal of this project, to be realized in Phase II, is to radically
-tranform the design cycle of energy system components by providing reliable and
-accurate AI-driven surrogates coupled with state-of-the-art design optimization
-[Sven?].  The targeted Phase I test problems are directly relevant to systems
-in the DOE energy portfolio, including reactor cores and inertially confined
-fusion (ICF).  (Liquid metal MHD for magnetically confined fusion will be
-addressed in Phase II.) As illustrated in Fig. \ref{fig:fm1}, test cases for
-Phase I include optimization of pressure-drop/heat-transfer in wire-wrapped
-fuel-rod bundles, a miniapp for ICF, and optimization of wire-coil inserts for
-heat transfer enhancement in beam-line devices.   These test cases were
-selected because of the availability of reliable simulation and experimental
-data and the fact that they can be scaled over a range of sizes, with the
-number of simulation degrees-of-freedom (DOFs) ranging from $\sim 10^7$ to
-$10^{12}$ \cite{gb23,gb25mfem}.
 
 \section{    Project Objectives \hspace{1.0in} 1/2 PAGE}
 
