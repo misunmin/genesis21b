@@ -127,20 +127,6 @@ prediction of key reactor performance quantities, including heat transfer coeffi
 pressure drop, and flow-induced mixing. For the cases considered, we have already established
 clear agreement between the experimental data and the high-order simulation codes, which will be 
 used to validate the ML surrogates.
-
-The second component develops a {\bf latent-space optimization and control framework}, 
-led by the University of Michigan, targeting both steady and transient operating regimes. 
-This effort will employ a hybrid strategy combining {\bf Bayesian optimization}~\cite{Morita2022BOCFD}, 
-{\bf derivative-free optimization methods}, and {\bf reinforcement learning}~\cite{Font2025DRLFlowControl}. 
-Such approaches are essential for reactor-relevant design spaces that are high-dimensional, 
-non-convex, and constrained by safety and operational limits.
-
-Optimization will be performed directly within the latent space of the foundation model, 
-enabling efficient exploration of design variables such as wire pitch, rod arrangement, 
-and operating conditions. The {bf agentic AI system} will orchestrate this process by dynamically 
-selecting optimization strategies, proposing new simulation queries, and balancing competing 
-objectives, including heat transfer enhancement, pressure loss minimization, and 
-safety margin preservation.
 }
 
 \medskip
@@ -171,6 +157,26 @@ heat transfer coefficients, pressure drop, and flow-induced mixing.
 between the experimental data and the high-order simulation codes, which
 will be used to validate the ML surrogates.
 
+{\color{gray}
+The second component develops a {\bf latent-space optimization and control framework},
+led by the University of Michigan, targeting both steady and transient operating regimes.
+This effort will employ a hybrid strategy combining {\bf Bayesian optimization}~\cite{Morita2022BOCFD},
+{\bf derivative-free optimization methods}, and {\bf reinforcement learning}~\cite{Font2025DRLFlowControl}.
+Such approaches are essential for reactor-relevant design spaces that are high-dimensional,
+non-convex, and constrained by safety and operational limits.
+%
+Optimization will be performed directly within the latent space of the foundation model,
+enabling efficient exploration of design variables such as wire pitch, rod arrangement,
+and operating conditions. The {bf agentic AI system} will orchestrate this process by dynamically
+selecting optimization strategies, proposing new simulation queries, and balancing competing
+objectives, including heat transfer enhancement, pressure loss minimization, and
+safety margin preservation.
+%
+The framework will operate in a closed-loop workflow, in which candidate designs generated
+in latent space are selectively validated using high-fidelity simulations.
+This ensures predictive accuracy while maintaining robustness across operating conditions.
+}
+
 The second component develops a latent-space optimization and control
 framework, led by the University of Michigan, targeting both steady and
 transient regimes. We will employ a hybrid strategy combining Bayesian
@@ -186,6 +192,28 @@ objectives such as heat transfer enhancement, pressure loss, and safety
 margins. The framework will operate in a closed loop, where candidate designs
 generated in latent space are selectively validated using high-fidelity
 simulations, ensuring both accuracy and robustness.
+
+{\color{gray}
+The third component focuses on {\bf cross-domain validation and integration into the
+Genesis Mission ecosystem},
+led by Argonne with contributions from all partners. In addition to wire-wrapped
+reactor bundles, two complementary applications will be considered to expand the scope
+and generality of the approach. 
+%
+The first application involves {\bf inertial confinement fusion}, where strongly transient,
+multiphysics dynamics arise from laser-driven compression of fuel pellets.
+This provides a stringent test of the model’s ability to capture rapidly evolving physical regimes.
+%
+The second application targets a {\bf well-characterized heat-transfer enhancement problem}
+involving wire-coil inserts in cooling channels, where experimental data~\cite{collins22}
+demonstrate up to fourfold increases in heat transfer accompanied by well-quantified pressure penalties.
+This problem provides an ideal benchmark for model development and validation
+due to the sensitivity of the QOI (typically the Nusselt number), its rich 
+parameter space--including wire diameter, pitch, and Reynolds number--and the 
+strong agreement between simulations and experiments, and relatively low cost 
+for simulation data.
+}
+
 
 The third component focuses on validation across multiple DOE-relevant
 applications and integration into the Genesis Mission ecosystem, led by Argonne
