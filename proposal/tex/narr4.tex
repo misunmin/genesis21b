@@ -52,6 +52,21 @@ industry sources. The central objective of this Phase I effort is to unify
 these heterogeneous datasets into a common representation and demonstrate a
 closed-loop workflow for rapid design and optimization.
 
+{\color{gray}
+Thermal–fluid transport governs the performance of a wide range of energy systems. 
+In nuclear fission and fusion reactors, fluid motion transports thermal energy 
+from core processes (fission/fusion reactions) to heat exchangers, where working 
+fluids drive turbines or other power-generation devices. Combustion systems and 
+inertially confined fusion (ICF) platforms similarly depend on controlled fluid 
+motion to initiate and sustain energy-producing reactions. 
+However, {\bf system- and device-level optimization—particularly when involving 
+geometric or topology modifications—typically requires hundreds of high-fidelity 
+simulations}, each taking days to months on high-performance computing (HPC) platforms. 
+The computational burden arises from complex geometries, broad ranges of timescales 
+(e.g., convective flow versus thermal diffusion in solids), and stringent 
+accuracy requirements.
+}
+
 Thermal-fluid transport is central to the majority of the world's energy
 systems.  Nuclear reactors and fusion systems rely on fluid flow to transport
 thermal energy from the core processes (fission/fusion reactions) to heat
@@ -63,6 +78,39 @@ require hundreds of simulations, each of which can take days to months on
 high-performance computing (HPC) platforms, depending on the domain complexity,
 the range of timescales (e.g., convective-flow scales versus thermal-diffusive
 scales in solids), and required fidelity.   
+
+{\color{gray}
+The overall goal of this project, to be realized in Phase II, is to radically 
+transform the design cycle for energy-system components by providing reliable, 
+high-accuracy AI-driven surrogate models tightly coupled with state-of-the-art 
+design optimization methods. The Phase I test problems are selected to establish 
+feasibility across representative DOE-relevant applications, including reactor-core 
+flows and inertially confined fusion (ICF) miniapps, while liquid-metal 
+magnetohydrodynamics (MHD) relevant to magnetically confined fusion will be 
+addressed in Phase II.
+As illustrated in Fig. 1, Phase I test cases include:
+(i) optimization of pressure-drop and heat-transfer
+performance in \textbf{wire-wrapped fuel-rod bundles};
+(ii) a \textbf{miniapp for inertially confined fusion}; and
+(iii) optimization of \textbf{wire-coil inserts} for
+heat-transfer enhancement in beam-line cooling systems.
+%
+%
+%As illustrated in Fig. 1, Phase I test cases include:
+%\begin{enumerate}[label=(\roman*), noitemsep, topsep=1pt]
+%\item Optimization of pressure drop and heat transfer in
+%\textbf{wire-wrapped fuel-rod bundles}
+%\item A \textbf{miniapp for inertially confined fusion}
+%\item Optimization of \textbf{wire-coil inserts} for
+%heat-transfer enhancement in beam-line cooling systems
+%\end{enumerate}
+%
+%
+These test cases were selected because of the availability of reliable simulation 
+and experimental data and their scalability across a wide range of problem sizes, 
+with simulation degrees of freedom (DOFs) ranging 
+from approximately $10^7$ to $10^12$~\cite{gb23,gb25mfem}.
+}
 
 The overall goal of this project, to be realized in Phase II, is to radically
 tranform the design cycle of energy system components by providing reliable and
