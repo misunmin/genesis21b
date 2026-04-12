@@ -22,6 +22,21 @@ which is significantly accelerated.
 
 \section{Background/Introduction  -   1 PAGE}
 
+{\color{gray} This project will develop a {\bf foundation-model–driven, agentic 
+AI framework}~\cite{Vinuesa2026XAI} for the prediction, optimization, and 
+control of thermal–fluid transport in energy systems, with primary emphasis 
+on wire-wrapped fuel-rod bundles for advanced reactor design. These systems 
+are central to DOE missions in advanced fission and fusion energy and are 
+characterized by complex turbulent flows, strong geometric sensitivity, and 
+stringent performance and safety requirements. They also constitute an 
+exceptionally rich data domain, combining decades of high-fidelity simulations 
+using Nek5000/RS--one of the few CFD codes accepted in NRC licensing workflows--with 
+extensive experimental datasets from both open literature and proprietary industry sources.
+The central objective of this {\bf Phase I effort} is to unify these 
+heterogeneous datasets into a common representation and demonstrate a 
+{\bf closed-loop workflow for rapid design and optimization}.
+}
+
 This project will develop a foundation-model-driven, agentic-AI
 framework~\cite{Vinuesa2026XAI} for the prediction, optimization, and control
 of thermal-fluid transport in energy systems, with primary emphasis on fission
@@ -91,6 +106,16 @@ $10^{12}$ \cite{gb23,gb25mfem}.
 \end{verbatim} 
 \normalsize
 
+{\color{gray}
+The first component of the research plan focuses on the development of a {\bf geometry-aware 
+thermal–fluid foundation model}, led by ANL, UIUC, and PSU. Building on prior work in foundation 
+modeling~\cite{Vishwasrao2026AgenticPDE}, simulation and experimental data from 
+wire-wrapped bundles~{Dai2025WireWrapped61Pin,kaeri37pin}, as well as related configurations 
+such as spacer grids, pebble beds, and twisted tubes, will be mapped into {\bf a common latent 
+space independent of mesh topology}. This capability is particularly critical for reactor applications, 
+where variations in geometry—such as wire pitch, rod spacing, and bundle configuration—strongly 
+influence heat transfer and pressure losses.
+}
 
 The first component of the research plan focuses on the development of a
 geometry-aware foundation model for thermal-fluid prediction, led by ANL,
@@ -243,7 +268,8 @@ AI-driven digital twins for reactor design and other DOE mission applications.
 \noindent
 {\bf Dillon, Elia, I wonder if this is a reasonable place to put Experimental/Numerical Comparison
 Results?  For example, as here:}
-\begin{figure}[h] \centering {\setlength{\unitlength}{1.00in}
+\begin{figure}[h] 
+ \centering {\setlength{\unitlength}{1.00in}
    \begin{picture}(2.0,1.5)(0,0)
       \put(0.0,0.0){\includegraphics[height=1.5in]{../figs/collins_02_nek_nu3.png}}
    \end{picture}}
@@ -253,6 +279,21 @@ vs. Reynolds number for various wire-coil insert geometries \cite{kaneko22}.
 }
 \end{figure}
 \vspace*{.1in} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{wrapfigure}{r}{0.4\textwidth}
+% \centering {\setlength{\unitlength}{1.00in}
+% \begin{picture}(2.0,1.5)(0,0)
+%     \put(0.0,0.0)\includegraphics[width=0.4\textwidth]{../figs/collins_02_nek_nu3.png}
+%    \end{picture}
+%  }
+%    \caption{\label{fig:collins}
+%    Experimental-Nek5000/RS data comparison of Nusselt number
+%    vs. Reynolds number for various wire-coil insert geometries \cite{kaneko22}.
+%    }
+% \end{wrapfigure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 {\bf These two pars. need work... They are sort of just filler for the moment. PFF.}
 The Argonne team has extensive experience in large eddy simulation (LES) of
