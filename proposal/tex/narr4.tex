@@ -116,8 +116,32 @@ such as spacer grids, pebble beds, and twisted tubes, will be mapped into {\bf a
 space independent of mesh topology}. This capability is particularly critical for reactor applications, 
 where variations in geometry—such as wire pitch, rod spacing, and bundle configuration—strongly 
 influence heat transfer and pressure losses.
+The proposed model integrates {\bf graph-based geometric representations}, 
+{\bf variational autoencoders (VAEs)} for compression of high-dimensional flow fields [20,23], 
+and {\bf conditional latent diffusion models} [25] to learn distributions across operating regimes. 
+Training will leverage DOE exascale-ready workflows and GPU-enabled datasets generated using 
+{\bf Nek5000/RS} and {\bf MFEM}. The resulting surrogate model will enable fast, high-fidelity 
+prediction of key reactor performance quantities, including heat transfer coefficients, 
+pressure drop, and flow-induced mixing. For the cases considered, we have already established
+clear agreement between the experimental data and the high-order simulation codes, which will be 
+used to validate the ML surrogates.
+
+The second component develops a {\bf latent-space optimization and control framework}, 
+led by the University of Michigan, targeting both steady and transient operating regimes. 
+This effort will employ a hybrid strategy combining {\bf Bayesian optimization} [17], 
+{\bf derivative-free optimization methods}, and {\bf reinforcement learning} [9]. 
+Such approaches are essential for reactor-relevant design spaces that are high-dimensional, 
+non-convex, and constrained by safety and operational limits.
+
+Optimization will be performed directly within the latent space of the foundation model, 
+enabling efficient exploration of design variables such as wire pitch, rod arrangement, 
+and operating conditions. The {bf agentic AI system} will orchestrate this process by dynamically 
+selecting optimization strategies, proposing new simulation queries, and balancing competing 
+objectives, including heat transfer enhancement, pressure loss minimization, and 
+safety margin preservation.
 }
 
+\medskip
 The first component of the research plan focuses on the development of a
 geometry-aware foundation model for thermal-fluid prediction, led by ANL,
 UIUC, and PSU.  
