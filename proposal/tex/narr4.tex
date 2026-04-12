@@ -107,6 +107,9 @@ $10^{12}$ \cite{gb23,gb25mfem}.
 \end{verbatim} 
 \normalsize
 
+
+\input taxonomy3
+
 {\color{gray}
 The first component of the research plan focuses on the development of a {\bf geometry-aware 
 thermal–fluid foundation model}, led by ANL, UIUC, and PSU. Building on prior work in foundation 
@@ -120,7 +123,10 @@ The proposed model integrates {\bf graph-based geometric representations},
 {\bf variational autoencoders (VAEs)} for compression of high-dimensional flow 
 fields~\cite{Vinuesa2022MLCFD,SoleraRico2024BetaVAE},
 and {\bf conditional latent diffusion models}~\cite{Vishwasrao2025DiffSPORT} 
-to learn distributions across operating regimes. 
+to learn distributions across operating regimes,
+as well as neural-operator architectures for physics-consistent surrogate learning
+which we will investigate in Phase II. 
+
 Training will leverage DOE exascale-ready workflows and GPU-enabled datasets generated using 
 {\bf Nek5000/RS} and {\bf MFEM}. The resulting surrogate model will enable fast, high-fidelity 
 prediction of key reactor performance quantities, including heat transfer coefficients, 

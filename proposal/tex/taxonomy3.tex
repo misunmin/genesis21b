@@ -1,0 +1,62 @@
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+    node distance=0.9cm and 1.4cm,
+    box/.style={
+        rectangle,
+        draw,
+        rounded corners,
+        align=center,
+        minimum width=2.8cm,
+        minimum height=0.7cm,
+        font=\scriptsize
+    }
+]
+
+% Top
+\node[box, fill=gray!15] (fm)
+{Foundation Models \\for Thermal-Fluid Systems};
+
+% Row 1
+\node[box, below left=of fm] (geom)
+{Representation Models\\(VAE, autoencoder)};
+
+\node[box, below=of fm] (repr)
+{Geometry-Aware Models\\(GNN)};
+
+\node[box, below right=of fm] (gen)
+{Generative Models\\(Diffusion)};
+
+% Row 2
+\node[box, below=of repr] (op)
+{Operator Learning\\(Neural Operators)};
+
+\node[box, left=of op] (encdec)
+{Encoder--Decoder\\(Transformers)};
+
+\node[box, right=of op] (opt)
+{Optimization\\(RL, Bayesian)};
+
+% Connections
+\draw[->] (fm) -- (geom);
+\draw[->] (fm) -- (repr);
+\draw[->] (fm) -- (gen);
+
+\draw[->] (repr) -- (op);
+\draw[->] (geom) -- (encdec);
+\draw[->] (gen) -- (opt);
+
+\end{tikzpicture}
+
+\vspace{-2pt}
+
+\caption{Taxonomy of architecture components used in physics-informed
+foundation models for TF systems.
+}
+\label{fig:compact_foundation_taxonomy}
+
+\vspace{-2pt}
+
+\end{figure}
+
