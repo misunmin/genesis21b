@@ -1,113 +1,91 @@
 \textbf{Decision Gate Metrics and Go/No-Go Criteria}
 
-Phase~I success will be evaluated through quantitative metrics that
-demonstrate predictive accuracy, computational efficiency, scalability,
-and measurable AI advantage relative to conventional high-fidelity
-simulation workflows. The following metrics define the Phase~I
-go/no-go decision criteria.
+Phase~I success will be evaluated through quantitative metrics
+demonstrating predictive accuracy, computational efficiency,
+and measurable AI advantage relative to conventional
+high-fidelity CFD workflows using Nek5000/RS.
 
-\textbf{1. Data Integration and Latent Representation Fidelity}
+\textbf{1. Integrated Data and Latent Representation.}
+A unified geometry-aware dataset combining simulation
+and experimental thermal–fluid data will be constructed.
+Success criteria include:
 
-A unified, geometry-aware dataset integrating heterogeneous
-Nek5000/RS simulation data and experimental datasets will be
-constructed. Successful completion will be demonstrated if:
+\begin{itemize}[noitemsep]
 
-\begin{itemize}
-\setlength{\itemsep}{3pt}
+\item Successful integration of $\geq 95\%$ of selected datasets
+into a consistent latent representation.
 
-\item $>95\%$ of selected simulation and experimental datasets are
-successfully mapped into a common latent representation.
-
-\item Reconstruction error of encoded flow fields remains below
-$3\%$ relative $L_2$ norm error for representative thermal–fluid fields.
-
-\item Latent representations demonstrate consistent embedding
-of multiple geometry classes (wire bundles, ICF configurations,
-and coil inserts) within a shared latent space.
+\item Reconstruction fidelity of encoded flow fields with
+relative $L_2$ error $\leq 3\%$ for representative
+thermal–fluid variables.
 
 \end{itemize}
 
-\textbf{2. Predictive Accuracy Across Unseen Configurations}
+\textbf{2. Predictive Accuracy and Generalization.}
+The foundation model will be validated across unseen
+geometries and operating regimes. Success requires:
 
-The geometry-aware foundation model will be evaluated for
-generalization capability across previously unseen geometries.
-Successful completion requires:
+\begin{itemize}[noitemsep]
 
-\begin{itemize}
-\setlength{\itemsep}{3pt}
+\item Prediction error $\leq 5\%$ for engineering quantities
+including pressure drop and heat-transfer coefficients.
 
-\item Prediction accuracy better than $5\%$ relative error for
-key engineering quantities, including pressure drop and
-heat-transfer coefficients.
-
-\item Stable prediction performance across at least
-three distinct geometry classes and multiple Reynolds-number regimes.
+\item Robust performance across at least three geometry
+classes and multiple Reynolds-number regimes.
 
 \end{itemize}
 
-\textbf{3. Closed-Loop Optimization Efficiency}
+\textbf{3. Design Acceleration and Optimization Efficiency.}
+AI-enabled latent-space optimization will be compared
+to traditional brute-force parameter sweeps. Success
+criteria include:
 
-Latent-space optimization workflows will be evaluated relative
-to brute-force CFD-based design studies. Phase~I success
-requires:
 
-\begin{itemize}
-\setlength{\itemsep}{3pt}
+\begin{itemize}[noitemsep]
 
-\item Demonstration of closed-loop optimization achieving
-at least $5$--$10\times$ reduction in required high-fidelity
-simulation evaluations relative to baseline parameter sweeps.
+\item Reduction of required high-fidelity CFD evaluations
+by $\geq 5$--$10\times$.
 
-\item Successful convergence of multi-objective optimization
-problems balancing heat-transfer enhancement and pressure-drop
-penalty.
+\item Demonstration of stable multi-objective optimization
+balancing thermal performance and pressure-drop penalties.
 
 \end{itemize}
 
-\textbf{4. Demonstration of AI Advantage Through Scaling Behavior}
+\textbf{4. Demonstration of AI Advantage Through Scaling.}
+AI advantage will be quantified using scaling-based
+performance metrics:
 
-AI advantage will be quantified through scaling metrics that
-demonstrate improved performance with increasing data and
-computational resources. Successful completion requires:
+\begin{itemize}[noitemsep]
 
-\begin{itemize}
-\setlength{\itemsep}{3pt}
+\item Reduction in prediction error of $\geq 30\%$
+when training dataset size is increased by $2\times$.
 
-\item Demonstration of improved prediction accuracy with
-increasing training dataset size (e.g., error reduction of
-$\geq 30\%$ when training data volume is increased by $2\times$).
+\item Efficient GPU scaling demonstrating proportional
+reduction in training or inference time with increasing
+computational resources.
 
-\item Demonstration of efficient scaling on GPU-enabled
-HPC platforms, showing reduction in training or inference
-time proportional to available compute resources.
+\item Demonstration of surrogate inference throughput
+$\geq 100\times$ faster than equivalent CFD evaluation.
 
 \end{itemize}
 
-\textbf{Go/No-Go Criterion}
+\textbf{Go/No-Go Criterion.}
+Advancement to Phase~II requires simultaneous
+demonstration of:
 
-Progression to Phase~II will require demonstration that
-the integrated foundation-model and optimization framework
-achieves all of the following:
+\begin{itemize}[noitemsep]
 
-\begin{itemize}
-\setlength{\itemsep}{3pt}
+\item Prediction accuracy $\leq 5\%$ across unseen geometries,
 
-\item Prediction accuracy $\leq 5\%$ for engineering-relevant
-quantities across unseen geometries,
+\item $\geq 5\times$ reduction in required CFD evaluations,
 
-\item Reduction of required CFD evaluations by
-at least $5\times$ relative to brute-force workflows,
+\item Measurable scaling-based AI advantage,
 
-\item Demonstration of measurable scaling-based AI advantage
-with increasing training data and computational resources.
-
-\item Demonstration of end-to-end design-cycle
-time reduction of at least $10\times$
-relative to traditional simulation-driven workflows.
+\item $\geq 10\times$ reduction in end-to-end
+design-cycle time relative to traditional workflows.
 
 \end{itemize}
 
 Meeting these criteria will validate the feasibility of
-foundation-model–driven, agentic AI workflows for
-accelerated thermal–fluid design and justify advancement
-to Phase~II development.
+foundation-model–driven workflows for accelerated
+thermal–fluid design and justify Phase~II expansion.
