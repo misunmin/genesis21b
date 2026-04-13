@@ -31,11 +31,11 @@ Proposal Materials Needed from Partners:
     - (-) Letter of Commitment from the partner institution
     - (-)  Any Letters of Collaboration or Access they want included in Appendix 7, if applicable
 
-- abstract narrative
-- upload to Min box folder
-- grants.gov
-- register
-- Budget justification
+- (-) abstract narrative
+- (-) upload to Min box folder
+- (o) grants.gov
+- (o) register
+- (-) Budget justification
 
 In addition, we will need all ANL key personnel documents and should be prepared to circulate the final Abstract and Narrative—identical
 across all partner organizations—between April 15–21, with the intent to submit the full proposal on Monday, April 27, 2026.
