@@ -113,6 +113,7 @@ Address how the objectives align with the chosen focus topic and lead to an AI a
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{wrapfigure}{r}{0.45\textwidth}
 
 \centering
@@ -324,6 +325,7 @@ AI-driven digital twins for reactor design and other DOE mission applications.
 
 \input milestone
 
+
 \newpage
 \section{    Data Sources and Models \hspace{1.0in} 1/2 PAGE}
 
@@ -343,22 +345,20 @@ AI-driven digital twins for reactor design and other DOE mission applications.
 
  o  Collins data for the small wire-coil - both experimental and numerical results available 
 \end{verbatim} 
+
 \normalsize
 
-\noindent
-{\bf Dillon, Elia, I wonder if this is a reasonable place to put Experimental/Numerical Comparison
-Results?  For example, as here:}
-\begin{figure}[h] 
- \centering {\setlength{\unitlength}{1.00in}
-   \begin{picture}(2.0,1.5)(0,0)
-      \put(0.0,0.0){\includegraphics[height=1.5in]{../figs/collins_02_nek_nu3.png}}
-   \end{picture}}
-\caption{\label{fig:collins}
-Experimental-Nek5000/RS data comparison of Nusselt number
-vs. Reynolds number for various wire-coil insert geometries \cite{kaneko22}.
-}
-\end{figure}
-\vspace*{.1in} 
+%\begin{figure}[h] 
+% \centering {\setlength{\unitlength}{1.00in}
+%   \begin{picture}(2.0,1.5)(0,0)
+%      \put(0.0,0.0){\includegraphics[height=1.5in]{../figs/collins_02_nek_nu3.png}}
+%   \end{picture}}
+%\caption{\label{fig:collins}
+%Experimental-Nek5000/RS data comparison of Nusselt number
+%vs. Reynolds number for various wire-coil insert geometries \cite{kaneko22}.
+%}
+%\end{figure}
+%\vspace*{.1in} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{wrapfigure}{r}{0.4\textwidth}
@@ -373,7 +373,6 @@ vs. Reynolds number for various wire-coil insert geometries \cite{kaneko22}.
 %    }
 % \end{wrapfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 {\bf These two pars. need work... They are sort of just filler for the moment. PFF.}
 The Argonne team has extensive experience in large eddy simulation (LES) of
@@ -392,6 +391,24 @@ for wire-wrapped bundles is available in \cite{kaeri37pin}, which will also be
 used for model training. {\bf Make a comment about the size/cost of the
 simulations that we are contemplating.}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{wrapfigure}{rb}{0.42\textwidth}
+
+\centering
+\includegraphics[width=0.4\textwidth]{../figs/collins_02_nek_nu3_new.png}
+
+%vspace{-2pt}
+\caption{\label{fig:collins}
+Experimental-Nek5000/RS data comparison of Nusselt number
+vs. Reynolds number for various wire-coil insert geometries \cite{kaneko22}.
+}
+\vspace{-7pt}
+
+\end{wrapfigure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\noindent
+{\bf Dillon, Elia, I wonder if this is a reasonable place to put Experimental/Numerical Comparison
+Results?  For example, as here:}
 The data situation is similar for the wire-coil insert geometry, which is a
 low-cost case to be used for test/development of the overall workflow.
 Extensive high-quality data is available in \cite{collins22}, which has been
