@@ -42,11 +42,22 @@ Ricardo:
    - 100 different configurations  (different angles, etc)    
    - no BC needed
    - inter
+ 
+   GNN: compressing flow data using convolutional GNN encoder
+   GNN: compressing the geometry data 
+
 
   Digital Twin:
    - experimental 
    - Active learning traning
    - uncertainty
+    
 
+  Two components: Surrogate + Optimization
+    Agentic AI (LLM based)
+      Steady case -- 
+
+    GPTOSS, OpenLLM for scientific application
+    
 =================================================================
  
