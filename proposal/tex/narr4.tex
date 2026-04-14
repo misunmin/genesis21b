@@ -53,8 +53,12 @@ simulations using Nek5000/RS (one of the few CFD codes accepted in NRC
 licensing workflows) and MFEM (the 2025 Gordon Bell Winner) with extensive
 experimental datasets from both open literature and proprietary industry sources. 
    The central objective of this {\bf Phase I effort} is to unify these heterogeneous 
-datasets into a common geometry-aware representation and to demonstrate a
-{\bf closed-loop workflow} for rapid design and optimization of thermal-fluid systems.
+datasets into a common (mesh-based) geometry-aware representation and to demonstrate rapid,
+accurate, surrogate solution generation that will be applied to design and
+optimization of thermal-fluid systems.
+%%    The central objective of this {\bf Phase I effort} is to unify these heterogeneous 
+%% datasets into a common geometry-aware representation and to demonstrate a
+%% {\bf closed-loop workflow} for rapid design and optimization of thermal-fluid systems.
 
 Thermal–fluid transport governs the performance of a wide range of energy systems. 
 In nuclear fission and fusion reactors, fluid motion transports thermal energy 
@@ -63,7 +67,7 @@ fluids drive turbines or other power-generation devices. Combustion systems and
 inertially confined fusion (ICF) platforms similarly depend on controlled fluid 
 motion to initiate and sustain energy-producing reactions. 
 However, {\bf system- and device-level optimization—particularly when involving 
-geometric or topology modifications—typically requires hundreds of high-fidelity 
+geometric or topology modifications—typically requires tens to hundreds of high-fidelity 
 simulations}, each taking days to months on high-performance computing (HPC) platforms. 
 The computational burden arises from complex geometries, broad ranges of timescales 
 (e.g., convective flow versus thermal diffusion in solids), and stringent 
@@ -111,6 +115,31 @@ Address how the objectives align with the chosen focus topic and lead to an AI a
   Here building on Vlad and Ricardo's text; ANYONE - please jump in 
 \end{verbatim} 
 \normalsize
+
+
+As illustrated in Fig. \ref{fig:fm1}, the {\bf Phase I} goal is to develop a training
+workflow to build AI surrogates for thermal-fluid solutions.   Initial
+training sets will be based on time-independent {mean-flow} fields that are already
+available or readily generated from Nek5000/RS and MFEM using direct numerical
+or large-eddy simulations (DNS or LES).  The geometry for each dataset is embedded
+in the computational mesh, whose nodes are associated with corresponding
+solution variables velocity, pressusure, and temperature.   Cases with 
+varying geometry or parameters (e.g., Reynolds number) are fed into an
+encoder, which builds the latent space.  Once trained, a new geometry (mesh)
+can be fed into the encoder to generate a surrogate solution within a few
+seconds.  This process has been tested with success using LES-based flow data
+for the NASA full-aircraft test model at different angles of attack, slat
+angles, etc., using datasets of size $n \approx 50$M.
+The encoding process uses TensorFlow on GPUs (several days on four to eight H200s)
+and inference takes about 30 seconds.  As products of DOE's Exascale Computing
+Project, both Nek5000/RS and MFEM run on NVIDIA, AMD, and Intel accelerators,
+so there are no GPU portability issues.  
+
+
+uuuu
+uuuu
+uuuu
+uuuu
 
 
 The first component of the research plan, led by ANL, UIUC, and PSU, focuses on
@@ -256,7 +285,6 @@ between simulations and experiments, and relatively low cost for simulation data
 % parameter space (wire diameter, pitch, Reynolds number), strong agreement
 % between simulations and experiments, and relatively low cost for simulation data.
 
-\newpage
 {\bf [Tzanio/Vlad - possible to integrate into above? Happy to discuss.]}
 The MFEM team will contribute a targeted ICF miniapp designed primarily as a
 high-fidelity data generator for training and validating the proposed surrogate
@@ -378,26 +406,72 @@ AI-driven digital twins for reactor design and other DOE mission applications.
 %    }
 % \end{wrapfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-The Argonne team has extensive experience in large eddy simulation (LES) of
-turbulent flow in reactor, including everything from isolated subassemblies
-\cite{fischer08a,Dai2025WireWrapped61Pin}[{\color{blue}other}] 
-to full cores~\cite{sc22,gb23}[{\color{blue}other3}].
-The majority of these simulation datasets are still available and summarized in
-the nuclear engineering literature.  Additional data can be readily generated
-using Nek5000/RS on existing compute resources on OLCF Frontier, ALCF Aurora,
-or the NE Divison cluster, {\em Nek5000}, as part of ongoing studies.  The
-generation of wire-wrapped fuel bundle geometries has been fully automated so
-that model training at new points in the the wire-wrap diameter / pitch space
-is straightforward.  This validity of this simulation data is backed up through
-extensive comparisons with experiments.  The latest (and most detailed) data
-for wire-wrapped bundles is available in \cite{kaeri37pin}, which will also be
-used for model training. {\bf CHECK Dillon!!}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{wrapfigure}{rb}{0.35\textwidth}
 
- vspace{-2pt}
+\vspace{-2pt}
+\centering
+\includegraphics[width=0.34\textwidth]{../figs/dai_data.png}
+
+%vspace{-2pt}
+\caption{\label{fig:blocked}
+Experimental-NekRS data comparison of friction factor
+vs. Reynolds number for a wire-wrapped bundle with blockage \cite{Dai2025WireWrapped61Pin}.
+}
+%\vspace{-7pt}
+
+\end{wrapfigure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{wrapfigure}{rb}{0.35\textwidth}
+
+%\vspace{-2pt}
+%\centering
+%\includegraphics[width=0.34\textwidth]{../figs/nacie_temp.png}
+
+%vspace{-2pt}
+%\caption{\label{fig:nacie} Experimental-NekRS data comparison of pin wall temperatures for a 19-pin wire-wrapped bundle \cite{shavernacie}.
+%}
+%\vspace{-7pt}
+
+%\end{wrapfigure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The Argonne team has extensive experience in large eddy simulation (LES) of
+turbulent flow in liquid metal fast reactors, including everything from
+isolated subassemblies
+\cite{fischer08a,Dai2025WireWrapped61Pin,shaver37pin,shavernacie} to full
+cores~\cite{sc22,gb23}.  The majority of these simulation datasets are still
+available and summarized in the nuclear engineering literature.  In particular
+we have ready access to full-3D high-fidelity datasets for adiabatic flow in a
+61-pin assembly covering a range of Reynolds numbers
+\cite{Dai2025WireWrapped61Pin} and heated flow in a 19-pin assembly under
+multiple flow and heating conditions \cite{shavernacie}.  All of these
+simulation datasets have corresponding experimental datasets that demonstrate
+their validity.  Additional data is currently being generated using NekRS on
+existing compute resources on OLCF Frontier, ALCF Aurora, and the NE Divison
+cluster, {\em Nek5k}, as part of ongoing studies.  This includes a series of
+7-pin reflector assemblies and additional 37-pin simulations similar to those
+performed by Shaver \cite{shaver37pin}.  The latest (and most detailed)
+experimental data for wire-wrapped bundles is available in \cite{kaeri37pin},
+which will also be used for model training.  The generation of wire-wrapped
+fuel bundle geometries has been fully automated so that model training at new
+points in the wire-wrap diameter / pitch space is straightforward.  We are able
+to generate data for single-pin, fully periodic domains to cover a broad range
+of conditions quickly which can be integrated in to the training data to
+control uncertainty.
+%This validity of this simulation data is backed up through extensive comparisons with experiments.  
+
+Because time-averaging smooths the solution, it is possible to down-sample the
+mesh and solution data before encoding.  Because derivatives are critical to
+pressure-drop and thermal flux QOIs, {\em spatial derivatives} will also be
+encoded during training in order to bypass the need for a fine mesh when
+differentiating the surrogate solution.  
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{wrapfigure}{rb}{0.35\textwidth}
+
+\vspace{-2pt}
 \centering
 \includegraphics[width=0.34\textwidth]{../figs/collins_02_nek_nu3_new.png}
 
@@ -411,8 +485,7 @@ vs. Reynolds number for various wire-coil insert geometries \cite{kaneko22}.
 \end{wrapfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \noindent
-{\bf Dillon, Elia, PFF wonders if this is a reasonable place to put Experimental/Numerical Comparison
-Results?  For example, as here:}
+%{\bf Dillon, Elia, PFF wonders if this is a reasonable place to put Experimental/Numerical Comparison Results?  For example, as here: (I think it is, yes -Dillon)}
 The data situation is similar for the wire-coil insert geometry, which is a
 low-cost case to be used for test/development of the overall workflow.
 Extensive high-quality data is available in \cite{collins22}, which has been
