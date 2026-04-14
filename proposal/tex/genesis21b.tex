@@ -17,6 +17,13 @@
  \nocitenames
 
 
+\newif\ifincludesynergistic
+\newif\ifincludeletter      
+%\includesynergistictrue     % include
+%\includelettertrue     % include
+ \includesynergisticfalse   % exclude
+ \includeletterfalse    % include
+
 \pagestyle{plain}
 \pagenumbering{roman}
 \setcounter{page}{1}
@@ -107,25 +114,31 @@ page 6)}}
 \newpage 
 \section{Facilities \& Other Resources\pagebudget{0.5pg}}
 \noindent
-\textcolor{red}{{\bf Fix:} This appendix should be no more than half a page when printed using standard letter-size (8.5-inch x 11-inch) paper with 1-inch margins (top, bottom, left, and right).}
+\textcolor{red}{{\bf Fix:} This appendix should be no more than half a page when 
+ printed using standard letter-size (8.5-inch x 11-inch) paper with 1-inch margins 
+ (top, bottom, left, and right).}
 
-\input{anl-facilities}
+\input anl-facilities
 
 %%% Appendix 3: Equipment
 \newpage 
 \section{Equipment}
+
 Not applicable to this project.
 
 %%% Appendix 4: Data Management Plan
 \newpage
 \section{Data Management Plan\pagebudget{Check!}}
 \label{app:dataplan}
+
 \input{anl-data} 
 
 %%% Appendix 5: SYNERGISTIC ACTIVITIES (OPTIONAL)
 \newpage
 \section{Synergistic Activities\pagebudget{1 pg per PI}}
-\label{app:synergies}
+\label{app:synergistic}
+
+\input synergistic
 
 %%% Appendix 6: TRANSPARENCY OF FOREIGN CONNECTIONS
 \newpage
@@ -136,6 +149,8 @@ Not applicable to this project.
 \newpage
 \section{Other Attachments: Letters of Collaboration or Access}
 \label{app:collab}
+
+\input letter
 
 \end{document}
 
