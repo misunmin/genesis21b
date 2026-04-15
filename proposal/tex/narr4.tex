@@ -130,7 +130,7 @@ can be fed into the encoder to generate a surrogate solution within a few
 seconds.  This process has been tested with success using LES-based flow data
 for the NASA full-aircraft test model at different angles of attack, slat
 angles, etc., using datasets of size $n \approx 50$M.
-The encoding process uses TensorFlow on GPUs (several days on four to eight H200s)
+The encoding process uses PyTorch on GPUs (several days on four to eight H200s)
 and inference takes about 30 seconds.  As products of DOE's Exascale Computing
 Project, both Nek5000/RS and MFEM run on NVIDIA, AMD, and Intel accelerators,
 so there are no GPU portability issues.  
