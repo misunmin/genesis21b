@@ -70,6 +70,7 @@ which is significantly accelerated.
 
 \section{    Project Objectives \hspace{1.0in} 1/2 PAGE}
 
+
 % \tiny \begin{verbatim}
 % Misun/Elia/Dillon: Provide a clear and concise statement of the specific objectives of the proposed project.  
 % Address how the objectives align with the chosen focus topic and lead to an AI advantage.
@@ -112,6 +113,29 @@ The encoding process uses PyTorch on GPUs (several days on four to eight H200s)
 and inference takes about 30 seconds.  As products of DOE's Exascale Computing
 Project, both Nek5000/RS and MFEM run on NVIDIA, AMD, and Intel accelerators,
 so there are no GPU portability issues.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Original taxonomy figure data is in latex 
+%\input taxonomy_new5.tex 
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.75\textwidth]{../figs/taxonomy5.png}
+%\vspace{-2pt}
+\caption{Foundation models and agentic AI framework for thermal–fluid systems.}
+%\vspace{-2pt}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{wrapfigure}{r}{0.45\textwidth}
+%\centering
+%\includegraphics[width=0.44\textwidth]{../figs/taxonomy2.png}
+%\vspace{-2pt}
+%\caption{Foundation models and agentic AI framework for thermal--fluid systems.}
+%\label{fig:foundation_agentic_framework}
+%\vspace{-7pt}
+%\end{wrapfigure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 This effort builds directly on DOE investments in high-fidelity simulation.
 Nek5000/RS and MFEM are Gordon Bell Prize winning codes
@@ -186,34 +210,6 @@ simulation stack and the latent-space optimization strategies outlined in the
 proposal, particularly for adjoint-informed refinement and hybrid optimization
 workflows.
 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Original taxonomy figure data is in latex
-%\input taxonomy_new5.tex 
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=0.75\textwidth]{../figs/taxonomy5.png}
-%\vspace{-2pt}
-\caption{Foundation models and agentic AI framework for thermal–fluid systems.}
-%\vspace{-2pt}
-\end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{wrapfigure}{r}{0.45\textwidth} 
-%\centering
-%\includegraphics[width=0.44\textwidth]{../figs/taxonomy2.png}
-%\vspace{-2pt}
-%\caption{Foundation models and agentic AI framework for thermal--fluid systems.}
-%\label{fig:foundation_agentic_framework}
-%\vspace{-7pt}
-%\end{wrapfigure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\medskip
 The second component, led by the University of Michigan, develops a {\bf
 latent-space optimization and control framework}, targeting both steady and
 transient operating regimes.  This effort will employ a hybrid strategy
@@ -342,7 +338,7 @@ This includes a series of
 
 \vspace{-2pt}
 \centering
-\includegraphics[width=0.34\textwidth]{../figs/dai_data.png}
+\includegraphics[width=0.35\textwidth]{../figs/dai_data.png}
 
 %vspace{-2pt}
 \caption{\label{fig:blocked}
@@ -376,7 +372,7 @@ differentiating the surrogate solution.
 
 \vspace{-2pt}
 \centering
-\includegraphics[width=0.34\textwidth]{../figs/collins_02_nek_nu3_new.png}
+\includegraphics[width=0.32\textwidth]{../figs/collins_02_nek_nu3_new.png}
 
 %vspace{-2pt}
 \caption{\label{fig:collins}
