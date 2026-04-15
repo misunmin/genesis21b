@@ -1,5 +1,29 @@
 \textbf{Decision Gate Metrics and Go/No-Go Criteria}
 
+Phase~I success will be evaluated using quantitative metrics that assess whether the proposed foundation-model and agentic-AI workflow provides a clear AI advantage over conventional CFD-only design. The decision gates focus on four areas: representation fidelity, predictive accuracy, reduction in expensive high-fidelity simulations, and end-to-end design acceleration. These metrics are aligned with the stated Phase~I objectives and milestones of the proposal.
+
+{\bf 1. Latent representation fidelity.}
+A first success criterion is that heterogeneous datasets from Nek5000/RS, MFEM, and experiments can be mapped into a common geometry-aware latent space without significant loss of information. Success will be defined by relative reconstruction errors below 3\% for the primary thermal-fluid state variables and below 1.5\% for key derived quantities such as pressure drop and heat-transfer metrics.
+
+{\bf 2. Predictive accuracy on unseen cases.}
+The foundation model must generalize beyond the training set. Success will be defined by mean prediction errors below 3\% for quantities of interest such as pressure drop, Nusselt number, heat-transfer coefficient, and selected mixing metrics on held-out geometries and operating conditions; and below 5\% for first- and second-order turbulence statistics. This level of accuracy must be demonstrated across at least three representative configuration classes.
+
+{\bf 3. Reduction in required CFD evaluations.}
+The AI-guided workflow must reduce reliance on repeated high-fidelity simulations during design. Success will be defined by demonstrating that the latent-space optimization identifies designs of comparable or better quality than a conventional parameter sweep or baseline optimization workflow while using at least 5$\times$ fewer high-fidelity CFD evaluations, with 10$\times$ as the target value.
+
+{\bf 4. End-to-end design acceleration.}
+The combined surrogate-plus-agentic workflow must reduce total design turnaround time relative to a CFD-only workflow. Success will be defined by demonstrating at least 10$\times$ acceleration in end-to-end design-cycle time on a representative heat-transfer or reactor thermal-hydraulics problem, with 20$\times$ as the stretch target. Additional evidence of AI advantage will be provided if increased training data and/or compute systematically improve either prediction accuracy or optimization efficiency.
+
+{\bf Go/No-Go Criterion.}
+Advancement to Phase II will require simultaneous demonstration of:
+(i) prediction errors below 5\% on unseen cases;
+(ii) at least 5$\times$ reduction in the number of required high-fidelity CFD evaluations; and
+(iii) at least 10$\times$ reduction in end-to-end design-cycle time for a representative DOE-relevant design problem. Meeting these criteria will establish that the proposed framework delivers a credible and measurable AI advantage for accelerated thermal-fluid design.
+
+
+\begin{comment}
+    
+
 Phase~I success will be evaluated through quantitative metrics
 demonstrating predictive accuracy, computational efficiency,
 and measurable AI advantage relative to conventional
@@ -64,3 +88,5 @@ design-cycle time relative to traditional workflows.
 Meeting these criteria will validate the feasibility of
 foundation-model–driven workflows for accelerated
 thermal–fluid design and justify Phase~II expansion.
+
+\end{comment}
