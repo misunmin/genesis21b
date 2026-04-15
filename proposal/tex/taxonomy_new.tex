@@ -1,0 +1,101 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+node distance=1.2cm and 1.6cm,
+box/.style={
+    rectangle,
+    rounded corners,
+    draw=black,
+    thick,
+    align=center,
+    minimum width=3.6cm,
+    minimum height=0.9cm,
+    font=\small
+},
+topbox/.style={
+    rectangle,
+    rounded corners,
+    draw=black,
+    thick,
+    align=center,
+    minimum width=10.8cm,
+    minimum height=1.1cm,
+    font=\small\bfseries
+}
+]
+
+% Top box
+\node[topbox] (top)
+{Foundation Models and Agentic AI\\
+for Optimization of Thermal--Fluid Systems};
+
+% Column headers
+\node[box, below left=of top] (rep)
+{\textbf{Representation Models}};
+
+\node[box, below=of top] (geo)
+{\textbf{Geometry \& Case}\\
+\textbf{Generalization}};
+
+\node[box, below right=of top] (opt)
+{\textbf{Optimization \&}\\
+\textbf{Agentic AI}};
+
+% Representation items
+\node[box, below=of rep] (rep1)
+{Autoencoders};
+
+\node[box, below=of rep1] (rep2)
+{Transformers};
+
+\node[box, below=of rep2] (rep3)
+{Conditional Latent Diffusion};
+
+% Geometry items
+\node[box, below=of geo] (geo1)
+{Graph Neural Networks};
+
+\node[box, below=of geo1] (geo2)
+{Neural Operators};
+
+\node[box, below=of geo2] (geo3)
+{Cross-Geometry Transfer};
+
+% Optimization items
+\node[box, below=of opt] (opt1)
+{LLM Workflow Orchestration};
+
+\node[box, below=of opt1] (opt2)
+{Bayesian Optimization};
+
+\node[box, below=of opt2] (opt3)
+{Reinforcement Learning};
+
+% Connections
+\draw[->, thick] (top) -- (rep);
+\draw[->, thick] (top) -- (geo);
+\draw[->, thick] (top) -- (opt);
+
+\draw[->] (rep) -- (rep1);
+\draw[->] (rep1) -- (rep2);
+\draw[->] (rep2) -- (rep3);
+
+\draw[->] (geo) -- (geo1);
+\draw[->] (geo1) -- (geo2);
+\draw[->] (geo2) -- (geo3);
+
+\draw[->] (opt) -- (opt1);
+\draw[->] (opt1) -- (opt2);
+\draw[->] (opt2) -- (opt3);
+
+\end{tikzpicture}
+
+\caption{
+Taxonomy of foundation models and agentic AI methods for optimization of
+thermal--fluid systems, organized into representation learning,
+geometry-aware generalization, and automated optimization workflows.
+}
+
+\label{fig:foundation_agentic_taxonomy}
+
+\end{figure}
