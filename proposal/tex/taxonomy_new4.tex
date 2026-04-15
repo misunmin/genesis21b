@@ -1,0 +1,74 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  >=Stealth,
+  title/.style={
+    draw,
+    rounded corners,
+    thick,
+    align=center,
+    text width=13.8cm,
+    minimum height=0.85cm,
+    inner sep=3pt,
+    font=\footnotesize\bfseries
+  },
+  header/.style={
+    draw,
+    rounded corners,
+    thick,
+    align=center,
+    text width=4.5cm,
+    minimum height=0.75cm,
+    inner sep=3pt,
+    font=\footnotesize\bfseries
+  },
+  block/.style={
+    draw,
+    rounded corners,
+    thick,
+    align=center,
+    text width=4.5cm,
+    minimum height=1.65cm,
+    inner sep=4pt
+  }
+]
+
+% Top box
+\node[title] (top) at (0,0)
+{Foundation Models \& Agentic AI for Thermal--Fluid Systems};
+
+% Header row
+\node[header] (rep) at (-5.3,-1.45) {Representation Models};
+\node[header, text width=5.1cm] (geo) at (0,-1.45) {Geometry \& Case\\Generalization};
+\node[header] (opt) at (5.3,-1.45) {Optimization\\\& Agentic AI};
+
+% Bottom row
+\node[block] (repb) at (-5.3,-3.10) {%
+Autoencoders\\
+Transformers\\
+Conditional Latent Diffusion};
+
+\node[block, text width=5.5cm] (geob) at (0,-3.10) {%
+Graph Neural Networks\\
+Neural Operators\\
+Cross-Geometry Transfer Learning};
+
+\node[block] (optb) at (5.3,-3.10) {%
+LLM Workflow Orchestration\\
+Bayesian Optimization\\
+Reinforcement Learning};
+
+% Arrows
+\draw[->, thick] ([xshift=-3.9cm]top.south) -- (rep.north);
+\draw[->, thick] (top.south) -- (geo.north);
+\draw[->, thick] ([xshift=3.9cm]top.south) -- (opt.north);
+
+\draw[->] (rep) -- (repb);
+\draw[->] (geo) -- (geob);
+\draw[->] (opt) -- (optb);
+
+\end{tikzpicture}
+\caption{Foundation models and agentic AI framework for thermal--fluid systems.}
+\label{fig:foundation_agentic_framework}
+\end{figure}
