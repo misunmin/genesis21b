@@ -4,7 +4,8 @@
 Unify \textbf{Nek5000/RS} simulation and experimental datasets
 (wire-coil and reactor-relevant geometries) into a common representation
 and demonstrate a baseline surrogate model for heat-transfer and
-pressure-drop prediction.
+pressure-drop prediction. Preparation of data sources and initial
+ICF simulations in MFEM.
 
 \vspace{4pt}
 
@@ -14,7 +15,8 @@ pressure-drop prediction.
 Fine-tune an existing geometry-aware fluid-mechanics foundation model
 using project-specific datasets. The learned latent representations will
 enable cross-configuration generalization, achieving accurate predictions
-($<5\%$ error) across unseen geometries.
+($<5\%$ error) across unseen geometries. Initial version of the MFEM-based
+ICF miniapp.
 
 \vspace{4pt}
 
@@ -24,7 +26,7 @@ enable cross-configuration generalization, achieving accurate predictions
 Integrate Bayesian and derivative-free optimization methods in latent
 space and demonstrate closed-loop design loops, achieving at least
 $5$--$10\times$ reduction in design iteration cost relative to
-brute-force CFD.
+brute-force CFD in both Nek and MFEM based applications.
 
 \vspace{4pt}
 
@@ -35,4 +37,4 @@ Deploy agentic AI orchestration for adaptive sampling and
 multi-objective optimization, demonstrating end-to-end automated
 design with $10$--$20\times$ design-cycle acceleration and improved performance
 (e.g., heat-transfer versus pressure-drop trade-off) on a
-representative heat-exchanger system.
+representative heat-exchanger system and ICF configuration.

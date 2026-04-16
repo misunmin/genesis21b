@@ -153,7 +153,7 @@ traditional approaches (e.g., a 32$\times$ gain compared to 2nd-order finite vol
 methods \cite{Min2024Wind,Tomboulides2024ABL}).  Nek5000/RS has been
 extensively used for reactor thermal-hydraulics and is part of NRC-accepted
 workflows, while MFEM has enabled important fusion applications in the DOE, based both
-on magnetic and on inertial confinment approaches.
+on magnetic and on inertial confinement approaches.
 The proposed work, however, is fundamentally distinct.
 Instead of advancing simulation capabilities alone, we develop a generalizable
 foundation model that unifies data across geometries and regimes, and we
@@ -337,7 +337,10 @@ we have ready access to full-3D high-fidelity datasets for adiabatic flow in a
 \cite{Dai2025WireWrapped61Pin} and heated flow in a 19-pin assembly under
 multiple flow and heating conditions \cite{shavernacie}.  All of these
 simulation datasets have corresponding experimental datasets that demonstrate
-their validity.  Additional data is currently being generated using NekRS on
+their validity. Similarly, the MFEM team has simulation data from model ICF
+simulations in wide regimes, geometries and resolutions.
+Both Nek and MFEM have infrastructures to automatically produce additional data,
+some of which is currently being generated on
 existing compute resources on OLCF Frontier, ALCF Aurora, and the NE Divison
 cluster, {\em Nek5k}, as part of ongoing studies.
 This includes a series of
