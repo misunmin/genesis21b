@@ -1,25 +1,23 @@
-
-
 =================================================================
   Dillon:
 =================================================================
 
      (1) OLD runs
-     37 wire-wrapped pins (E=2.2M) for 1 month using xxxx nodes on Summit    
+     37 wire-wrapped pins (E=2.2M) for 1 month using xxxx nodes on Summit
      steady state flow profile (TerraPower owns data)
      37 pins, E = 2.2M, lx1 = 8, nodes = 960 V100s ranks, wall time per step ~ 0.3s
-     1 million timesteps (N=7), DT= 1e-5, CFL=3, 
+     1 million timesteps (N=7), DT= 1e-5, CFL=3,
      1 week  --  v23 nekRS, 3 months 1.5% difference
 
      754 million point runs --> rotationally symmetric and so 1/6 downsample good!
-     125 downsampled grid points --> 
-      30 configurations? 600 V1000x --> 150-200 tiles on Aurora 
+     125 downsampled grid points -->
+      30 configurations? 600 V1000x --> 150-200 tiles on Aurora
 
      (2) NEW runs can be the following:
      April-Jun: data to be ready on Frontier/Aurora; run the traditional runs
                 E=1M for the similar geometry
-                     
-   
+
+
      plan: 30 configurations for training single pin?
      plan: 1pin, 19pin --> predict 37 pins
      plan: 1pin, 19pin, 37pins --> predict 217 pins
@@ -28,36 +26,35 @@
 Ricardo:
 =================================================================
 
-  Use of Tensor flow, 
-   - how many nodes for inference 
+  Use of Tensor flow,
+   - how many nodes for inference
      30sec on 1 GPU for 50M grid points (on new mesh)
-     1 day of run --> speedup 
+     1 day of run --> speedup
 
-  Aircraft case:  
+  Aircraft case:
      input: steady state statistical data (eg: mean velocity flows) from WMLES
-     output: new full flow fields   
+     output: new full flow fields
    - 50M grid points case (down-sampled version of xxx) <--- 115M (1 day run)
-     3-7 days for training on 4-8 H200s 
+     3-7 days for training on 4-8 H200s
      parallelization possible for training
-   - 100 different configurations  (different angles, etc)    
+   - 100 different configurations  (different angles, etc)
    - no BC needed
    - inter
- 
+
    GNN: compressing flow data using convolutional GNN encoder
-   GNN: compressing the geometry data 
+   GNN: compressing the geometry data
 
 
   Digital Twin:
-   - experimental 
+   - experimental
    - Active learning traning
    - uncertainty
-    
+
 
   Two components: Surrogate + Optimization
     Agentic AI (LLM based)
-      Steady case -- 
+      Steady case --
 
     GPTOSS, OpenLLM for scientific application
-    
+
 =================================================================
- 

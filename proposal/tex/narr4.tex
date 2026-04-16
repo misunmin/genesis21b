@@ -2,48 +2,48 @@
 
 This project will develop a {\bf foundation-model-driven, agentic-AI framework}
 \cite{Vinuesa2026XAI} for the prediction, optimization, and control of
-thermal-fluid transport in energy systems, with primary emphasis on 
-fission and fusion applications.  
-  These fluid systems are central to DOE’s advanced energy programs and 
-are characterized by complex turbulent flow, strong geometric sensitivity, 
+thermal-fluid transport in energy systems, with primary emphasis on
+fission and fusion applications.
+  These fluid systems are central to DOE’s advanced energy programs and
+are characterized by complex turbulent flow, strong geometric sensitivity,
 and stringent performance and safety constraints.
   They also constitute a rich data domain, combining decades of high-fidelity
 simulations using Nek5000/RS (one of the few CFD codes accepted in NRC
 licensing workflows) and MFEM (the 2025 Gordon Bell Winner) with extensive
-experimental datasets from both open literature and proprietary industry sources. 
-   The central objective of this {\bf Phase I effort} is to unify these heterogeneous 
+experimental datasets from both open literature and proprietary industry sources.
+   The central objective of this {\bf Phase I effort} is to unify these heterogeneous
 datasets into a common (mesh-based) geometry-aware representation and to demonstrate rapid,
 accurate, surrogate solution generation that will be applied to design and
 optimization of thermal-fluid systems.
 
-Thermal–fluid transport governs the performance of a wide range of energy systems. 
-In nuclear fission and fusion reactors, fluid motion transports thermal energy 
-from core processes (fission/fusion reactions) to heat exchangers, where working 
-fluids drive turbines or other power-generation devices. Combustion systems and 
-inertially confined fusion (ICF) platforms similarly depend on controlled fluid 
-motion to initiate and sustain energy-producing reactions. 
-However, {\bf system- and device-level optimization—particularly when involving 
-geometric or topology modifications—typically requires tens to hundreds of high-fidelity 
-simulations}, each taking days to months on high-performance computing (HPC) platforms. 
-The computational burden arises from complex geometries, broad ranges of timescales 
-(e.g., convective flow versus thermal diffusion in solids), and stringent 
+Thermal–fluid transport governs the performance of a wide range of energy systems.
+In nuclear fission and fusion reactors, fluid motion transports thermal energy
+from core processes (fission/fusion reactions) to heat exchangers, where working
+fluids drive turbines or other power-generation devices. Combustion systems and
+inertially confined fusion (ICF) platforms similarly depend on controlled fluid
+motion to initiate and sustain energy-producing reactions.
+However, {\bf system- and device-level optimization—particularly when involving
+geometric or topology modifications—typically requires tens to hundreds of high-fidelity
+simulations}, each taking days to months on high-performance computing (HPC) platforms.
+The computational burden arises from complex geometries, broad ranges of timescales
+(e.g., convective flow versus thermal diffusion in solids), and stringent
 accuracy requirements.
 
-The overall goal of this project, to be realized in Phase II, is to radically 
-transform the design cycle for energy-system components by providing reliable, 
-high-accuracy AI-driven surrogate models tightly coupled with state-of-the-art 
-design optimization methods. The Phase I test problems are selected to establish 
-feasibility across representative DOE-relevant applications, including reactor-core 
-flows and inertially confined fusion (ICF) miniapps, while liquid-metal 
-magnetohydrodynamics (MHD) relevant to magnetically confined fusion will be 
+The overall goal of this project, to be realized in Phase II, is to radically
+transform the design cycle for energy-system components by providing reliable,
+high-accuracy AI-driven surrogate models tightly coupled with state-of-the-art
+design optimization methods. The Phase I test problems are selected to establish
+feasibility across representative DOE-relevant applications, including reactor-core
+flows and inertially confined fusion (ICF) miniapps, while liquid-metal
+magnetohydrodynamics (MHD) relevant to magnetically confined fusion will be
 addressed in Phase II.
 As illustrated in Fig. 1, Phase I test cases include:
     (i) optimization of pressure-drop and heat-transfer performance in \textbf{wire-wrapped fuel-rod bundles};
    (ii) a \textbf{miniapp for inertially confined fusion}; and
   (iii) optimization of \textbf{wire-coil inserts} for
 heat-transfer enhancement in beam-line cooling systems.
-These test cases were selected because of the availability of reliable simulation 
-and experimental data and their scalability across a wide range of problem sizes, 
+These test cases were selected because of the availability of reliable simulation
+and experimental data and their scalability across a wide range of problem sizes,
 with simulation degrees of freedom (DOFs) ranging from $10^7$ to $10^{12}$
 \cite{gb23,gb25mfem}.
 
@@ -71,8 +71,8 @@ which is significantly accelerated.
 \section{    Project Objectives \hspace{1.0in} 1/2 PAGE}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Original taxonomy figure data is in latex 
-%\input taxonomy_new5.tex 
+% Original taxonomy figure data is in latex
+%\input taxonomy_new5.tex
 
 \begin{figure}[t]
 \centering
@@ -83,21 +83,21 @@ which is significantly accelerated.
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\begin{wrapfigure}{r}{0.45\textwidth} 
-%\centering 
+%\begin{wrapfigure}{r}{0.45\textwidth}
+%\centering
 %\includegraphics[width=0.44\textwidth]{../figs/taxonomy2.png}
 %\vspace{-2pt}
 %\caption{Foundation models and agentic AI framework for thermal--fluid systems.}
-%\label{fig:foundation_agentic_framework} 
+%\label{fig:foundation_agentic_framework}
 %\vspace{-7pt}
 %\end{wrapfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % \tiny \begin{verbatim}
-% Misun/Elia/Dillon: Provide a clear and concise statement of the specific objectives of the proposed project.  
+% Misun/Elia/Dillon: Provide a clear and concise statement of the specific objectives of the proposed project.
 % Address how the objectives align with the chosen focus topic and lead to an AI advantage.
-% \end{verbatim} 
+% \end{verbatim}
 % \normalsize
 
 \input objective
@@ -106,16 +106,16 @@ which is significantly accelerated.
 \section{    Proposed Research and Methods \hspace{1.0in} 1-1/2 PAGES}
 
 %% \tiny \begin{verbatim}
-%%   Provide a clear research plan for a 9-month project and describe the proposed activities and methods. 
-%% 
-%%   Include enough technical details to evaluate the impact of the proposed activity. 
-%% 
-%%   For each activity, indicate the responsibility of the key investigator(s) and the associated budget.  
-%%   If the proposed application is building on an existing, currently funded DOE project, describe how 
+%%   Provide a clear research plan for a 9-month project and describe the proposed activities and methods.
+%%
+%%   Include enough technical details to evaluate the impact of the proposed activity.
+%%
+%%   For each activity, indicate the responsibility of the key investigator(s) and the associated budget.
+%%   If the proposed application is building on an existing, currently funded DOE project, describe how
 %%   the submitted application leverages that work and is distinct from the existing funding.
-%% 
-%%   Here building on Vlad and Ricardo's text; ANYONE - please jump in 
-%% \end{verbatim} 
+%%
+%%   Here building on Vlad and Ricardo's text; ANYONE - please jump in
+%% \end{verbatim}
 %% \normalsize
 
 
@@ -125,7 +125,7 @@ training sets will be based on time-independent {mean-flow} fields that are alre
 available or readily generated from Nek5000/RS and MFEM using direct numerical
 or large-eddy simulations (DNS or LES).  The geometry for each dataset is embedded
 in the computational mesh, whose nodes are associated with corresponding
-solution variables velocity, pressusure, and temperature.   Cases with 
+solution variables velocity, pressusure, and temperature.   Cases with
 varying geometry or parameters (e.g., Reynolds number) are fed into an
 encoder, which builds the latent space.  Once trained, a new geometry (mesh)
 can be fed into the encoder to generate a surrogate solution within a few
@@ -135,7 +135,7 @@ positions using datasets of size $n \approx 50$M.
 The encoding process uses PyTorch on GPUs (several days on four to eight H200s)
 and inference takes about 30 seconds.  As products of DOE's Exascale Computing
 Project, both Nek5000/RS and MFEM run on NVIDIA, AMD, and Intel accelerators,
-so there are no GPU portability issues.  
+so there are no GPU portability issues.
 
 This effort builds directly on DOE investments in high-fidelity simulation.
 Nek5000/RS and MFEM are Gordon Bell Prize winning codes
@@ -233,7 +233,7 @@ simulations.  This ensures predictive accuracy while maintaining robustness
 across operating conditions.
 %
 All team members will work on {\bf cross-domain validation and integration into the
-Genesis Mission ecosystem}, with contributions from all partners. 
+Genesis Mission ecosystem}, with contributions from all partners.
 
 
 
@@ -251,7 +251,7 @@ Genesis Mission ecosystem}, with contributions from all partners.
 %% \tiny \small \begin{verbatim}
 %%   Misun, Ricardo, Luke
 %%   Provide a list of clearly defined and measurable milestones of the project.
-%% \end{verbatim} 
+%% \end{verbatim}
 %% \normalsize
 
 \input milestone
@@ -261,24 +261,24 @@ Genesis Mission ecosystem}, with contributions from all partners.
 
 % \tiny \begin{verbatim}
 %   Misun, Paul, Tzanio, Dillon  (pay attn to APPENDIX 2)
-% 
-%   Describe which existing or new data sources will be used. Address your team’s access to the data.  
-%   If applicable, indicate which AI models or frameworks will be used in your proposed project.  
+%
+%   Describe which existing or new data sources will be used. Address your team’s access to the data.
+%   If applicable, indicate which AI models or frameworks will be used in your proposed project.
 %   Do not include a computing resources--to be done in Appendix 2.
-% 
+%
 %   Here, discuss: o  Experimental data for fuel pins \cite{KAERI,Todreas}
 %                  o  Nek5000/RS and MFEM as trusted high-accuracy and efficient sources
 %                  - Top-ranked in numerous benchmark cases (T-junction \cite{tjunc}, 5x5-pin spacer grid \cite{5pin}, etc.)
-%                  - 1/32 the amount of computational resources as FV for the same accuracy for Re=50M 
-%                    boundary layer calculation (1/8 the number of grid points, 1/2 the number of timesteps, 
+%                  - 1/32 the amount of computational resources as FV for the same accuracy for Re=50M
+%                    boundary layer calculation (1/8 the number of grid points, 1/2 the number of timesteps,
 %                    and 1/2 the time per step, per gridpoint on the same platform, OLCF Summit)
-% 
-%  o  Collins data for the small wire-coil - both experimental and numerical results available 
-% \end{verbatim} 
-% 
+%
+%  o  Collins data for the small wire-coil - both experimental and numerical results available
+% \end{verbatim}
+%
 % \normalsize
 
-%\begin{figure}[h] 
+%\begin{figure}[h]
 % \centering {\setlength{\unitlength}{1.00in}
 %   \begin{picture}(2.0,1.5)(0,0)
 %      \put(0.0,0.0){\includegraphics[height=1.5in]{../figs/collins_02_nek_nu3.png}}
@@ -288,7 +288,7 @@ Genesis Mission ecosystem}, with contributions from all partners.
 %vs. Reynolds number for various wire-coil insert geometries \cite{kaneko22}.
 %}
 %\end{figure}
-%\vspace*{.1in} 
+%\vspace*{.1in}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{wrapfigure}{r}{0.4\textwidth}
@@ -330,7 +330,7 @@ multiple flow and heating conditions \cite{shavernacie}.  All of these
 simulation datasets have corresponding experimental datasets that demonstrate
 their validity.  Additional data is currently being generated using NekRS on
 existing compute resources on OLCF Frontier, ALCF Aurora, and the NE Divison
-cluster, {\em Nek5k}, as part of ongoing studies.  
+cluster, {\em Nek5k}, as part of ongoing studies.
 This includes a series of
 7-pin reflector assemblies and additional 37-pin simulations similar to those
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -357,13 +357,13 @@ points in the wire-wrap diameter / pitch space is straightforward.  We are able
 to generate data for single-pin, fully periodic domains to cover a broad range
 of conditions quickly which can be integrated in to the training data to
 control uncertainty.
-%This validity of this simulation data is backed up through extensive comparisons with experiments.  
+%This validity of this simulation data is backed up through extensive comparisons with experiments.
 
 Because time-averaging smooths the solution, it is possible to down-sample the
 mesh and solution data before encoding.  Because derivatives are critical to
 pressure-drop and thermal flux QOIs, {\em spatial derivatives} will also be
 encoded during training in order to bypass the need for a fine mesh when
-differentiating the surrogate solution.  
+differentiating the surrogate solution.
 
 
 
@@ -400,24 +400,24 @@ to be had in this case that should be found automatically by the proposed
 AI framework.
 
 % \medskip
-% {\bf CHECK: Tzanio/Vladimir} MFEM data sources and models are needed here!! 
+% {\bf CHECK: Tzanio/Vladimir} MFEM data sources and models are needed here!!
 
 
 \section{    Decision Gate Metrics \hspace{1.0in} 1/2 PAGE}
 
 % \tiny \small \begin{verbatim}
-%   Ricardo / Luke / Misun 
-% 
+%   Ricardo / Luke / Misun
+%
 %   Provide specific metrics that can be used for the evaluation of Phase I go/no
-%   go decision. 
-% 
-%   DOE encourages the development of metrics to identify AI advantage. 
+%   go decision.
+%
+%   DOE encourages the development of metrics to identify AI advantage.
 %   One such metric could include scaling behavior which shows increasing performance
-%   as additional data, computing, and/or other resources are applied. 
-% 
+%   as additional data, computing, and/or other resources are applied.
+%
 %   Quantitative statements enabling transformative science and engineering through AI are preferred.
-% \end{verbatim} 
-% 
+% \end{verbatim}
+%
 % \normalsize
 
 \input metric

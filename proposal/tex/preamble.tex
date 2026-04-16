@@ -1,8 +1,7 @@
-
 %\newcommand{\Title}{Proposal Title (see preamble.tex)}
 \newcommand{\Title}{Foundation Models for Automated Design of Energy Flow Systems}
-\usepackage[breaklinks=true, pdftex, 
-  pdfborder={0 0 0}, colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue, 
+\usepackage[breaklinks=true, pdftex,
+  pdfborder={0 0 0}, colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue,
   bookmarks=false, pdfpagelabels=false, pdftitle={\Title}]{hyperref}
 \usepackage{fullpage}
 \usepackage{tikz}
@@ -19,7 +18,7 @@
 \usepackage{color}
 \usepackage{multirow}
 \usepackage{pdfpages}
-\usepackage{longtable} 	%used in Masha's c&p
+\usepackage{longtable}  %used in Masha's c&p
 \usepackage{datetime}
 \usepackage{xspace}
 \usepackage{enumitem} % For tighter lists
@@ -38,7 +37,7 @@
 \setlength{\commentWidth}{2in}
 \newcommand{\atcp}[1]{\tcp*[r]{\makebox[\commentWidth]{#1\hfill}}}
 
-\graphicspath{{./figs/}} 
+\graphicspath{{./figs/}}
 \usepackage{pgfgantt}
 \usepackage{pdflscape} % provides the landscape environment
 %\usepackage{mathtools}
@@ -62,7 +61,7 @@
 % define highlight box style
 \usepackage{mdframed}                 % creating color text boxes
 \usepackage{colortbl}
-% \usepackage[table,dvipsnames]{xcolor}  
+% \usepackage[table,dvipsnames]{xcolor}
 \usepackage[most]{tcolorbox}
 \usepackage{enumitem}
 
@@ -152,10 +151,10 @@ backgroundcolor=yellow!10!white,linecolor=yellow!50!black}
 %\newcommand{\mcomment}[2]{\textcolor{red}{#2}\marginpar{{\color{red}\textbf{#1 Note}}}}
 \newcommand{\call}[1]{\noindent\textcolor{blue}{\textbf{From the call:} #1}}
 %\renewcommand{\call}[1]{ } % Final version
- \newcommand{\team}[1]			% team command
+ \newcommand{\team}[1]                  % team command
       {\textcolor{cyan}{#1}\marginpar{{\color{cyan}\textbf{Team}}}}
-% \newcommand{\team}[1]{}			% team command
-  
+% \newcommand{\team}[1]{}                       % team command
+
 \newcommand{\ignore}[1]{}  % Use to comment out large blocks of text
 \newcommand{\BigO}[1]{\ensuremath{\mathcal{O}\!\left(#1\right)}}
 \newcommand{\Sec}[1]{{\S\ref{#1}}}
@@ -186,28 +185,28 @@ backgroundcolor=yellow!10!white,linecolor=yellow!50!black}
 % \pdfminorversion=6 % Turns of PDF version warnings
 
 
-% \newcommand{\bio}[3]{\newpage \phantomsection 
-% 		 \pagestyle{fancy} \sectionmark{BIOGRAPHICAL SKETCHES \hfill #1}
+% \newcommand{\bio}[3]{\newpage \phantomsection
+%                \pagestyle{fancy} \sectionmark{BIOGRAPHICAL SKETCHES \hfill #1}
 %    \IfFileExists{bio/#3.tex}{\addcontentsline{toc}{subsection}{#1 -- #2} \input{bio/#3}
 %     }{\IfFileExists{bio/#3.pdf}{\addcontentsline{toc}{subsection}{#1 -- #2}
 %          \includepdf[pages=-,offset=0 -65,pagecommand={\thispagestyle{fancy}}]{bio/#3}
 %       }{% If the desired PDF file doesn't exist, warn about it but continue
-% 	 \addcontentsline{toc}{subsection}{\textcolor{red}{#1 -- #2 MISSING}}
+%        \addcontentsline{toc}{subsection}{\textcolor{red}{#1 -- #2 MISSING}}
 %          \begin{center}
 %             \textbf{\color{red}\Large No file found for `#1'!\\
 %                     Tried bio/#3.tex and bio/#3.pdf} \\
 %          \end{center}}}}
 
-% \newcommand{\cnp}[3]{\newpage \phantomsection 
-% 		 \pagestyle{fancy} \sectionmark{SUPPORT OF INVESTIGATORS \hfill #1}
-%    \IfFileExists{cnp/#3support.tex}{\addcontentsline{toc}{subsection}{#1 -- 
+% \newcommand{\cnp}[3]{\newpage \phantomsection
+%                \pagestyle{fancy} \sectionmark{SUPPORT OF INVESTIGATORS \hfill #1}
+%    \IfFileExists{cnp/#3support.tex}{\addcontentsline{toc}{subsection}{#1 --
 % #2} \input{cnp/#3support.tex}
-%     }{\IfFileExists{cnp/#3.pdf}{ 
+%     }{\IfFileExists{cnp/#3.pdf}{
 % \addcontentsline{toc}{subsection}{#1 -- #2}
-%          \includepdf[pages=-,offset=0 -65,pagecommand={\thispagestyle{fancy}} 
+%          \includepdf[pages=-,offset=0 -65,pagecommand={\thispagestyle{fancy}}
 % ]{cnp/#3.pdf}
 %       }{% If the desired PDF file doesn't exist, warn about it but continue
-% 	 \addcontentsline{toc}{subsection}{\textcolor{red}{#1 -- #2 MISSING!!!}}
+%        \addcontentsline{toc}{subsection}{\textcolor{red}{#1 -- #2 MISSING!!!}}
 %          \begin{center}
 %             \textbf{\color{red}\Large No file found for `#1'!\\
 %                     Tried cnp/#3.tex and cnp/#3.pdf} \\
@@ -217,7 +216,7 @@ backgroundcolor=yellow!10!white,linecolor=yellow!50!black}
 % \newcommand{\sven}[1]{{{\color{red}{Sven:} #1}}}
 
 \usepackage[normalem]{ulem} % For \sout
-\newcommand\hcancel[2][black]{\setbox0=\hbox{$#2$}\rlap{\raisebox{.45\ht0}{\textcolor{#1} {\rule{\wd0}{1pt}}}}#2} 
+\newcommand\hcancel[2][black]{\setbox0=\hbox{$#2$}\rlap{\raisebox{.45\ht0}{\textcolor{#1} {\rule{\wd0}{1pt}}}}#2}
 \newcommand{\replace}[2]{{\color{red}\sout{#1}\color{black}{\color{red}#2\color{black}}}} %TeX source markup.
 \newcommand{\replacemath}[2]{{\hcancel[red]{#1}{}{\color{red}#2\color{black}}}} %TeX source markup.
 \newcommand{\slnote}[1]{{{\color{blue}{ SL note:} #1}}\marginpar{\color{blue}{SL}}}
@@ -241,15 +240,15 @@ backgroundcolor=yellow!10!white,linecolor=yellow!50!black}
 
 \usepackage{textpos}
 \NewEnviron{RandSample}{%
-	\colorbox{green!15!white}{
-		\parbox{0.97\hsize}{
-			\begin{textblock*}{75pt}[1, 1](\hsize,5pt)
-			\emph{$\gets$ Sampler}
-			\end{textblock*}%
-			\BODY
-		}
-	}
+        \colorbox{green!15!white}{
+                \parbox{0.97\hsize}{
+                        \begin{textblock*}{75pt}[1, 1](\hsize,5pt)
+                        \emph{$\gets$ Sampler}
+                        \end{textblock*}%
+                        \BODY
+                }
+        }
 }
 
 \usepackage{tocloft}
-\setlength{\cftsecnumwidth}{2em} 
+\setlength{\cftsecnumwidth}{2em}

@@ -4,7 +4,7 @@
 \begin{document}
 
 %%% Todd equation spacing commands
-\setlength{\abovedisplayskip}{3pt} 
+\setlength{\abovedisplayskip}{3pt}
 \setlength{\abovedisplayshortskip}{2pt}
 
 \setlength{\belowdisplayskip}{3pt}
@@ -18,7 +18,7 @@
 
 
 \newif\ifincludesynergistic
-\newif\ifincludeletter      
+\newif\ifincludeletter
  \includesynergistictrue     % include
  \includelettertrue     % include
 %\includesynergisticfalse   % exclude
@@ -38,14 +38,14 @@
 % \addcontentsline{toc}{subsection}{Proposal Supplemental Cover Page}
 % \input{SupplCover}
 
-\setcounter{secnumdepth}{3} 
+\setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 
 %%% Required: Table of Contents
 \newpage \phantomsection
-% \makeatletter				% More room for page numbers in TOC
-% \renewcommand{\@pnumwidth}{3.1em}	% 
-% \renewcommand{\@tocrmarg}{4.0em}	%
+% \makeatletter                         % More room for page numbers in TOC
+% \renewcommand{\@pnumwidth}{3.1em}     %
+% \renewcommand{\@tocrmarg}{4.0em}      %
 % \setcounter{tocdepth}{2}
  \addcontentsline{toc}{subsection}{Table of Contents}
  \renewcommand\contentsname{Contents}
@@ -55,7 +55,7 @@
 \makeatletter
 \@starttoc{toc}
 \makeatother
-% \makeatother				% End more room in TOC
+% \makeatother                          % End more room in TOC
 
 \pagestyle{fancy}
 % \newpage \phantomsection ABSTRACT IS A SEPARATE PAGE
@@ -73,18 +73,18 @@
 
 \newpage
 
-\input narr4 
+\input narr4
 
-%%% \newpage 
+%%% \newpage
 %%% \section{Original Inputs}
 %%% \noindent {\Large \bf Here retaining ricardo.tex, for the record.}
 %%% \input ricardo
 
-%%% \newpage 
+%%% \newpage
 %%% \noindent {\Large \bf Here retaining tzanio.tex, for the record.}
 %%% \input tzanio
 
-%%% \newpage 
+%%% \newpage
 %%% \noindent {\Large \bf Here optimization, AI, DINO sven.tex, for the record.}
 %%% \input sven
 
@@ -96,14 +96,14 @@
 %%   \input{metrics}
 
 \newpage
-\lhead{ } 
+\lhead{ }
 \appendix
 \renewcommand{\thesection}{A.\arabic{section}}
 \addcontentsline{toc}{section}{APPENDICES \pagebudget{(Should start on or before
 page 6)}}
 
 %%% Appendix 1: BIBLIOGRAPHY \& REFERENCES CITE
-\newpage 
+\newpage
 \pagestyle{fancy} \lhead{\it BIBLIOGRAPHY \& REFERENCES CITED}
 \section{Bibliography \& References Cited}
 \bibliographystyle{abbrvnat}
@@ -111,14 +111,14 @@ page 6)}}
 \lhead{}
 
 %%% Appendix 2: Facilities \& Other Resources
-\newpage 
+\newpage
 \section{Facilities \& Other Resources\pagebudget{0.5--1pg}}
 \noindent
 
 \input facilities
 
 %%% Appendix 3: Equipment
-\newpage 
+\newpage
 \section{Equipment}
 
 Not applicable to this project.
@@ -128,7 +128,7 @@ Not applicable to this project.
 \section{Data Management Plan\pagebudget{Check!}}
 \label{app:dataplan}
 
-\input{anl-data} 
+\input{anl-data}
 
 %%% Appendix 5: SYNERGISTIC ACTIVITIES (OPTIONAL)
 \newpage
@@ -141,7 +141,7 @@ Not applicable to this project.
 \newpage
 \section{Transparency of Foreign Connections}
 \label{app:foreign}
- 
+
 Not applicable to this project.
 
 %%% Appendix 7: Other Attachments
@@ -152,4 +152,3 @@ Not applicable to this project.
 \input letter
 
 \end{document}
-

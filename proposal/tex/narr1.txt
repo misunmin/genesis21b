@@ -1,5 +1,3 @@
-
-
 Successful AI models and workflows developed under this effort may be
 integrated into AmSC, ModCon, and/or other key components of the Genesis
 Mission platform.
@@ -22,11 +20,11 @@ scientific capability, justifying further investment.
 
 The following organization of the Project Narrative is strongly encouraged:
 
-1 PAGE:    Background/Introduction 
+1 PAGE:    Background/Introduction
 
 /* Explain the importance and relevance of the proposed work and clearly
-   articulate which aspect of the chosen challenge will be addressed and 
-   solved.  
+   articulate which aspect of the chosen challenge will be addressed and
+   solved.
 
      1st and 2nd paragraphs
 
@@ -34,7 +32,7 @@ The following organization of the Project Narrative is strongly encouraged:
    Set the proposed research in perspective to other efforts in the field.
      Luke/Ricardo
 
-   Highlight novel or unique aspects of the proposed work. 
+   Highlight novel or unique aspects of the proposed work.
      Nek5000/RS and MFEM are Gordon Bell Winners
      Order-of-magnitude performance gains, for same accuracy, over
      low-order codes.
@@ -67,7 +65,7 @@ device-level optimization, often involving domain-topology modifications, can
 require hundreds of simulations, each of which can take days to months on
 high-performance computing (HPC) platforms, depending on the domain complexity,
 the range of timescales (e.g., convective-flow scales versus thermal-diffusive
-scales in solids), and required fidelity.   
+scales in solids), and required fidelity.
 
 Elia/Dillon/Vlad/Tzanio for preceding par.
 
@@ -83,7 +81,7 @@ orders of magnitude) design exploration costs such that the design process for
 critical thermal-fluid components can be fully automated.  Ground truths for
 the project derive from available experimental and simulated data and from
 existing high-order exascale codes MFEM and Nek5000/RS, both of which have been
-extended to have 
+extended to have
 
 The targeted test problems are directly relevant to several critical components
 of systems in the DOE energy systems portfolio. These include optimizing
@@ -94,30 +92,30 @@ transfer in synchrotron beam-line devices [collins22].
 Elia/Dillon/Vlad/Tzanio for preceding par.
 
 
-   Highlight novel or unique aspects of the proposed work. 
+   Highlight novel or unique aspects of the proposed work.
      Nek5000/RS and MFEM are Gordon Bell Winners
      Order-of-magnitude performance gains, for same accuracy, over
      low-order codes.
 
 
-1/2 PAGE:    Project Objectives 
+1/2 PAGE:    Project Objectives
 
    Provide a clear and concise statement of the specific objectives of the
-   proposed project. Address how the objectives align with the chosen focus 
+   proposed project. Address how the objectives align with the chosen focus
    topic and lead to an AI advantage.
 
       Ricardo / Luke
 
-1.5 PAGE:    Proposed Research and Methods 
+1.5 PAGE:    Proposed Research and Methods
 
   Provide a clear research plan for a 9-month project and describe the proposed
-  activities and methods. 
+  activities and methods.
 
-  Include enough technical details to evaluate the impact of the proposed activity. 
+  Include enough technical details to evaluate the impact of the proposed activity.
 
-  For each activity, indicate the responsibility of the key investigator(s) and 
-  the associated budget.  If the proposed application is building on an existing, 
-  currently funded DOE project, describe how the submitted application leverages 
+  For each activity, indicate the responsibility of the key investigator(s) and
+  the associated budget.  If the proposed application is building on an existing,
+  currently funded DOE project, describe how the submitted application leverages
   that work and is distinct from the existing funding.
 
 
@@ -127,13 +125,13 @@ Elia/Dillon/Vlad/Tzanio for preceding par.
 
 
 
-1 PAGE:    Milestones in the Nine Months 
+1 PAGE:    Milestones in the Nine Months
 
   Misun
 
   Provide a list of clearly defined and measurable milestones of the project.
 
-1/2 PAGE:    Data Sources and Models 
+1/2 PAGE:    Data Sources and Models
 
   Misun
 
@@ -144,18 +142,17 @@ Elia/Dillon/Vlad/Tzanio for preceding par.
   performance period; this should be done in Appendix 2.
 
 
-1/2 PAGE:    Decision Gate Metrics 
+1/2 PAGE:    Decision Gate Metrics
 
   Ricardo / Luke
 
   Provide specific metrics that can be used for the evaluation of Phase I go/no
-  go decision. 
+  go decision.
 
-  DOE encourages the development of metrics to identify AI advantage. 
-  One such metric could include scaling behavior which shows increasing 
+  DOE encourages the development of metrics to identify AI advantage.
+  One such metric could include scaling behavior which shows increasing
   performance as additional data, computing, and/or other resources
-  are applied. 
+  are applied.
 
-  Quantitative statements enabling transformative science and engineering 
+  Quantitative statements enabling transformative science and engineering
   through AI are preferred.
-

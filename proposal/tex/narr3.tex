@@ -1,7 +1,3 @@
-
-
-
-
 \begin{figure}
     \centering
     \includegraphics[width=0.15\linewidth]{../figs/collins1a_ppt.png}
@@ -46,7 +42,7 @@ device-level optimization, often involving domain-topology modifications, can
 require hundreds of simulations, each of which can take days to months on
 high-performance computing (HPC) platforms, depending on the domain complexity,
 the range of timescales (e.g., convective-flow scales versus thermal-diffusive
-scales in solids), and required fidelity.   
+scales in solids), and required fidelity.
 {\bf Elia/Dillon/Vlad/Tzanio for preceding par.}
 
 The overall goal of this project, to be realized in Phase II, is to radically
@@ -69,32 +65,32 @@ $10^{12}$ \cite{gb23,gb25mfem}.
 
 \tiny \small \begin{verbatim}
    Provide a clear and concise statement of the specific objectives of the
-   proposed project. Address how the objectives align with the chosen focus 
+   proposed project. Address how the objectives align with the chosen focus
    topic and lead to an AI advantage.
 
       Misun / Ricardo / Luke
-\end{verbatim} 
+\end{verbatim}
 \normalsize
 
 \newpage
 \section{    Proposed Research and Methods \hspace{1.0in} 1-1/2 PAGES}
 
 \tiny \begin{verbatim}
-  Provide a clear research plan for a 9-month project and describe the proposed activities and methods. 
+  Provide a clear research plan for a 9-month project and describe the proposed activities and methods.
 
-  Include enough technical details to evaluate the impact of the proposed activity. 
+  Include enough technical details to evaluate the impact of the proposed activity.
 
-  For each activity, indicate the responsibility of the key investigator(s) and the associated budget.  If the proposed application is building on an 
+  For each activity, indicate the responsibility of the key investigator(s) and the associated budget.  If the proposed application is building on an
   existing, currently funded DOE project, describe how the submitted application leverages that work and is distinct from the existing funding.
 
-  Here building on Vlad and Ricardo's text; ANYONE - please jump in 
-\end{verbatim} 
+  Here building on Vlad and Ricardo's text; ANYONE - please jump in
+\end{verbatim}
 \normalsize
 
 
 The first component of the research plan focuses on the development of a
 geometry-aware foundation model for thermal-fluid prediction, led by ANL,
-UIUC, and PSU.  
+UIUC, and PSU.
 Building on prior work on foundation models~\cite{Vishwasrao2026AgenticPDE}, as
 well as simulation and experimental data from wire-wrapped bundles
 \cite{Dai2025WireWrapped61Pin,kaeri37pin}, and related configurations such as
@@ -103,12 +99,12 @@ common latent space independent of mesh topology.
 %
 This is particularly critical for reactor applications, where geometry
 variations (wire pitch, rod spacing, bundle configuration) strongly influence
-heat transfer and pressure losses. 
+heat transfer and pressure losses.
   The model will combine graph-basedrepresentations of geometry, variational
 autoencoders for compressing high-dimensional flow
 fields~\cite{Vinuesa2022MLCFD,SoleraRico2024BetaVAE}, and conditional latent
 diffusion~\cite{Vishwasrao2025DiffSPORT} to learn the latent distribution
-across operating regimes. 
+across operating regimes.
 %
 Training will exploit available experimental data sets (e.g.,
 \cite{kaeri37pin}) and DOE exascale-ready workflows and GPU-enabled
@@ -145,7 +141,7 @@ fuel pellets. This provides a stringent test of the model’s ability to capture
 fast-evolving regimes. The second is a well-characterized heat transfer
 enhancement problem involving wire-coil inserts in cooling channels, where
 experimental data \cite{collins22}) show up to fourfold increases in heat
-transfer with well-quantified pressure penalties. 
+transfer with well-quantified pressure penalties.
 %
    This problem is particularly valuable for model development and validation
 due to the sensitivity of the QOI (typically the Nusselt number), its rich
@@ -180,7 +176,7 @@ simulation stack and the latent-space optimization strategies outlined in the
 proposal, particularly for adjoint-informed refinement and hybrid optimization
 workflows.
 
-  Together, these Phase I applications provide relatively wide coverage of 
+  Together, these Phase I applications provide relatively wide coverage of
 energy-relevant thermal-fluids systems.
 This effort builds directly on DOE investments in high-fidelity simulation.
 Nek5000/RS and MFEM are Gordon Bell Prize winning codes
@@ -216,7 +212,7 @@ AI-driven digital twins for reactor design and other DOE mission applications.
 \tiny \small \begin{verbatim}
   Misun, Ricardo, Luke
   Provide a list of clearly defined and measurable milestones of the project.
-\end{verbatim} 
+\end{verbatim}
 \normalsize
 
 \newpage
@@ -225,8 +221,8 @@ AI-driven digital twins for reactor design and other DOE mission applications.
 \tiny \small \begin{verbatim}
   Misun, Paul, Tzanio, Dillon  (pay attn to APPENDIX 2)
 
-  Describe which existing or new data sources will be used. Address your team’s access 
-  to the data.  If applicable, indicate which AI models or frameworks will be used in 
+  Describe which existing or new data sources will be used. Address your team’s access
+  to the data.  If applicable, indicate which AI models or frameworks will be used in
   your proposed project.  Do not include a computing resources--to be done in Appendix 2.
 
   Here, we discuss:
@@ -241,7 +237,7 @@ AI-driven digital twins for reactor design and other DOE mission applications.
 
     o  Collins data for the small wire-coil - both experimental and numerical
        results available \cite{collins22,kaneko23}
-\end{verbatim} 
+\end{verbatim}
 \normalsize
 
 The Argonne team has extensive experience in large eddy simulation (LES) of
@@ -310,14 +306,13 @@ workflows.
   Ricardo / Luke
 
   Provide specific metrics that can be used for the evaluation of Phase I go/no
-  go decision. 
+  go decision.
 
-  DOE encourages the development of metrics to identify AI advantage. 
+  DOE encourages the development of metrics to identify AI advantage.
   One such metric could include scaling behavior which shows increasing performance
-  as additional data, computing, and/or other resources are applied. 
+  as additional data, computing, and/or other resources are applied.
 
   Quantitative statements enabling transformative science and engineering through AI are preferred.
-\end{verbatim} 
+\end{verbatim}
 
 \normalsize
-
