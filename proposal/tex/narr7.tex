@@ -3,10 +3,11 @@
 \section{Background/Introduction}
 
 This project will develop a {\bf foundation-model-driven, agentic-AI framework}
-\cite{Vinuesa2026XAI} for the prediction, optimization, and control of
+\cite{Vinuesa2026XAI} for the prediction, optimization, and 
+{\color{red}VINUESA: remove? control} of
 thermal-fluid transport, with primary emphasis on components in fission and
 fusion energy systems.
-  Phase I demonstrator problems, illustrated in Fig.  \ref{fig:fm1}, right, 
+  Phase I demonstrator problems, illustrated in Fig.~\ref{fig:fm1}, right, 
 include 
 {\em (i)} wire-wrapped fuel-rod bundles, 
 {\em (ii)} an inertial-confinement fusion (ICF) miniapp, and 
@@ -104,10 +105,10 @@ necessary retraining may be identified at low cost.
 % \normalsize
 
 
-
-As illustrated in Fig. \ref{fig:fm1}, the {\bf Phase I} goal is to develop a training
-workflow to build AI surrogates for thermal-fluid solutions.   Initial
-training sets will be based on time-independent {mean-flow} fields that are already
+Figure~\ref{fig:tax} summarizes our approaches.
+As illustrated in Fig.~\ref{fig:fm1}, our goal of {\bf Phase I} is to develop a training
+workflow to build AI surrogates for thermal-fluid solutions. 
+Initial training sets will be based on time-independent {mean-flow} fields that are already
 available or readily generated from Nek5000/RS and MFEM using direct numerical
 or large-eddy simulations (DNS or LES).  The geometry for each dataset is embedded
 in the computational mesh, whose nodes are associated with corresponding
@@ -218,11 +219,13 @@ The second component, led by the University of Michigan, develops a {\bf
 latent-space optimization and control framework}, targeting both steady and
 transient operating regimes.  This effort will employ a hybrid strategy
 combining {\rm Bayesian optimization}~\cite{Morita2022BOCFD}, {\rm
-derivative-free optimization methods}, and {\rm reinforcement
-learning}~\cite{Font2025DRLFlowControl}.  Such approaches are essential for
+derivative-free optimization methods}, and 
+{\color{red}VINUESA, remove? {\rm reinforcement learning}~\cite{Font2025DRLFlowControl}}.  
+Such approaches are essential for
 reactor-relevant design spaces that are high-dimensional, non-convex, and
 constrained by safety and operational limits. Note that the MFEM team also
-has experience with reinforcement learning in for adaptive DOE-relevant
+has experience with {\color{red}VINUESA: remove? reinforcement learning}
+in for adaptive DOE-relevant
 finite element simulations \cite{RL23}.
 %
 Optimization will be performed directly within the latent space of the
