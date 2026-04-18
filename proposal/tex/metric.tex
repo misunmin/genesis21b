@@ -1,92 +1,60 @@
-\textbf{Decision Gate Metrics and Go/No-Go Criteria}
+\section{Decision Gate Metrics}
 
-Phase~I success will be evaluated using quantitative metrics that assess whether the proposed foundation-model and agentic-AI workflow provides a clear AI advantage over conventional CFD-only design. The decision gates focus on four areas: representation fidelity, predictive accuracy, reduction in expensive high-fidelity simulations, and end-to-end design acceleration. These metrics are aligned with the stated Phase~I objectives and milestones of the proposal.
-
-{\bf 1. Latent representation fidelity.}
-A first success criterion is that heterogeneous datasets from Nek5000/RS, MFEM, and experiments can be mapped into a common geometry-aware latent space without significant loss of information. Success will be defined by relative reconstruction errors below 3\% for the primary thermal-fluid state variables and below 1.5\% for key derived quantities such as pressure drop and heat-transfer metrics.
-
-{\bf 2. Predictive accuracy on unseen cases.}
-The foundation model must generalize beyond the training set. Success will be defined by mean prediction errors below 3\% for quantities of interest such as pressure drop, Nusselt number, heat-transfer coefficient, and selected mixing metrics on held-out geometries and operating conditions; and below 5\% for first- and second-order turbulence statistics. This level of accuracy must be demonstrated across at least three representative configuration classes.
-
-{\bf 3. Reduction in required CFD evaluations.}
-The AI-guided workflow must reduce reliance on repeated high-fidelity simulations during design. Success will be defined by demonstrating that the latent-space optimization identifies designs of comparable or better quality than a conventional parameter sweep or baseline optimization workflow while using at least 5$\times$ fewer high-fidelity CFD evaluations, with 10$\times$ as the target value.
-
-{\bf 4. End-to-end design acceleration.}
-The combined surrogate-plus-agentic workflow must reduce total design turnaround time relative to a CFD-only workflow. Success will be defined by demonstrating at least 10$\times$ acceleration in end-to-end design-cycle time on a representative heat-transfer or reactor thermal-hydraulics problem, with 20$\times$ as the stretch target. Additional evidence of AI advantage will be provided if increased training data and/or compute systematically improve either prediction accuracy or optimization efficiency.
-
-{\bf Go/No-Go Criterion.}
-Advancement to Phase II will require simultaneous demonstration of:
-(i) prediction errors below 5\% on unseen cases;
-(ii) at least 5$\times$ reduction in the number of required high-fidelity CFD evaluations; and
-(iii) at least 10$\times$ reduction in end-to-end design-cycle time for a representative DOE-relevant design problem. Meeting these criteria will establish that the proposed framework delivers a credible and measurable AI advantage for accelerated thermal-fluid design.
-
-
-\begin{comment}
-
-
-Phase~I success will be evaluated through quantitative metrics
-demonstrating predictive accuracy, computational efficiency,
-and measurable AI advantage relative to conventional
-high-fidelity CFD workflows using Nek5000/RS and MFEM.
-
-\textbf{1. Integrated Data and Latent Representation.}
-A unified geometry-aware dataset combining simulation
-and experimental thermal–fluid data will be constructed.
-Success criteria include:
+% \tiny \small \begin{verbatim}
+%   Ricardo / Luke / Misun
 %
-Successful integration of $\geq 95\%$ of selected datasets
-into a consistent latent representation;
+%   Provide specific metrics that can be used for the evaluation of Phase I go/no
+%   go decision.
 %
-Reconstruction fidelity of encoded flow fields with
-relative $L_2$ error $\leq 3\%$ for representative
-thermal–fluid variables.
+%   DOE encourages the development of metrics to identify AI advantage.
+%   One such metric could include scaling behavior which shows increasing performance
+%   as additional data, computing, and/or other resources are applied.
+%
+%   Quantitative statements enabling transformative science and engineering through AI are preferred.
+% \end{verbatim}
+%
 
-\textbf{2. Predictive Accuracy and Generalization.}
-The foundation model will be validated across unseen
-geometries and operating regimes. Success requires:
-%
-Prediction error $\leq 5\%$ for engineering quantities
-including pressure drop and heat-transfer coefficients;
-%
-Robust performance across at least three geometry
-classes and multiple Reynolds-number regimes.
+\noindent
+Phase~I success will be evaluated using quantitative metrics that assess
+whether the proposed foundation-model and agentic-AI workflow provides a clear
+AI advantage over conventional CFD-only design. The decision gates focus on
+four areas: 
 
-\textbf{3. Design Acceleration and Optimization Efficiency.}
-AI-enabled latent-space optimization will be compared
-to traditional brute-force parameter sweeps. Success
-criteria include:
-%
-Reduction of required high-fidelity CFD evaluations
-by $\geq 5$--$10\times$;
-%
-Demonstration of stable multi-objective optimization
-balancing thermal performance and pressure-drop penalties.
+\noindent
+{\bf 1. Latent representation fidelity.} 
+Demonstrate that the heterogeneous datasets 
+%%% from Nek5000/RS, MFEM, and experiments 
+can be mapped into a common geometry-aware latent space with relative
+reconstruction errors below 5\% for the primary thermal-fluid state variables
+and below 3\% for derived QOIs such as pressure drop and heat-transfer.
 
-\textbf{4. Demonstration of AI Advantage Through Scaling.}
-AI advantage will be quantified using scaling-based
-performance metrics:
-%
-Reduction in prediction error of $\geq 30\%$
-when training dataset size is increased by $2\times$;
-%
-Efficient GPU scaling demonstrating proportional
-reduction in training or inference time with increasing
-computational resources;
-%
-Demonstration of surrogate inference throughput
-$\geq 100\times$ faster than equivalent CFD evaluation.
+\noindent
+{\bf 2. Predictive accuracy on unseen cases.} 
+Demonstrate mean prediction errors below 5\% for QOIs
+on held-out geometries and operating conditions
+across at least three configurations.
 
-\textbf{Go/No-Go Criterion.}
-Advancement to Phase~II requires simultaneous
-demonstration of:
-Prediction accuracy $\leq 5\%$ across unseen geometries;
-$\geq 5\times$ reduction in required CFD evaluations;
-Measurable scaling-based AI advantage;
-$\geq 10\times$ reduction in end-to-end
-design-cycle time relative to traditional workflows.
+\noindent
+{\bf 3. Reduction in required CFD evaluations.} Demonstrate
+that the latent-space optimization identifies
+designs of comparable or better quality than conventional parameter sweep 
+workflows while using at least 5$\times$ fewer
+high-fidelity CFD evaluations, with 10$\times$ as the target value.
 
-Meeting these criteria will validate the feasibility of
-foundation-model–driven workflows for accelerated
-thermal–fluid design and justify Phase~II expansion.
+\noindent
+{\bf 4. End-to-end design acceleration.} 
+Demonstrate at least 5$\times$ acceleration in design-cycle time for
+representative fluid-thermal device.
+Additional evidence provided if increased training data
+systematically improves prediction accuracy or
+optimization efficiency.
+\\[-2ex]
 
-\end{comment}
+
+\noindent
+{\bf Advancement to Phase II} will require demonstration of: 
+(i) prediction errors $ <  \, 5$\% on unseen cases and
+(ii)  $\approx \, 5\times$ reduction in the required number of high-fidelity 
+      CFD evaluations.
+%% (iii) $\approx \, 10\times$ reduction in end-to-end design-cycle time for 
+%%       a representative DOE-relevant design problem. 
