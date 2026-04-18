@@ -83,11 +83,18 @@
 page 6)}}
 
 %%% Appendix 1: BIBLIOGRAPHY \& REFERENCES CITE
-\newpage
+
+\newpage 
 \pagestyle{fancy} \lhead{\it BIBLIOGRAPHY \& REFERENCES CITED}
 \section{Bibliography \& References Cited}
+
+\medskip
+\begingroup
+\renewcommand{\section}[2]{} % Suppress the section heading
 \bibliographystyle{abbrvnat}
 \bibliography{../bib/masterbib,../bib/emmd.bib}
+\endgroup
+
 \lhead{}
 
 %%% Appendix 2: Facilities \& Other Resources
