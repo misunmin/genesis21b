@@ -3,10 +3,9 @@
 \section{Background/Introduction}
 
 This project will develop a {\bf foundation-model-driven, agentic-AI framework}
-\cite{Vinuesa2026XAI} for the prediction, optimization, and 
-{\color{red}VINUESA: remove? control} of
-thermal-fluid transport, with primary emphasis on components in fission and
-fusion energy systems.
+\cite{Vinuesa2026XAI} for the prediction and optimization of thermal-fluid
+transport, with primary emphasis on components in fission and fusion energy
+systems.
   Phase I demonstrator problems, illustrated in Fig.~\ref{fig:fm1}, right, 
 include 
 {\em (i)} wire-wrapped fuel-rod bundles, 
@@ -52,8 +51,8 @@ convective flow versus thermal diffusion in solids), and stringent accuracy
 requirements.
 
   The Phase I effort will combine graph neural networks (GNNs) with
-autoencoders to build a cross-device latent space comprising compressed
-geometric, fluid, and thermal information across {\em all} project data sets.  
+autoencoders to build a latent space comprising compressed geometric, fluid,
+and thermal information across {\em all} project data sets.  
 This shared information space will permit significantly shortened
 training cycles for {\em new device configurations} (e.g., fuel rods vs. heat
 exchangers).  The quality of the surrogate predictions---with 
@@ -85,175 +84,9 @@ necessary retraining may be identified at low cost.
 
 \section{Project Objectives}
 
-
-
 \input objective
-\noindent
 
-\vspace*{.1in}
-\section{Proposed Research and Methods}
-
-% \tiny 
-% \begin{verbatim} 
-%   Provide a clear research plan for a 9-month project and describe the proposed activities and methods.  
-%   Include enough technical details to evaluate the impact of the proposed activity.  
-%   For each activity, indicate the responsibility of the key investigator(s) and the associated budget.  
-%  *** If the proposed application is building on an existing, currently funded DOE 
-%      project, describe how the submitted leverages that work and is distinct from 
-%     the existing funding. ***  [MENTION ASCR/NEAMS ! ]
-% \end{verbatim} 
-% \normalsize
-
-
-Figure~\ref{fig:tax} summarizes our approaches.
-As illustrated in Fig.~\ref{fig:fm1}, our goal of {\bf Phase I} is to develop a training
-workflow to build AI surrogates for thermal-fluid solutions. 
-Initial training sets will be based on time-independent {mean-flow} fields that are already
-available or readily generated from Nek5000/RS and MFEM using direct numerical
-or large-eddy simulations (DNS or LES).  The geometry for each dataset is embedded
-in the computational mesh, whose nodes are associated with corresponding
-solution variables velocity, pressure, and temperature.   Cases with
-varying geometry or parameters (e.g., Reynolds number) are fed into an
-encoder, which builds the latent space. In this setting we will also be able to
-take advantage of the ASCR-supported development of differential simulation
-capabilities in MFEM in order to produce higher-quality surrogates or to
-converge the optimization at high resolution given a surrogate initial guess
-\cite{MFEM24, DMC24, Schmidt26}.    
-%
-This work leverages current DOE investments in high-fidelity simulation
-through DOE's Nuclear Energy Advanced Modeling and Simulation (NEAMS) program
-(e.g., \cite{smr21,Merzari2024Exascale} {\bf [more Dillon]}) and ASCR,
-where in addition to reactor simulation capabilities, we are developing
-magnetohydrodynamics (MHD) capabilities for simulating liquid-metal divertors
-and breeder-blankets for magnetically-confined fusion {\bf [misun1,misun2,tzanio1]}.
-The latter will be a critical component of Phase II developments.
-
-Once trained, a new geometry (mesh) can be fed into the encoder to generate a
-surrogate solution within a few seconds.  This process has been successfully
-applied to LES-based flow data for the NASA full-aircraft test model at
-different angles of attack and slat positions using datasets of size $n \approx
-50$M.  The encoding process uses PyTorch on GPUs (several days on four to eight
-H200s) and inference takes about 30 seconds.  As products of DOE's Exascale
-Computing Project, both Nek5000/RS and MFEM run on NVIDIA, AMD, and Intel
-accelerators, so there are no GPU portability issues.
-
-This effort builds directly on DOE investments in high-fidelity simulation.
-Nek5000/RS and MFEM developed under the Center for Efficient Exascale
-Discretizations as part of DOE's Exascale Computing Project \cite{ceed}.  
-Their high-order
-discretizations, coupled with fast matrix-free operator evaluation and highly
-scalable preconditioners gives them a competitive training edge over
-traditional approaches (e.g., a 32$\times$ gain compared to 2nd-order finite volume
-methods \cite{Min2024Wind,Tomboulides2024ABL}).  Nek5000/RS has been
-extensively used for reactor thermal-hydraulics and is part of NRC-accepted
-workflows, while MFEM has enabled important fusion applications in the DOE,
-based both on magnetic and on inertial confinement approaches.
-The proposed work, however, is fundamentally distinct.
-Instead of advancing simulation capabilities alone, we develop a generalizable
-foundation model that unifies data across geometries and regimes, and we
-introduce a closed-loop, AI-driven optimization framework that enables rapid
-design exploration and mechanistic discovery.   This process has already
-been demonstrated for full aircraft configurations (co-PI Vinuesa).
-By the end of Phase I, we will
-demonstrate real-time surrogate modeling and surrogate-based optimization for
-representative thermal-fluid systems, establishing a clear pathway toward
-closed-loop optimization and AI-driven digital twins for reactor design 
-and other DOE mission applications in Phase II.
-
-\input figtax
-
-The first component of the research plan, led by ANL, UIUC, and PSU, focuses on
-the development of a {\bf geometry-aware thermal–fluid foundation model}.
-Building on prior work in foundation modeling \cite{Vishwasrao2026AgenticPDE},
-simulation and experimental data from wire-wrapped
-bundles~\cite{Dai2025WireWrapped61Pin,kaeri37pin}, as well as related
-configurations such as spacer grids, pebble beds, and twisted tubes, will be
-mapped into {\rm a common latent space independent of mesh topology}. This
-capability is particularly critical for reactor applications, where variations
-in geometry—such as wire pitch, rod spacing, and bundle configuration—strongly
-influence heat transfer and pressure losses.  The proposed model integrates
-{\rm graph-based geometric representations}, {\rm variational autoencoders
-(VAEs)} for compression of high-dimensional flow
-fields~\cite{Vinuesa2022MLCFD,SoleraRico2024BetaVAE}, and {\rm conditional
-latent diffusion models}~\cite{Vishwasrao2025DiffSPORT} to learn distributions
-across operating regimes, as well as neural-operator architectures for
-physics-consistent surrogate learning which we will investigate in Phase II.
-Derivatives of the velocity and temperature fields are central to quantities of
-interest (QOIs) such as pressure drop and heat transfer.  We will compute these
-in the fine-scale training data, where derivatives can be accurately computed,
-and encode them along with the primary data.  The resulting surrogate model
-will enable fast, high-fidelity prediction of key reactor performance
-quantities, including heat transfer coefficients, pressure drop, and
-flow-induced mixing. For the cases considered, we have already established
-clear agreement between the experimental data and the high-order simulation
-codes, which will be used to validate the ML surrogates.
-
-The MFEM team will contribute a {\bf targeted ICF miniapp} designed as a
-high-fidelity data generator for training and validating the proposed surrogate
-modeling framework. Building on existing capabilities in Lagrangian
-hydrodynamics \cite{Dobrev2012}, ALE methods \cite{Tomov2018}, and scalable
-H(div) radiation diffusion solvers \cite{Pazner2025}, this effort will focus on
-producing physically consistent, multi-physics datasets that capture coupled
-hydrodynamics–radiation behavior across parameterized geometries and operating
-conditions. The miniapp will be tightly integrated into the AI workflow to
-systematically generate training data, support active learning loops, and
-enable evaluation of surrogate accuracy and generalization. In Phase I,
-simplified ICF configurations will be used to demonstrate feasibility and
-establish a robust pipeline connecting MFEM-generated data with the foundation
-models, ensuring that learned representations remain consistent with the
-underlying physical operators and constraints.
-This effort directly complements the proposed AI architecture by providing
-high-order, structure- preserving finite element data that aligns with the
-project’s emphasis on physically consistent latent spaces. MFEM’s support for
-complex, unstructured meshes and high-order discretizations enables systematic
-variation of geometry and resolution, which is critical for training
-geometry-aware models such as GNN-based encoders. Moreover, the compatibility
-of MFEM operators with differentiable programming frameworks enables a natural
-pathway to incorporate operator-level sensitivities into both surrogate
-training and downstream optimization. This will create a strong link between the
-simulation stack and the latent-space optimization strategies outlined in the
-proposal, particularly for adjoint-informed refinement and hybrid optimization
-workflows.
-
-The second component, led by the University of Michigan, develops a {\bf
-latent-space optimization and control framework}, targeting both steady and
-transient operating regimes.  This effort will employ a hybrid strategy
-combining {\rm Bayesian optimization}~\cite{Morita2022BOCFD}, {\rm
-derivative-free optimization methods}, and 
-{\color{red}VINUESA, remove? {\rm reinforcement learning}~\cite{Font2025DRLFlowControl}}.  
-Such approaches are essential for
-reactor-relevant design spaces that are high-dimensional, non-convex, and
-constrained by safety and operational limits. Note that the MFEM team also
-has experience with {\color{red}VINUESA: remove? reinforcement learning}
-in for adaptive DOE-relevant
-finite element simulations \cite{RL23}.
-%
-Optimization will be performed directly within the latent space of the
-foundation model, enabling efficient exploration of design variables such as
-wire pitch, rod arrangement, and operating conditions. The {\rm agentic AI
-system} will orchestrate this process by dynamically selecting optimization
-strategies, proposing new simulation queries, and balancing competing
-objectives, including heat transfer enhancement, pressure loss minimization,
-and safety margin preservation.
-%
-The framework will operate in a closed-loop workflow, in which candidate
-designs generated in latent space are selectively validated using high-fidelity
-simulations.  This ensures predictive accuracy while maintaining robustness
-across operating conditions.
-%
-All team members will work on {\bf cross-domain validation and integration into the
-Genesis Mission ecosystem}.
-
-
-
-\vspace*{.1in}
-\noindent {\bf Effort Breakdown:}
-   {\bf ANL}-reactor TF data; model validation; device optimization \$100K;
-   {\bf LLNL}-ICF data; model validation \$100K;
-   {\bf U. Mich.}-model development; device optimization \$100K;
-   {\bf PSU}-reactor TF data; model validation \$50K;
-   {\bf UIUC}-heat-exchanger data; model validation \$50K.
-{\tiny \bf CHANGE to REFLECT FULL BUDGETs}
+\input proposed_methods
 
 \input milestone
 
