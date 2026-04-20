@@ -1,0 +1,281 @@
+\documentclass[11pt]{article}
+\newcommand{\Title}{Foundation Models for Automated Design of Energy Flow Systems}
+\usepackage[breaklinks=true, pdftex,
+  pdfborder={0 0 0}, colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue,
+  bookmarks=false, pdfpagelabels=false, pdftitle={\Title}]{hyperref}
+\usepackage{fullpage}
+\usepackage{tikz}
+\usepackage{array}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage{times}
+\usepackage{ifthen}   % for conditionals
+\usepackage{graphicx,graphics}
+\usepackage{sidecap}
+\usepackage[]{rotating}
+\usepackage{setspace}
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage{float}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{pdfpages}
+\usepackage{longtable}  %used in Masha's c&p
+\usepackage{datetime}
+\usepackage{xspace}
+\usepackage{enumitem} % For tighter lists
+\usepackage{refcheck}           % For checking references
+\usepackage[it,small]{caption}
+\usepackage[top=2in,bottom=2in,left=1.5in,right=1.5in]{geometry} % Set margins
+\usepackage{subcaption,wrapfig}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{doi}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{algorithmic}
+% \usepackage[noresetcount,lined,boxed]{algorithm2e} % ... for algorithms
+\usepackage[linesnumbered,lined,boxed]{algorithm2e} % ... for algorithms
+\newlength{\commentWidth}
+\setlength{\commentWidth}{2in}
+\newcommand{\atcp}[1]{\tcp*[r]{\makebox[\commentWidth]{#1\hfill}}}
+
+\graphicspath{{./figs/}}
+\usepackage{pgfgantt}
+\usepackage{pdflscape} % provides the landscape environment
+%\usepackage{mathtools}
+\usepackage[most]{tcolorbox}
+\usepackage{textcomp}
+
+\usepackage{titlesec}
+%% %%% The following is a fix for people using the buggy version of titlesec
+  \usepackage{etoolbox}
+  \makeatletter
+  \patchcmd{\ttlh@hang}{\parindent\z@}{\parindent\z@\leavevmode}{}{}
+  \patchcmd{\ttlh@hang}{\noindent}{}{}{}
+  \makeatother
+% %%%
+\titleformat{\subsubsection}[runin]{\bfseries}{\thesubsubsection}{1em}{}[.~~]
+  \titlespacing{\section}{0pt}{*1.35}{*0.35}
+  \titlespacing{\subsection}{0pt}{*1.15}{*0.15}
+  \titlespacing{\subsubsection}{0pt}{*1.05}{*0.05}
+ \titlespacing{\paragraph}{0pt}{*1.15}{*0.5}
+
+% define highlight box style
+\usepackage{mdframed}                 % creating color text boxes
+\usepackage{colortbl}
+% \usepackage[table,dvipsnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+
+%\usepackage{xcolor}
+%\definecolor{highlight}{HTML}{cdeeff} % background color
+%%\definecolor{highlight}{HTML}{aed6f1} % background color
+\definecolor{optim}{HTML}{DFEFF9}
+\mdfdefinestyle{highlightoptim}{leftmargin=0pt,rightmargin=0pt,%
+innerleftmargin=3pt,innerrightmargin=2pt,%
+innertopmargin=4pt,innerbottommargin=4pt,%
+linewidth=2pt,%
+backgroundcolor=blue!10!white,linecolor=blue!50!black}
+\definecolor{stats}{HTML}{D4EFDF} % background color
+\mdfdefinestyle{highlightstats}{leftmargin=0pt,rightmargin=0pt,%
+innerleftmargin=3pt,innerrightmargin=2pt,%
+innertopmargin=4pt,innerbottommargin=4pt,%
+linewidth=2pt,%
+backgroundcolor=green!10!white,linecolor=green!50!black}
+\definecolor{appl}{HTML}{F2D7D5} % background color
+\mdfdefinestyle{highlightsample}{leftmargin=0pt,rightmargin=0pt,%
+innerleftmargin=3pt,innerrightmargin=2pt,%
+innertopmargin=4pt,innerbottommargin=4pt,%
+linewidth=2pt,%
+backgroundcolor=red!10!white,linecolor=red!50!black}
+\definecolor{AD}{HTML}{FFFFCC} % background color
+\mdfdefinestyle{highlightsoft}{leftmargin=0pt,rightmargin=0pt,%
+innerleftmargin=3pt,innerrightmargin=2pt,%
+innertopmargin=4pt,innerbottommargin=4pt,%
+linewidth=2pt,%
+backgroundcolor=yellow!10!white,linecolor=yellow!50!black}
+
+%%Space things:
+\setlength{\textfloatsep}{2pt plus 1.0pt minus 1.0pt}
+\setlength{\floatsep}{2pt plus 1.0pt minus 1.0pt}
+\setlength{\intextsep}{2pt plus 1.0pt minus 1.0pt}
+\setlength{\belowcaptionskip}{1pt}
+\setlength{\abovecaptionskip}{1pt}
+
+% Various codes (for consistency and to differentiate from acronyms)
+\newcommand{\R}{\mathbb R}           % Real  numbers
+\newcommand{\Z}{\mathbb Z}           % Integer  numbers
+\newcommand{\E}{\mathbb E}           % expectation
+\newcommand{\Prob}{\mathbb P} %probability
+\newcommand{\Risk}{\mathbb R}           % expectation
+\newcommand{\dps}{\displaystyle}
+\newcommand{\maxi}{\mathop{\mbox{maximize}}}
+\newcommand{\mini}{\mathop{\mbox{minimize}}}
+\newcommand{\amin}{\mathop{\mbox{argmin}}}
+\def\IhH {I_h^H}
+\def\IhHb { {\hat I}_h^H}
+\newcommand{\DOESC}{DOE/SC} % US Dept of Energy (DOE) Office of Science (SC)
+\newcommand{\DoE}{DoE} % Design of Experiments (could have many modifiers)
+\newcommand{\st}{\mbox{subject to}}
+\newcommand{\stn}{\mbox{s.t.}}
+\newcommand{\bvec}{\left(\begin{array}{c}}
+\newcommand{\evec}{\end{array}\right)}
+\newcommand{\cF}{{\cal F}}
+\newcommand{\cS}{{\cal S}}
+\newcommand{\cP}{{\cal P}}
+\newcommand{\xh}{\hat{x}}
+\newcommand{\yh}{\hat{y}}
+\newcommand{\Lag}{{\cal L}}
+\newcommand{\sLag}{{\tilde{\cal L}}}
+\newcommand{\sI}{{\tilde{I}}}
+\newcommand{\heta}{\hat{\eta}}
+%\newcommand{\homega}{\hat{\omega}}
+\newcommand{\hkappa}{\hat{\kappa}}
+\newcommand{\x}{\mathbf x}
+\newcommand{\y}{\mathbf y}
+\newcommand{\cc}{\mathbf c}
+
+\DeclareGraphicsRule{.pdftex}{pdf}{.pdftex}{}
+
+% ... theorems etc
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{assumption}{Assumption}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{remark}{Remark}[section]
+
+% Commands specific to this proposal
+\newcommand{\subsubsubsection}[1]{\paragraph{#1.}}
+%{\vspace{1pt} \noindent \textbf{#1}}
+%\newcommand{\mcomment}[2]{\textcolor{red}{#2}\marginpar{{\color{red}\textbf{#1 Note}}}}
+\newcommand{\call}[1]{\noindent\textcolor{blue}{\textbf{From the call:} #1}}
+%\renewcommand{\call}[1]{ } % Final version
+ \newcommand{\team}[1]                  % team command
+      {\textcolor{cyan}{#1}\marginpar{{\color{cyan}\textbf{Team}}}}
+% \newcommand{\team}[1]{}                       % team command
+
+\newcommand{\ignore}[1]{}  % Use to comment out large blocks of text
+\newcommand{\BigO}[1]{\ensuremath{\mathcal{O}\!\left(#1\right)}}
+\newcommand{\Sec}[1]{{\S\ref{#1}}}
+%\newcommand{\Secs}{Secs.}
+\newcommand{\Fig}[1]{Fig.~\ref{#1}}
+%\newcommand{\Figs}{Figs.}
+
+
+\newcommand{\pagebudget}[1]{\textcolor{red}{~#1}} % For working version
+%\renewcommand{\pagebudget}[1]{} % In final version
+
+
+% For using headers ********************************
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[R]{{\it \rightmark}}
+\fancyhead[L]{{\it \leftmark}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+\voffset= -65pt
+\headsep= 51pt %\voffset-12pt
+\headheight=14pt
+% headers *******************************************
+
+%  Following not defined in  LaTeX2e <2003/12/01> - Steve
+% \pdfminorversion=6 % Turns of PDF version warnings
+
+
+% \newcommand{\bio}[3]{\newpage \phantomsection
+%                \pagestyle{fancy} \sectionmark{BIOGRAPHICAL SKETCHES \hfill #1}
+%    \IfFileExists{bio/#3.tex}{\addcontentsline{toc}{subsection}{#1 -- #2} \input{bio/#3}
+%     }{\IfFileExists{bio/#3.pdf}{\addcontentsline{toc}{subsection}{#1 -- #2}
+%          \includepdf[pages=-,offset=0 -65,pagecommand={\thispagestyle{fancy}}]{bio/#3}
+%       }{% If the desired PDF file doesn't exist, warn about it but continue
+%        \addcontentsline{toc}{subsection}{\textcolor{red}{#1 -- #2 MISSING}}
+%          \begin{center}
+%             \textbf{\color{red}\Large No file found for `#1'!\\
+%                     Tried bio/#3.tex and bio/#3.pdf} \\
+%          \end{center}}}}
+
+% \newcommand{\cnp}[3]{\newpage \phantomsection
+%                \pagestyle{fancy} \sectionmark{SUPPORT OF INVESTIGATORS \hfill #1}
+%    \IfFileExists{cnp/#3support.tex}{\addcontentsline{toc}{subsection}{#1 --
+% #2} \input{cnp/#3support.tex}
+%     }{\IfFileExists{cnp/#3.pdf}{
+% \addcontentsline{toc}{subsection}{#1 -- #2}
+%          \includepdf[pages=-,offset=0 -65,pagecommand={\thispagestyle{fancy}}
+% ]{cnp/#3.pdf}
+%       }{% If the desired PDF file doesn't exist, warn about it but continue
+%        \addcontentsline{toc}{subsection}{\textcolor{red}{#1 -- #2 MISSING!!!}}
+%          \begin{center}
+%             \textbf{\color{red}\Large No file found for `#1'!\\
+%                     Tried cnp/#3.tex and cnp/#3.pdf} \\
+%          \end{center}}}}
+
+% \newcommand{\todd}[1]{{{\color{blue}{Todd:} #1}}}
+% \newcommand{\sven}[1]{{{\color{red}{Sven:} #1}}}
+
+\usepackage[normalem]{ulem} % For \sout
+\newcommand\hcancel[2][black]{\setbox0=\hbox{$#2$}\rlap{\raisebox{.45\ht0}{\textcolor{#1} {\rule{\wd0}{1pt}}}}#2}
+\newcommand{\replace}[2]{{\color{red}\sout{#1}\color{black}{\color{red}#2\color{black}}}} %TeX source markup.
+\newcommand{\replacemath}[2]{{\hcancel[red]{#1}{}{\color{red}#2\color{black}}}} %TeX source markup.
+\newcommand{\slnote}[1]{{{\color{blue}{ SL note:} #1}}\marginpar{\color{blue}{SL}}}
+\newcommand{\mcnote}[1]{{{\color{cyan}{ MC note:} #1}}\marginpar{\color{cyan}{SP}}}
+\newcommand{\tlnote}[1]{{{\color{brown}{ TL note:} #1}}\marginpar{\color{brown}{MM}}}
+%% \renewcommand{\slnote}[1]{}
+%% \renewcommand{\mcnote}[1]{}
+
+\newcommand{\SLreverse}[2]{{\color{purple}\sout{#2}\color{black}{\color{purple}#1\color{black}}}} %TeX source REVERSEmarkup.
+%\renewcommand{\SLreverse}[2]{#1}{}
+
+\newcommand{\SLreplace}[2]{{\color{blue}\sout{#1}\color{black}{\color{blue}#2\color{black}}}} %TeX source markup.
+%\renewcommand{\SLreplace}[2]{#2}{}
+
+\usepackage{adjustbox}
+
+\newcommand{\prtl}[2]{\frac{\partial #1}{\partial #2}}
+
+\usepackage{xpatch}
+\xpretocmd{\eqref}{Eq.~}{}{}
+
+\usepackage{textpos}
+\NewEnviron{RandSample}{%
+        \colorbox{green!15!white}{
+                \parbox{0.97\hsize}{
+                        \begin{textblock*}{75pt}[1, 1](\hsize,5pt)
+                        \emph{$\gets$ Sampler}
+                        \end{textblock*}%
+                        \BODY
+                }
+        }
+}
+
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{2em}
+
+\begin{document}
+
+\pagestyle{fancy}
+\setcounter{page}{1}
+
+\newpage
+
+\section{Statement of Work~---~Illinois}
+\medskip
+
+The objective of this project is to develop a geometry-aware,
+foundation-model–driven, agentic AI framework for the rapid prediction,
+optimization, and control of thermal–fluid transport in DOE-relevant energy
+systems. The proposed work at Illinois includes assisting with integrating
+high-fidelity simulation data, advanced machine learning architectures, and
+closed-loop optimization workflows.
+
+The project will involve several interconnected components to build foundation
+models and agentic systems for thermal-fluid simulations.  The work at Illinois
+will primarily focus on the first component of the research plan, which
+involves the development of a geometry-aware thermal–fluid foundation model.
+The work at Illinois will also contribute to the other components of the
+project as well as cross-domain validation and integration into the Genesis
+Mission ecosystem.
+
+\end{document}
