@@ -4,8 +4,7 @@
 
 This project will develop a {\bf foundation-model-driven, agentic-AI framework}
 \cite{Vinuesa2026XAI} for the prediction and optimization of thermal-fluid
-transport, with primary emphasis on components in fission and fusion energy
-systems.
+systems in fission and fusion reactors.
   Phase I demonstrator problems, illustrated in Fig.~\ref{fig:fm1}, right, 
 include 
 {\em (i)} wire-wrapped fuel-rod bundles, 
@@ -23,7 +22,7 @@ licensing workflows and a former Gordon Bell Prize winner
 with extensive experimental datasets from both open literature and proprietary
 industry sources.  These two teams have worked closely together in the last
 decade to deliver major application and HPC advancements to the DOE under the
-Exascale Computing Project \cite{ceed}.
+Exascale Computing Project \cite{ceed}.  
 
 %  The central objective of this {\bf Phase I effort} is to {\em unify the
 %  available heterogeneous datasets into a common (mesh-based) geometry-aware
@@ -31,45 +30,45 @@ Exascale Computing Project \cite{ceed}.
 %  generation that will be applied to design and optimization of thermal-fluid
 %  systems.
 
-
-
-
-Thermal–fluid transport governs the performance of a wide range of energy systems.
-In fission and fusion systems, fluid motion transports thermal energy
-from core processes (fission/fusion reactions) to heat exchangers, where 
-recipient working fluids ultimately drive turbines or other power-generation devices.
+The project team also includes leading experts (Merzari, Shaver) in fission and
+fusion thermal-hydraulics who will ensure that training and quantities of
+interest (QOIs) are of direct relevance to design work in industry and national
+laboratories.  In these systems, fluid motion transports thermal energy from
+core processes (fission/fusion reactions) to heat exchangers, where recipient
+working fluids ultimately drive turbines or other power-generation devices.
 Combustion systems and inertially confined fusion (ICF) platforms similarly
-depend on controlled fluid motion to initiate and sustain energy-producing
-reactions.
-However, {\bf system- and device-level optimization—particularly when involving
-geometric or topology modifications—typically requires tens to hundreds of
+depend on controlled fluid motion to initiate and sustain energy-producing reactions.
+Computational costs are significant because of complex geometries, broad ranges of
+timescales (e.g., convective flow versus thermal diffusion in solids), and
+required accuracy for safety.
+  Current {\bf system- and device-level optimization—particularly when involving
+geometric or topology modifications—can require tens to hundreds of
 high-fidelity simulations}, each taking days to months on high-performance
-computing (HPC) platforms,
-with {\bf no shared information across the simulation space.} The computational
-burden arises from complex geometries, broad ranges of timescales (e.g.,
-convective flow versus thermal diffusion in solids), and stringent accuracy
-requirements.
+computing (HPC) platforms, with {\bf no shared information across the
+simulation space.}   
 
-  The Phase I effort will combine graph neural networks (GNNs) with
-autoencoders to build a latent space comprising compressed geometric, fluid,
-and thermal information across {\em all} project data sets.  
-This shared information space will permit significantly shortened
-training cycles for {\em new device configurations} (e.g., fuel rods vs. heat
-exchangers).  The quality of the surrogate predictions---with 
-emphasis on design-driven quantities of interest (QOIs)---will be
-assessed directly through experimental data and current simulation
-capabilities.  The ultimate goal, to be realized in Phase II,
-is to radically transform the design cycle for energy-system components by
-providing reliable, high-accuracy AI-driven surrogate models tightly coupled
-with state-of-the-art design optimization methods.  Runtime surrogate
-uncertainty quantification (UQ) will be a key component of Phase II so that
-necessary retraining may be identified at low cost.
+  This Phase I effort will combine graph neural networks (GNNs) with
+autoencoders to build a {\bf common latent space} compressing
+geometric, fluid, and thermal information across {\em all} project data sets.
+This shared information space will permit significantly shortened training
+cycles for {\bf new device configurations} (e.g., fuel rods vs. heat
+exchangers).  The quality of the surrogate predictions---with emphasis on
+design-driven QOIs---will be assessed directly through available experimental
+data and current simulation capabilities.  The ultimate goal, to be realized in
+Phase II, is to radically transform the design cycle for energy-system
+components by providing reliable, high-accuracy AI-driven surrogate models
+tightly coupled with state-of-the-art design optimization methods.  Runtime
+surrogate uncertainty quantification (UQ) will be a key component of Phase II
+so that necessary retraining (where UQ is high) may be identified at low cost.
+
 
 % The Phase I test problems are selected to establish feasibility across
 % representative DOE-relevant applications, including reactor-core flows and
 % inertially confined fusion (ICF) miniapps, while liquid-metal
 % magnetohydrodynamics (MHD) relevant to magnetically confined fusion will be
 % addressed in Phase II.
+
+
 % As illustrated in Fig. 1, Phase I test cases include:
 %     (i) optimization of pressure-drop and heat-transfer performance in \textbf{wire-wrapped fuel-rod bundles};
 %    (ii) a \textbf{miniapp to investigate approaches for inertially confined fusion}; and

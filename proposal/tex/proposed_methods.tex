@@ -13,11 +13,11 @@
 % \normalsize
 
 
-As illustrated in Fig.~\ref{fig:fm1}, our goal of {\bf Phase I} is to develop a
-training workflow to build AI surrogates for thermal-fluid solutions.  Initial
-training sets will be based on time-independent {mean-flow} fields that are
-already available or readily generated from Nek5000/RS and MFEM using direct
-numerical or large-eddy simulations (DNS or LES) of turbulence in representative domains.  
+As illustrated in Fig.~\ref{fig:fm1}, the {\bf Phase I} objective is to develop a
+training workflow to build AI surrogates for thermal-fluid solutions.  
+Initial training sets, identified by domain experts, will be based on time-averaged
+data that are already available or readily generated with Nek5000/RS and MFEM
+using direct numerical or large-eddy simulations (DNS or LES) of turbulence.
 The geometry for each dataset is embedded in the computational mesh, whose
 nodes are associated with corresponding solution variables velocity, pressure,
 and temperature.   Cases with varying geometry or parameters (e.g., Reynolds
@@ -30,17 +30,18 @@ geometries can be encoded to generate surrogate solutions within seconds.
 This process has been successfully applied to LES flow data for the NASA
 full-aircraft test model at different angles of attack and slat positions using
 datasets of size $n \approx 50$M.  The encoding process uses PyTorch on GPUs
-(several days on four to eight H200s) and inference takes about 30 seconds.  
+(several days on four to eight H200s) and inference takes about 30 seconds
+per configuration.
 
 This effort builds directly on DOE investments in high-fidelity simulation.
 Nek5000/RS and MFEM developed under the Center for Efficient Exascale
 Discretizations as part of DOE's Exascale Computing Project \cite{ceed}.  
 Their high-order
 discretizations, coupled with fast matrix-free operator evaluation and highly
-scalable preconditioners gives them a competitive training edge over
-traditional approaches (e.g., a 32$\times$ gain compared to 2nd-order finite
+scalable preconditioners, gives them a competitive training edge over
+traditional approaches (e.g., a {\bf 32$\times$ gain} compared to 2nd-order finite
 volume methods \cite{Min2024Wind,Tomboulides2024ABL}).  Nek5000/RS has been
-extensively used for reactor thermal-hydraulics and is part of NRC-accepted
+extensively used for reactor thermal-hydraulics (TH) and is part of NRC-accepted
 workflows, while MFEM has enabled important fusion applications in the DOE,
 based both on magnetic and on inertial confinement approaches.  
    Both Nek5000/RS and MFEM run on NVIDIA, AMD, and Intel accelerators, so there 
@@ -51,18 +52,11 @@ simulation capabilities alone, we develop a generalizable foundation model that
 unifies data across geometries and regimes, and we introduce a closed-loop,
 AI-driven optimization framework that enables rapid design exploration and
 mechanistic discovery.   
-
-{\bf IM STILL WORKING HERE}
-
-MENTION THE DOMAN SPECIFIC EXPERTISE IN THE APPLICATION SPACE
-
-
-
-
-Figure \ref{fig:tax} illustrates the essential components of our work
-plan, moving left-to-right from representation models (current simulation
-data), to geometry and case generalization via a common latent space,
-to optimization (ultimately) driven by agentic AI.  
+   Figure \ref{fig:tax} illustrates the essential components of our work plan. 
+From left-to-right: 
+   representation models (current simulation data); geometry and case
+   generalization via a common latent space; and 
+   optimization driven by agentic AI.  
 
 \input figtax
 
@@ -71,7 +65,7 @@ the development of a {\bf geometry-aware thermal–fluid foundation model}.
 Building on prior work in foundation modeling \cite{Vishwasrao2026AgenticPDE},
 simulation and experimental data from wire-wrapped
 bundles~\cite{Dai2025WireWrapped61Pin,kaeri37pin}, as well as related
-configurations such as spacer grids, pebble beds, and twisted tubes, will be
+configurations such as spacer grids and twisted tubes, will be
 mapped into {\rm a common latent space independent of mesh topology}. This
 capability is particularly critical for reactor applications, where variations
 in geometry—such as wire pitch, rod spacing, and bundle configuration—strongly
@@ -82,18 +76,17 @@ fields~\cite{Vinuesa2022MLCFD,SoleraRico2024BetaVAE}, and {\rm conditional
 latent diffusion models}~\cite{Vishwasrao2025DiffSPORT} to learn distributions
 across operating regimes, as well as neural-operator architectures for
 physics-consistent surrogate learning which we will investigate in Phase II.
-Derivatives of the velocity and temperature fields are central to quantities of
-interest (QOIs) such as pressure drop and heat transfer.  We will compute these
-in the fine-scale training data, where derivatives can be accurately computed,
-and encode them along with the primary data.  The resulting surrogate model
-will enable fast, high-fidelity prediction of key reactor performance
-quantities, including heat transfer coefficients, pressure drop, and
-flow-induced mixing. For the cases considered, we have already established
-clear agreement between the experimental data and the high-order simulation
-codes, which will be used to validate the ML surrogates (e.g., 
-Figs. \ref{fig:blocked} and \ref{fig:collins})
+In order to avoid sensitive differentiation of the surrogates,
+derivatives of velocity and temperature, central to several QOIs and readily
+computed in the fine-scale training data, will be encoded with the primary data.
+The resulting surrogate model will enable fast, high-fidelity prediction of key
+reactor performance quantities, including heat transfer coefficients, pressure
+drop, and flow-induced mixing.  We already have well-established agreement
+between the experiments and high-order simulations (e.g., Figs.
+\ref{fig:blocked} and \ref{fig:collins}), which will enable validation of the
+ML surrogates.
 
-The MFEM team will contribute a {\bf targeted ICF miniapp} designed as a
+The LLNL team will contribute a {\bf targeted ICF miniapp} designed as a
 high-fidelity data generator for training and validating the proposed surrogate
 modeling framework. Building on existing capabilities in Lagrangian
 hydrodynamics \cite{Dobrev2012}, ALE methods \cite{Tomov2018}, and scalable
@@ -122,16 +115,14 @@ workflows.
 
 The second component, led by the University of Michigan, develops a {\bf
 latent-space optimization and control framework}, targeting both steady and
-transient operating regimes.  This effort will employ a hybrid strategy
-combining {\rm Bayesian optimization}~\cite{Morita2022BOCFD}, {\rm
-derivative-free optimization methods}, and 
-{\color{red}VINUESA, remove? {\rm reinforcement learning}~\cite{Font2025DRLFlowControl}}.  
-Such approaches are essential for
-reactor-relevant design spaces that are high-dimensional, non-convex, and
-constrained by safety and operational limits. Note that the MFEM team also
-has experience with {\color{red}VINUESA: remove? reinforcement learning}
-in for adaptive DOE-relevant
-finite element simulations \cite{RL23}.
+transient operating regimes.  This effort will employ a hybrid strategy combining 
+{\rm Bayesian optimization}~\cite{Morita2022BOCFD}, 
+{\rm derivative-free optimization methods}, and 
+{\rm reinforcement learning}~\cite{Font2025DRLFlowControl}.  
+Such approaches are essential for energy-system design spaces that are
+high-dimensional, non-convex, and constrained by safety and operational limits.
+(The MFEM team also has experience with reinforcement learning for
+adaptive DOE-relevant finite element simulations \cite{RL23}.)
 %
 Optimization will be performed directly within the latent space of the
 foundation model, enabling efficient exploration of design variables such as
@@ -153,11 +144,8 @@ Genesis Mission ecosystem}.
 
 \vspace*{.1in}
 \noindent {\bf Effort Breakdown:}
-   {\bf ANL}-reactor TF data; model validation; device optimization \$100K;
-   {\bf LLNL}-ICF data; model validation \$100K;
-   {\bf U. Mich.}-model development; device optimization \$100K;
-   {\bf PSU}-reactor TF data; model validation \$50K;
-   {\bf UIUC}-heat-exchanger data; model validation \$50K.
-{\tiny \bf CHANGE to REFLECT FULL BUDGETs}
-
-uuuuu
+   {\bf ANL}-reactor TH data; model validation; device optimization \$300K;
+   {\bf LLNL}-ICF data; model validation \$200K;
+   {\bf U. Mich.}-model development; device optimization \$110K;
+   {\bf PSU}-reactor TH data; model validation \$70K;
+   {\bf UIUC}-heat-exchanger data; model validation \$70K.
