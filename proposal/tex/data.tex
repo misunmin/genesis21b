@@ -1,3 +1,4 @@
+\newpage
 \section{Data Sources and Models}
 
 % \tiny \begin{verbatim}
@@ -31,9 +32,8 @@ for a wire-wrapped bundle with blockage \cite{Dai2025WireWrapped61Pin}.
 }
 \end{wrapfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The Argonne team has extensive experience in large eddy simulation (LES) of
-turbulent flow in liquid metal fast reactors, including everything from
-isolated subassemblies
+The Argonne team has extensive experience in LES of turbulent flow in liquid
+metal fast reactors, including everything from isolated subassemblies
 \cite{fischer08a,Dai2025WireWrapped61Pin,shaver37pin,shavernacie} to full
 cores~\cite{sc22,gb23}.  
    The majority of these datasets are 
@@ -44,10 +44,9 @@ datasets for a 61-pin assembly over a range of Reynolds numbers
 multiple flow and heating conditions \cite{shavernacie}.  
   Similarly, the MFEM team has simulation data from model ICF simulations in
 wide regimes, geometries and resolutions.  
-Both Nek and MFEM have infrastructures to automatically produce additional
-data, some of which is being generated on  
-OLCF Frontier, ALCF Aurora, and the NE Divison cluster, {\em Nek5k},
-as part of ongoing studies.
+{\bf Both Nek and MFEM have infrastructure to automatically produce additional
+data, some of which is being generated on  OLCF Frontier, ALCF Aurora, and the
+NE Divison cluster, {\em Nek5k}, as part of ongoing studies.}
 This includes a series of
 7-pin reflector assemblies and additional 37-pin simulations similar to those
 performed by Shaver \cite{shaver37pin}.  The latest (and most detailed)
@@ -57,29 +56,10 @@ which will also be used for model training.
 so new points in the wire-wrap geometry space can be readily integrated into the
 training data to control uncertainty.
 
-
-% The generation of wire-wrapped fuel bundle geometries has been fully automated
-% so that model training at new points in the wire-wrap diameter / pitch space is
-% straightforward.  We are able to generate data for single-pin, fully periodic
-% domains to cover a broad range of conditions quickly which can be integrated in
-% to the training data to control uncertainty.
-
-% Because time-averaging smooths the solution, it is possible to down-sample the
-% mesh and solution data before encoding.  Because derivatives are critical to
-% pressure-drop and thermal flux QOIs, {\em spatial derivatives} will also be
-% encoded during training in order to bypass the need for a fine mesh when
-% differentiating the surrogate solution.
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{wrapfigure}{rb}{0.30\textwidth}
-
 \vspace{-2pt}
 \centering
 \includegraphics[width=0.29\textwidth]{../figs/collins_02_nek_nu3_new.png}
-
-%vspace{-2pt}
 \caption{\label{fig:collins}
 Experimental-Nek5000 /RS data comparison of Nusselt 
 vs. Reynolds number for wire-coil insert geometries \cite{kaneko22}.
@@ -91,14 +71,13 @@ vs. Reynolds number for wire-coil insert geometries \cite{kaneko22}.
 The data situation is similar for the wire-coil insert geometry, which is a
 low-cost case to be used for test/development of the overall workflow.
 Extensive high-quality data is available in \cite{collins22}, which has been
-corroborated with Nek5000/RS studies by Kaneko, who also examined nearby
-geometric configurations such as arrays of ring inserts \cite{kaneko22}.
-These cases are sufficiently small that they can run on just one or two
-GPUs for one hour to generate requisite heat-transfer QOIs (e.g., Nusselt
-number, Nu, which is the nondimensional heat-transfer coefficient).
-It is also a case where the QOI is sensitive to geometry, with up to a
-4$\times$ increase in Nu observed in experiments and simulations for
-the best configurations, implying that there is a clear optimization win
-to be had in this case that should be found automatically by the proposed
-AI framework.
+corroborated with Nek5000/RS studies by Kaneko \cite{kaneko22}, who also 
+examined nearby geometric configurations such as arrays of ring inserts.
+These cases are relatively small and can be run on one or two GPUs for 
+one hour to generate requisite QOIs (e.g., Nusselt number, Nu, which is the
+nondimensional heat-transfer coefficient).  It is also a case where the QOI is
+sensitive to geometry, with up to a 4$\times$ increase in Nu observed in
+experiments and simulations for the best configurations, implying that there 
+is a significant performance benefit that should be identifiable
+by the automated AI optimization framework.
 
