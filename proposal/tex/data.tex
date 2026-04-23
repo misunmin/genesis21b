@@ -55,7 +55,7 @@ These efforts include simulations of
 previsouly studied by Shaver~\cite{shaver37pin}.  The most recent and highly detailed
 experimental datasets for wire-wrapped bundles are available in~\cite{kaeri37pin},
 and will be incorporated into model training and validation.  
-  {\color{CHECK:MMS}
+  {\color{red}CHECK:MMS
 The generation of wire-wrapped fuel bundle geometries has been fully automated,
 enabling rapid sampling of new points in the wire-wrap geometry space.
 This capability allows systematic expansion of the training dataset
@@ -73,16 +73,32 @@ vs. Reynolds number for wire-coil insert geometries \cite{kaneko22}.
 
 \end{wrapfigure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The data situation is similar for the wire-coil insert geometry, which is a
-low-cost case to be used for test/development of the overall workflow.
-Extensive high-quality data is available in \cite{collins22}, which has been
-corroborated with Nek5000/RS studies by Kaneko \cite{kaneko22}, who also 
-examined nearby geometric configurations such as arrays of ring inserts.
-These cases are relatively small and can be run on one or two GPUs for 
-one hour to generate requisite QOIs (e.g., Nusselt number, Nu, which is the
-nondimensional heat-transfer coefficient).  It is also a case where the QOI is
-sensitive to geometry, with up to a 4$\times$ increase in Nu observed in
-experiments and simulations for the best configurations, implying that there 
-is a significant performance benefit that should be identifiable
-by the automated AI optimization framework.
+A similar data-generation framework exists for wire-coil insert geometries, 
+which provide a computationally efficient platform for workflow testing and 
+method development.  
+% The data situation is similar for the wire-coil insert geometry, which is a
+% low-cost case to be used for test/development of the overall workflow.
+Extensive high-quality experimental datasets are available in \cite{collins22}
+and have been corroborated through Nek5000/RS simulations by Kaneko \cite{kaneko22}, 
+inclduing studies of related configurations 
+%%%%who also examined nearby geometric configurations} 
+such as arrays of ring inserts.
+These cases are computationally inexpensive and can typically be executed on
+one or two GPUs within approximately one hour 
+to generate requisite QOIs, such as the Nusselt number (Nu), 
+a nondimensional heat-transfer coefficient.  
+Importantly, the Nusselt number in these configurations exhibits strong 
+sensitivity to geometric variation, with increases of up to fourfold observed 
+in both experiments and simulations for optimized geometries.
+This strong geometry–performance coupling provides an ideal testbed for 
+evaluating automated AI-driven optimization workflows and demonstrating 
+measurable performance gains.
+
+%%%%%%%%%%%%%
+%It is also a case where the QOI is
+%sensitive to geometry, with up to a 4$\times$ increase in Nu observed in
+%experiments and simulations for the best configurations, implying that there 
+%is a significant performance benefit that should be identifiable
+%by the automated AI optimization framework.
+%%%%%%%%%%%%%%%
 
