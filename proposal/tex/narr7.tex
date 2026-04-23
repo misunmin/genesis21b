@@ -32,17 +32,19 @@ Exascale Computing Project \cite{ceed}.
 
 The project team includes leading experts (Merzari and Shaver) in fission and
 fusion thermal-hydraulics who will ensure that training and quantities of
-interest (QOIs) are directly relevant to design work in industry and national
-laboratories. {\color{red}CHECK:MMS Our industrial collaborators incldue
-Kairos, TerraPower, and Westinghouse (see Appendix \ref{collaboration_letters} 
-for letters of collaboration).} 
-In these systems, fluid motion transports thermal energy from
-core processes (fission/fusion reactions) to heat exchangers, where recipient
-working fluids ultimately drive turbines or other power-generation devices.
-Combustion systems and inertially confined fusion (ICF) platforms similarly
-depend on controlled fluid motion to initiate and sustain energy-producing reactions.
-Computational costs are significant because of complex geometries, broad ranges of
-timescales (e.g., convective flow versus thermal diffusion in solids), and
+interest (QOIs) are directly relevant to design work at national laboratories
+and in industry, where we are partnering with several firms, including
+{\bf Kairos}, {\bf TerraPower}, and {\bf Westinghouse} 
+(Appendix \ref{collaboration_letters}).
+In these systems, fluid motion is the {\em principal transport mechanism} for
+energy from core processes (fission/fusion reactions) to heat exchangers, where
+recipient working fluids ultimately drive turbines or other power-generation
+devices.
+%
+Combustion systems and inertially confined fusion (ICF) similarly depend on
+controlled fluid motion to initiate and sustain energy-producing reactions.
+Computational costs are significant because of complex geometries, broad ranges
+of timescales (e.g., convective flow versus thermal diffusion in solids), and
 required accuracy for safety.
   Current {\bf system- and device-level optimization—particularly when involving
 geometric or topology modifications—can require tens to hundreds of
@@ -55,7 +57,7 @@ autoencoders to build a {\bf common latent space} compressing
 geometric, fluid, and thermal information {\bf across all project data sets.}
 This shared information space will permit significantly shortened training
 cycles for {\bf new device configurations} (e.g., fuel rods vs. heat
-exchangers).  The quality of the surrogate predictions---with emphasis on
+exchangers).  Surrogate prediction quality---with emphasis on
 design-driven QOIs---will be assessed directly through available experimental
 data and current simulation capabilities.  The ultimate goal, to be realized in
 Phase II, is to radically transform the design cycle for energy-system
@@ -63,26 +65,6 @@ components by providing reliable, high-accuracy AI-driven surrogate models
 tightly coupled with state-of-the-art design optimization methods.  Runtime
 surrogate uncertainty quantification (UQ) will be a key component of Phase II
 so that necessary retraining (where UQ is high) may be identified at low cost.
-
-
-% The Phase I test problems are selected to establish feasibility across
-% representative DOE-relevant applications, including reactor-core flows and
-% inertially confined fusion (ICF) miniapps, while liquid-metal
-% magnetohydrodynamics (MHD) relevant to magnetically confined fusion will be
-% addressed in Phase II.
-
-
-% As illustrated in Fig. 1, Phase I test cases include:
-%     (i) optimization of pressure-drop and heat-transfer performance in \textbf{wire-wrapped fuel-rod bundles};
-%    (ii) a \textbf{miniapp to investigate approaches for inertially confined fusion}; and
-%   (iii) optimization of \textbf{wire-coil inserts} for
-% heat-transfer enhancement in beam-line cooling systems.
-% These test cases were selected because of the availability of reliable simulation
-% and experimental data and their scalability across a wide range of problem sizes,
-% with simulation degrees of freedom (DOFs) ranging from $10^7$ to $10^{12}$
-% \cite{gb23,gb25mfem}.
-% {\bf PF: need to clean up / re-org; eliminate redundancy in the preceding paragraph.}
-
 
 \section{Project Objectives}
 
