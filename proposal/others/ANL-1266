@@ -1,0 +1,22 @@
+
+ANL 1266 Identifier
+ANL-1266-20260422-2081
+
+Solicitation Name: The Genesis Mission: Transforming Science and Energy with AI – DE-FOA-0003612
+Potential Sponsor: U.S. Department of Energy
+Proposal Type: Full proposal
+Title of Proposal: Foundation Models for Automated Design of Energy Flow Systems
+Date by Which Proposal is DUe: 05/01/2026
+
+Brief Description of Proposed Work:
+This project develops an AI-driven design and control framework for energy-relevant fluid flow systems using training data from the high-fidelity simulation codes, Nek5000/RS and MFEM, developed at ANL and LLNL under the Department of Energy’s Exascale Computing Project. Phase I focuses on building foundation models capable of predicting performance and durability metrics under varying operating conditions and geometric parameters. The workflow integrates large-scale simulation datasets with an agentic-AI framework to enable rapid optimization and adaptive control strategies. The Phase I deliverable will demonstrate low-cost real-time prediction for representative energy components (e.g., heat exchangers and reactor-core assemblies), which can placed in a design optimization loop.
+
+Employees and Non-Argonne Persons Who Will Be Working on the Proposal and/or Conducting Associated Work
+Misun Min (Argonne National Laboratory); Sven Leyffer (ANL), Dillon Shaver (ANL); Tzanio Kolev (Lawrence Livermore National Laboratory); Julian Andrej (LLNL), Ricardo Vinuesa (University of Michigan); Paul Fischer (University of Illinois Urbana Champaign); Luke Olson (UIUC); Elia Merzari (Pennsylvania State University)
+
+
+Is the Proposed Work Within Any Science & Tech Risk Matrix Subject Areas?
+[x] High Performance Computing
+[x] Machine learning/AI Sicence & Tech
+
+
