@@ -113,7 +113,7 @@ proposal, particularly for adjoint-informed refinement and hybrid optimization
 workflows.
 
 The second component, led by the University of Michigan, develops a {\bf
-latent-space optimization and control framework} based on agentic AI
+latent-space optimization and control framework}, based on agentic AI
 interacting with a foundation model and high-fidelity solvers, targeting both
 steady and transient operating regimes.  
 This effort will employ a hybrid strategy combining 
@@ -122,11 +122,12 @@ This effort will employ a hybrid strategy combining
    {\rm reinforcement learning}~\cite{Font2025DRLFlowControl}.  
 Such approaches are essential for energy-system design spaces that are
 high-dimensional, non-convex, and constrained by safety and operational limits.
-(Note that the MFEM team also has experience with reinforcement learning for
-adaptive DOE-relevant finite element simulations \cite{RL23}.)
+(The MFEM team also has experience with reinforcement learning for
+adaptive DOE-relevant finite element simulations~\cite{RL23}.)
 %
+{\color{red}CHECK:MMS, ricardo version doesn't have this? just double-checking. 
 Explainable deep learning~\cite{ricardo24,ricardo25} will be used to connect geometric
-features with latent variables~\cite{ricardo26_causality}.
+features with latent variables~\cite{ricardo26_causality}.}
 %
 %% r1: https://www.nature.com/articles/s41467-024-47954-6
 %% r2: https://www.nature.com/articles/s41467-025-65199-9
@@ -134,7 +135,7 @@ features with latent variables~\cite{ricardo26_causality}.
 %
 Optimization will be performed directly within the latent space of the
 foundation model, enabling efficient exploration of design variables such as
-wire pitch and rod arrangement, as well as operating conditions. 
+wire pitch and rod arrangement and operating conditions. 
 The {\rm agentic AI
 system} will orchestrate this process by dynamically selecting optimization
 strategies, proposing new simulation queries, and balancing competing

@@ -42,21 +42,24 @@ in the nuclear design literature and provide validated benchmarks for
 thermal–fluid performance prediction..  
   In particular we have access to {\em experimentally validated}
 datasets for a 61-pin assembly over a range of Reynolds numbers
-\cite{Dai2025WireWrapped61Pin} and flow in a 19-pin assembly under
-multiple flow and heating conditions \cite{shavernacie}.  
-  Similarly, the MFEM team has simulation data from model ICF simulations in
-wide regimes, geometries and resolutions.  
-{\bf Both Nek and MFEM have infrastructure to automatically produce additional
+\cite{Dai2025WireWrapped61Pin}, as well as satasets for a 19-pin assembly under
+multiple flow and heating conditions~\cite{shavernacie}.  
+  Similarly, the MFEM team possesses high-resolution simulation datasets
+from model ICF studies spanning wide range of operating
+regimes, geometries and spatial resolutions.  
+{\bf Both Nek5000/RS and MFEM have infrastructure to automatically produce additional
 data, some of which is being generated on  OLCF Frontier, ALCF Aurora, and the
-NE Divison cluster, {\em Nek5k}, as part of ongoing studies.}
-This includes a series of
-7-pin reflector assemblies and additional 37-pin simulations similar to those
-performed by Shaver \cite{shaver37pin}.  The latest (and most detailed)
-experimental data for wire-wrapped bundles is available in \cite{kaeri37pin},
-which will also be used for model training.  
-  The generation of wire-wrapped fuel bundle geometries has been fully automated
-so new points in the wire-wrap geometry space can be readily integrated into the
-training data to control uncertainty.
+Argonne NSE Divison cluster, {\em Nek5k}, as part of ongoing studies.}
+These efforts include simulations of
+7-pin reflector assemblies and additional 37-pin configurations similar to those
+previsouly studied by Shaver~\cite{shaver37pin}.  The most recent and highly detailed
+experimental datasets for wire-wrapped bundles are available in~\cite{kaeri37pin},
+and will be incorporated into model training and validation.  
+  {\color{CHECK:MMS}
+The generation of wire-wrapped fuel bundle geometries has been fully automated,
+enabling rapid sampling of new points in the wire-wrap geometry space.
+This capability allows systematic expansion of the training dataset
+and supports uncertainty reduction through targeted data generation}.
 
 \begin{wrapfigure}{rb}{0.30\textwidth}
 \vspace{-2pt}
