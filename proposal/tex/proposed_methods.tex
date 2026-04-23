@@ -1,4 +1,3 @@
-
 \vspace*{.1in}
 \section{Proposed Research and Methods}
 
@@ -114,28 +113,41 @@ proposal, particularly for adjoint-informed refinement and hybrid optimization
 workflows.
 
 The second component, led by the University of Michigan, develops a {\bf
-latent-space optimization and control framework}, targeting both steady and
-transient operating regimes.  This effort will employ a hybrid strategy combining 
-{\rm Bayesian optimization}~\cite{Morita2022BOCFD}, 
-{\rm derivative-free optimization methods}, and 
-{\rm reinforcement learning}~\cite{Font2025DRLFlowControl}.  
+latent-space optimization and control framework} based on agentic AI
+interacting with a foundation model and high-fidelity solvers, targeting both
+steady and transient operating regimes.  
+This effort will employ a hybrid strategy combining 
+   {\rm Bayesian optimization}~\cite{Morita2022BOCFD}, 
+   {\rm derivative-free optimization methods}, and 
+   {\rm reinforcement learning}~\cite{Font2025DRLFlowControl}.  
 Such approaches are essential for energy-system design spaces that are
 high-dimensional, non-convex, and constrained by safety and operational limits.
-(The MFEM team also has experience with reinforcement learning for
+(Note that the MFEM team also has experience with reinforcement learning for
 adaptive DOE-relevant finite element simulations \cite{RL23}.)
+%
+Explainable deep learning~\cite{ricardo24,ricardo25} will be used to connect geometric
+features with latent variables~\cite{ricardo26_causality}.
+%
+%% r1: https://www.nature.com/articles/s41467-024-47954-6
+%% r2: https://www.nature.com/articles/s41467-025-65199-9
+%% r3: https://arxiv.org/abs/2601.03311
 %
 Optimization will be performed directly within the latent space of the
 foundation model, enabling efficient exploration of design variables such as
-wire pitch, rod arrangement, and operating conditions. The {\rm agentic AI
+wire pitch and rod arrangement, as well as operating conditions. 
+The {\rm agentic AI
 system} will orchestrate this process by dynamically selecting optimization
 strategies, proposing new simulation queries, and balancing competing
 objectives, including heat transfer enhancement, pressure loss minimization,
 and safety margin preservation.
 %
 The framework will operate in a closed-loop workflow, in which candidate
-designs generated in latent space are selectively validated using high-fidelity
-simulations.  This ensures predictive accuracy while maintaining robustness
-across operating conditions.
+designs generated in the latent space are selectively validated using high-fidelity
+simulations.  
+Uncertainty quantification and active learning are used to improve the
+foundation model when needed, incorporating high-fidelity data with the
+required geometry and flow conditions.  
+  This ensures predictive accuracy while maintaining robustness across operating conditions.
 %
 All team members will work on {\bf cross-domain validation and integration into the
 Genesis Mission ecosystem}.
