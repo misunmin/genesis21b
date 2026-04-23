@@ -1,16 +1,36 @@
 Letters of collaboration are provided from the following organizations:
 
-\begin{itemize}
+\begin{enumerate}
     \item Kairos
     \item TerraPower
     \item Westinghouse
-\end{itemize}
+\end{enumerate}
 
-\bigskip
-\bigskip
-\vskip1in
-\ifincludeletter
- \includepdf[pages=1,scale=0.90,pagecommand={}]{../letter/kairos_collaboration_letter.pdf}
- \includepdf[pages=1,scale=0.90,pagecommand={}]{../letter/terrapower_collaboration_letter.pdf}
- \includepdf[pages=1,scale=0.80,pagecommand={}]{../letter/westinghouse_collaboration_letter.pdf}
-\fi
+
+
+
+\newpage \phantomsection
+\pagestyle{fancy} \sectionmark{Letters of Collaboration \hfill Kairos}
+\addcontentsline{toc}{subsection}{Kairos}
+\includepdf[pages=-,scale=0.90,offset=0 -65,pagecommand={\thispagestyle{fancy}}]{../letter/kairos_collaboration_letter_1page.pdf}
+
+\newpage \phantomsection
+\pagestyle{fancy} \sectionmark{Letters of Collaboration \hfill TerraPower}
+\addcontentsline{toc}{subsection}{TerraPower}
+\includepdf[pages=-,scale=1.0,offset=0 -65,pagecommand={\thispagestyle{fancy}}]{../letter/terrapower_collaboration_letter_1page.pdf}
+
+\newpage \phantomsection
+\pagestyle{fancy} \sectionmark{Letters of Collaboration \hfill Westinghouse}
+\addcontentsline{toc}{subsection}{Westinghouse}
+\includepdf[pages=-,scale=0.85,offset=0 -65,pagecommand={\thispagestyle{fancy}}]{../letter/westinghouse_collaboration_letter_1page.pdf}
+
+
+%
+%\bigskip
+%\bigskip
+%\vskip1in
+%\ifincludeletter
+% \includepdf[pages=1,scale=0.90,pagecommand={}]{../letter/kairos_collaboration_letter.pdf}
+% \includepdf[pages=1,scale=0.90,pagecommand={}]{../letter/terrapower_collaboration_letter.pdf}
+% \includepdf[pages=1,scale=0.80,pagecommand={}]{../letter/westinghouse_collaboration_letter.pdf}
+%\fi
