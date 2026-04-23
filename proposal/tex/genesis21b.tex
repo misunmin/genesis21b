@@ -34,27 +34,27 @@
 %\includepdf{LeyfferCoverPage}
 \input{cover}
 
-% \newpage \phantomsection
-% \addcontentsline{toc}{subsection}{Proposal Supplemental Cover Page}
-% \input{SupplCover}
+%\newpage \phantomsection
+%\addcontentsline{toc}{subsection}{Proposal Supplemental Cover Page}
+%\input{SupplCover}
 
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 
 %%%%%% Required: Table of Contents
-%\newpage \phantomsection
+\newpage \phantomsection
 %%%% \makeatletter                         % More room for page numbers in TOC
 %%%% \renewcommand{\@pnumwidth}{3.1em}     %
 %%%% \renewcommand{\@tocrmarg}{4.0em}      %
 %%%% \setcounter{tocdepth}{2}
-% \addcontentsline{toc}{subsection}{Table of Contents}
-% \renewcommand\contentsname{Contents}
-% \subpdfbookmark{Table of Contents}{toc}
+ \addcontentsline{toc}{subsection}{Table of Contents}
+ \renewcommand\contentsname{Contents}
+ \subpdfbookmark{Table of Contents}{toc}
 %%%%\noindent{\bf \Title}
 %%%%\tableofcontents
-%\makeatletter
-%\@starttoc{toc}
-%\makeatother
+\makeatletter
+\@starttoc{toc}
+\makeatother
 %%%% \makeatother                          % End more room in TOC
 
 \pagestyle{fancy}
