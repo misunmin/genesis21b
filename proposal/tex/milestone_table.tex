@@ -1,0 +1,73 @@
+
+\begin{table}[t]
+\centering
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{5pt}
+
+\begin{tabularx}{\textwidth}{|
+>{\raggedright\arraybackslash}p{2.2cm}|
+>{\raggedright\arraybackslash}p{1.5cm}|
+>{\raggedright\arraybackslash}X|
+>{\raggedright\arraybackslash}p{2.2cm}|}
+
+\hline
+\textbf{Milestone} &
+\textbf{Month} &
+\textbf{Tasks} &
+\textbf{PIs} \\
+\hline
+
+%\textbf{Milestone 1}
+\textbf{Data Integration and Baseline Surrogate}
+&
+%Month 2
+2
+&
+Unify Nek5000/RS simulation and experimental datasets (wire-coil and reactor-relevant geometries) into a common representation and demonstrate a baseline surrogate model for heat-transfer and pressure-drop prediction. Preparation of data sources and initial ICF simulations in MFEM.
+&
+DS, EM, MM, PF, TK, JA, RV, LO, SL 
+\\
+\hline
+
+%\textbf{Milestone 2}
+\textbf{Foundation Model in Latent Space}
+&
+%Month 4
+4
+&
+Fine-tune an existing geometry-aware fluid-mechanics foundation model using project-specific datasets. The learned latent representations will enable cross-configuration generalization, achieving accurate predictions ($<5\%$ error) across unseen geometries. Initial version of the MFEM-based ICF miniapp. Continued collection of data for fuel-pin and wire-coil models.
+&
+DS, EM, MM, PF, TK, JA, RV, LO, SL 
+\\
+\hline
+
+%\textbf{Milestone 3}
+\textbf{Closed-Loop Optimization Capability}
+&
+%Month 6
+6
+&
+Integrate Bayesian and derivative-free optimization methods in latent space and demonstrate closed-loop design loops, achieving at least $5$--$10\times$ reduction in design iteration cost relative to brute-force CFD in both Nek and MFEM-based applications.
+&
+DS, EM, MM, PF, TK, JA, RV, LO, SL 
+\\
+\hline
+
+%\textbf{Milestone 4}
+\textbf{Agentic AI–Driven Accelerated Design}
+&
+%Month 9
+9
+&
+Deploy agentic AI orchestration for adaptive sampling and multi-objective optimization, demonstrating end-to-end automated design with $10$--$20\times$ design-cycle acceleration and improved performance (e.g., heat-transfer versus pressure-drop trade-off) on a representative heat-exchanger system and ICF configuration.
+&
+DS, EM, MM, PF, TK, JA, RV, LO, SL 
+\\
+\hline
+
+\end{tabularx}
+
+\caption{Phase I milestones, schedule, and responsibilities.}
+\label{tab:phase1_milestones}
+
+\end{table}
