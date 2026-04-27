@@ -16,7 +16,10 @@ As illustrated in Fig.~\ref{fig:fm1}, the {\bf Phase I} objective is to develop 
 training workflow to build AI surrogates for thermal-fluid solutions.  
 Initial training sets, identified by domain experts, will be based on time-averaged
 data that are already available or readily generated with Nek5000/RS and MFEM
-using direct numerical or large-eddy simulations (DNS or LES) of turbulence.
+using direct numerical or large-eddy simulations (DNS or LES) of 
+turbulence.\footnote{Broadly, 
+we employ Nek5000/RS for incompressible applications
+and MFEM for compressible flows.}
 The geometry for each dataset is embedded in the computational mesh, whose
 nodes are associated with corresponding solution variables velocity, pressure,
 and temperature.   Cases with varying geometry or parameters (e.g., Reynolds
@@ -38,7 +41,7 @@ Discretizations as part of DOE's Exascale Computing Project \cite{ceed}.
 Their high-order
 discretizations, coupled with fast matrix-free operator evaluation and highly
 scalable preconditioners, gives them a competitive training edge over
-traditional approaches (e.g., a {\bf 32$\times$ gain} compared to 2nd-order finite
+traditional discretizations (e.g., a {\bf 32$\times$ gain} compared to 2nd-order finite
 volume methods \cite{Min2024Wind,Tomboulides2024ABL}).  Nek5000/RS has been
 extensively used for reactor thermal-hydraulics (TH) and is part of NRC-accepted
 workflows, while MFEM has enabled important fusion applications in the DOE,
